@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="VMMPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_VMMPortlet/jsp/html/VMMPortletView.jsp</value>
+        </property>
+        <property>
+            <name>WSRP_PRODUCER</name>
+            <value>false</value>
+        </property>
+    </portlet>
+    <portlet name="LongAjaxLoader">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_LongAjaxLoader/jsp/html/LongAjaxLoaderPortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>
