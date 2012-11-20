@@ -11,6 +11,42 @@ public class VMMManager extends VMMBase{
 	
 	private static Service service;
 
+	public static String searchTest(String userName,String password,final String searchBase,final String queryAttrib,final String userType) throws Exception{
+		System.out.println(userName+"----->"+password);
+		VMMServiceObject vobj = VMMServiceObject.createVMMServiceObject();
+		service = vobj.getLocalServiceProvider();
+		DataObject result = (DataObject) runAsUser(userName, password, new java.security.PrivilegedExceptionAction()
+		{
+	        @SuppressWarnings("unchecked")
+			public Object run() throws Exception
+	        {
+	            //Note the service instance used is that of security domain obtained in step 1.
+	            DataObject root = service.createRootDataObject();
+	            DataObject searchCtrl = SDOHelper.createControlDataObject(root, null, SchemaConstants.DO_SEARCH_CONTROL);
+	            // Set the properties that need to be retrieved in search results
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("uid");
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("cn");
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("samAccountName"); 
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("userprincipalname"); 
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("groupTypes");  
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("ibm-jobTitle");
+	            // Set the search base in which search will be performed
+//	            searchCtrl.getList(SchemaConstants.PROP_SEARCH_BASES).add("o=defaultWIMFileBasedRealm");
+	         
+	            searchCtrl.getList(SchemaConstants.PROP_SEARCH_BASES).add(searchBase);
+	            // Set the search filter as uid, here the expression will search for all uids
+//	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='PersonAccount' and uid='"+searchString+"'");
+	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='"+userType+"' and "+queryAttrib+"='*'");
+
+	            
+	            //	            System.out.println("Input datagraph before searching for users in the searchbase"+ printDO(root));  
+	            DataObject retObject = service.search(root);
+	            return retObject;
+	        }
+	    });
+		return printDO(result).trim();
+	}
+	
 	public static String searchVMM(String userName,String password,final String searchBase,final String searchTerm) throws Exception{
 		VMMServiceObject vobj = VMMServiceObject.createVMMServiceObject();
 		service = vobj.getLocalServiceProvider();
@@ -27,6 +63,7 @@ public class VMMManager extends VMMBase{
 	            DataObject searchCtrl = SDOHelper.createControlDataObject(root, null, SchemaConstants.DO_SEARCH_CONTROL);
 	            // Set the properties that need to be retrieved in search results
 	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("uid");
+	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("cn");
 	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("samAccountName"); 
 	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("userprincipalname"); 
 	            searchCtrl.getList(SchemaConstants.PROP_PROPERTIES).add("groupTypes");  
@@ -39,8 +76,10 @@ public class VMMManager extends VMMBase{
 	            }
 	            searchCtrl.getList(SchemaConstants.PROP_SEARCH_BASES).add(searchBase);
 	            // Set the search filter as uid, here the expression will search for all uids
-//	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='PersonAccount' and uid='"+searchString+"'");
-	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='PersonAccount' and cn='"+searchString+"'");
+	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='PersonAccount' and uid='"+searchString+"'");
+//	            searchCtrl.setString(SchemaConstants.PROP_SEARCH_EXPRESSION, "@xsi:type='PersonAccount' and uid='*'");
+
+	            
 	            //	            System.out.println("Input datagraph before searching for users in the searchbase"+ printDO(root));  
 	            DataObject retObject = service.search(root);
 	            return retObject;

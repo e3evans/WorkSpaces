@@ -42,7 +42,7 @@ public class SearchService {
 		try {
 //			return VMMManager.searchVMM("waslocal","waslocal","o=defaultWIMFileBasedRealm","w");
 			System.out.println("SEARCH BASE:  "+searchBase);
-			
+			System.out.println("SEARCH TERM:  "+searchTerm);
 			return VMMManager.searchVMM(userName,password,searchBase,searchTerm);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -68,5 +68,22 @@ public class SearchService {
 			e.printStackTrace();
 		}
 		return "THERE HAS BEEN AN ERROR CHECK THE LOGS!";
+	}
+	@GET
+	@Path("/testDN")
+	@Produces("text/xml")
+	public String test(@QueryParam("userName")String user, 
+			@QueryParam("password")String password, @QueryParam("base")String base,
+			@QueryParam("queryAttrib")String queryAttrib,@QueryParam("userType")String userType){
+		
+		try {
+			String test = VMMManager.searchTest(user, password, base,queryAttrib,userType);
+			return test;
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return"CHECK THE LOGS";
 	}
 }

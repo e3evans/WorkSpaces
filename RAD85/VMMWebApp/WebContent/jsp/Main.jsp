@@ -12,6 +12,7 @@
 <script>
 function test(renderas){
 		var searchString = document.getElementById('searchField').value;
+		//alert(searchString);
 		$('#ajax-panel2').empty();
 		$.ajax({
 		  type: 'POST',
