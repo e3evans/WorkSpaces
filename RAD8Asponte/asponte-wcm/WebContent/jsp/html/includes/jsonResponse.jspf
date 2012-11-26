@@ -1,0 +1,11 @@
+<%@ page session="false" isELIgnored="false" import="java.util.*,java.util.logging.*,java.text.MessageFormat,com.ibm.workplace.wcm.api.*,com.ibm.workplace.wcm.api.exceptions.*,com.asponte.commons.*,com.asponte.wcm.widgets.*" 
+	%>{"success":<%=Boolean.toString(jsonResult)%>,"results":[<%
+if(jsonResults.size()>0){
+	ResourceBundle rb=ResourceBundle.getBundle("com.asponte.wcm.widgets.resources.strings");
+	int ii=0;
+	for(Iterator itr=jsonResults.iterator();itr.hasNext();ii++){ 
+		Result result=(Result)itr.next();
+		if(ii>0){%>,<%}
+	%>{"severity":<%=Integer.toString(result.getSeverity())%>,"code":<%=result.getCode()%>,"msg":"%=result.getMessage(request.getLocale())%>"}<%
+	}
+}%>]}

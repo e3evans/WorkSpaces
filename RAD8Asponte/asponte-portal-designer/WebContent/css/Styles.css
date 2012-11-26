@@ -1,0 +1,113 @@
+.awwUnconfigured{
+	padding:10px;
+	font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Sans-Serif;
+	color:#666699;
+}
+.awwWizard{
+	visibility:hidden;
+}
+.awwWizardDialog{
+	text-align:left;
+	width:660px;
+}
+.awwWizardDialog .awwWizardTabSet{
+	width:660px;
+	height:400px;
+}
+.awwWizardDialog .dijitTabPane{
+	background-color:#eee;
+	padding:0px;
+}
+.awwWizardDialog .dijitTab{
+	background: transparent none;
+	border: none;
+	margin:0px 0px 0px 0px;
+}
+.awwWizardDialog .dijitTabInnerDiv{
+	border:none;
+	padding:8px 5px 8px 5px;
+}
+.awwWizardTabSet .dijitTabContent{
+	white-space:normal;
+	vertical-align:top;
+	width:100px;
+}
+.awwWizardTabSet .tabLabel{
+	display:block;
+	text-align:center;
+}
+.awwWizardDialog .dijitTabChecked,
+.awwWizardDialog .dijitTabHover {
+	background:#eee url('../images/tabbg.png') repeat-x;
+}
+.awwWizardDialog .dijitTabContent h3 {
+	margin:2px 0px;
+	padding:0px;
+	color:#eee;
+	font-size:1em;
+}
+.awwWizardDialog .dijitTabChecked h3 {
+	color:#2a3740;
+}
+
+.awwWizardDialog .dijitTabHover h3{
+	color:#2a3740;
+}
+.awwWizardDialog .dijitTab .dijitTabButtonSpacer {
+	height:0px;
+}
+.awwWizardDialog .dijitTabPaneWrapper{
+	border: none;
+}
+.awwWizardDialog .dijitTabPane .awwWizardTabPaneHeader{
+	padding:8px 12px;
+	background-color:white;
+	border-bottom:1px solid #ccc;
+}
+.awwWizardDialog .dijitTabPane .awwWizardTabPaneHeader h3 {
+	margin:2px 0px;
+	padding:0px;
+	color:#2a3740;
+	font-size:1em;
+}
+.awwWizardDialog .dijitTabPane .awwWizardTabPaneHeader p {
+	margin:4px 0px;
+	padding:0px;
+	color:#2a3740;
+	font-size:1em;
+}
+.awwWizardDialog .dijitTabPane .awwWizardTabPaneContent {
+	padding:10px;
+}
+.awwWizardDialog .awwWizardButtons{
+	float:right;
+	padding:4px;
+}
+.awwMessages{
+	padding:0px;
+	margin:0px;
+}
+.awwMessages li{
+	list-style-type:none;
+	list-style-position:inside;
+	list-style-image:none;
+	color:red;
+	font-weight:bold;
+	font-size:1.1em;
+}
+.standbyUnderlayNode {
+	display: none;
+	opacity: 0;
+	z-index: 9999;
+	position: absolute;
+	cursor:wait;
+}
+.standbyImageNode {
+	opacity: 0;
+        display: none;
+	z-index: -10000;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	cursor:wait;
+}

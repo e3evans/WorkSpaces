@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.ibm.googlemaps.GoogleMapsPortlet.b1c04d1643">
+	<portlet>
+		<portlet-name>GoogleMaps</portlet-name>
+		<display-name xml:lang="en">GoogleMaps</display-name>
+		<display-name>GoogleMaps</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.googlemaps.nl.GoogleMapsPortletResource</resource-bundle>
+		<portlet-info>
+			<title>GoogleMaps</title>
+			<short-title>GoogleMaps</short-title>
+			<keywords>GoogleMaps</keywords>
+		</portlet-info>
+		<portlet-preferences>
+			<preference>
+				<name>defaultLong</name>
+				<value>12345</value>
+			</preference>
+		</portlet-preferences>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+	<default-namespace>http://GoogleMaps/</default-namespace>
+</portlet-app>

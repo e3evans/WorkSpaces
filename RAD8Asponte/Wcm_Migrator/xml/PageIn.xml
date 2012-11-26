@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IBM WebSphere Portal/6.1.0.5 build wp6105_021_01 exported on Fri Dec 16 12:42:23 EST 2011 from portal61.asponte.com/127.0.0.1 -->
+<!-- 1 [content-node 6_000000000000000000000000A0] -->
+<!-- 2 [content-node 6_CGAH47L0084G00I4BONHCQ10I3] -->
+<!-- 3 [content-node 6_6D7PQKG108GG00I50OECNP20Q1 uniquename=eric.content.test] -->
+<!-- 4 [component 7_6D7PQKG108GG00I50OECNP20Q5] -->
+<!-- 5 [component 7_6D7PQKG108GG00I50OECNP20Q7] -->
+<!-- 6 [component 7_6D7PQKG108GG00I50OECNP2062] -->
+<!-- 7 [web-app 1_6D7PQKG1006M00IE6HLO8B08B1 uid=ilwwcm-localrenderingportlet-jsr.war.webmod] -->
+<!-- 8 [portlet-app 2_6D7PQKG1006M00IE6HLO8B08B5 uid=ilwwcm-localrenderingportlet-jsr.war] -->
+<!-- 9 [servlet V_6D7PQKG1006M00IE6HLO8B08B3] -->
+<!-- 10 [portlet 3_6D7PQKG1006M00IE6HLO8B08B7 name=Web Content Viewer (JSR 286)] -->
+<!-- 11 [portletinstance 5_6D7PQKG108GG00I50OECNP2064] -->
+<!-- 12 [component 7_6D7PQKG108GG00I50OECNP20M6] -->
+<!-- 13 [component 7_6D7PQKG108GG00I50OECNP20E7] -->
+<!-- 14 [web-app 1_CGAH47L000T950I4B4R9CD0G75 uid=wcm.contentviewer.1001] -->
+<!-- 15 [portlet-app 2_CGAH47L000T950I4B4R9CD0G73 uid=wcm.contentviewer.1001.1] -->
+<!-- 16 [servlet V_CGAH47L000T950I4B4R9CD0G77] -->
+<!-- 17 [portlet 3_CGAH47L000T950I4B4R9CD0GN0 name=Web Content Viewer] -->
+<!-- 18 [portletinstance 5_6D7PQKG108GG00I50OECNP20E3] -->
+<request xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" build="wp6105_021_01" type="update" version="6.1.0.5" xsi:noNamespaceSchemaLocation="PortalConfig_6.1.0.2.xsd">
+    <portal action="locate">
+        <web-app action="locate" domain="rel" objectid="1_6D7PQKG1006M00IE6HLO8B08B1" uid="ilwwcm-localrenderingportlet-jsr.war.webmod">
+            <servlet action="locate" domain="rel" name="Web Content Viewer (JSR 286)" objectid="V_6D7PQKG1006M00IE6HLO8B08B3"/>
+            <portlet-app action="locate" domain="rel" name="Web Content Management - Content Viewer (JSR 286)" objectid="2_6D7PQKG1006M00IE6HLO8B08B5" uid="ilwwcm-localrenderingportlet-jsr.war">
+                <portlet action="locate" domain="rel" name="Web Content Viewer (JSR 286)" objectid="3_6D7PQKG1006M00IE6HLO8B08B7" uniquename="ibm.portal.Web.Content.Viewer.Jsr286"/>
+            </portlet-app>
+        </web-app>
+        <web-app action="locate" domain="rel" objectid="1_CGAH47L000T950I4B4R9CD0G75" uid="wcm.contentviewer.1001">
+            <servlet action="locate" domain="rel" name="Web Content Viewer.$appuid.wcm.contentviewer.1001.1" objectid="V_CGAH47L000T950I4B4R9CD0G77"/>
+            <portlet-app action="locate" domain="rel" name="Web Content Management - Content Viewer" objectid="2_CGAH47L000T950I4B4R9CD0G73" uid="wcm.contentviewer.1001.1">
+                <portlet action="locate" domain="rel" name="Web Content Viewer" objectid="3_CGAH47L000T950I4B4R9CD0GN0" uniquename="ibm.portal.Web.Content.Viewer"/>
+            </portlet-app>
+        </web-app>
+        <content-node action="locate" domain="rel" objectid="6_000000000000000000000000A0" uniquename="wps.content.root"/>
+        <content-node action="locate" domain="rel" objectid="6_CGAH47L0084G00I4BONHCQ10I3" uniquename="ibm.portal.Home"/>
+        <content-node action="update" active="true" allportletsallowed="true" content-parentref="6_CGAH47L0084G00I4BONHCQ10I3" create-type="explicit" domain="rel" objectid="6_6D7PQKG108GG00I50OECNP20Q1" ordinal="1200" type="page" uniquename="eric.content.test">
+            <supported-markup markup="html" update="set"/>
+            <localedata locale="en">
+                <title>Eric Content Test</title>
+            </localedata>
+            <parameter name="com.ibm.portal.IgnoreAccessControlInCaches" type="string" update="set"><![CDATA[false]]></parameter>
+            <parameter name="com.ibm.portal.bookmarkable" type="string" update="set"><![CDATA[Yes]]></parameter>
+            <parameter name="com.ibm.portal.remote-cache-expiry" type="string" update="set"><![CDATA[0]]></parameter>
+            <parameter name="com.ibm.portal.remote-cache-scope" type="string" update="set"><![CDATA[NON-SHARED]]></parameter>
+            <access-control externalized="false" owner="uid=wpsadmin,cn=users,dc=asponte,dc=com" private="false"/>
+            <component action="update" active="true" deletable="undefined" domain="rel" modifiable="undefined" objectid="7_6D7PQKG108GG00I50OECNP20Q5" ordinal="100" orientation="H" skinref="undefined" type="container" width="undefined">
+                <component action="update" active="true" deletable="undefined" domain="rel" modifiable="undefined" objectid="7_6D7PQKG108GG00I50OECNP20Q7" ordinal="200" orientation="V" skinref="undefined" type="container" width="undefined">
+                    <component action="update" active="true" deletable="undefined" domain="rel" modifiable="undefined" objectid="7_6D7PQKG108GG00I50OECNP2062" ordinal="100" skinref="undefined" type="control" width="undefined">
+                        <portletinstance action="update" domain="rel" objectid="5_6D7PQKG108GG00I50OECNP2064" portletref="3_6D7PQKG1006M00IE6HLO8B08B7">
+                            <preferences name="WCM_BROADCASTS_TO" update="set">
+                                <value><![CDATA[WCM_LINKING_NONE]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_CONTEXT" update="set">
+                                <value><![CDATA[/ontario content library/Ontario/News/Top News Stories]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_CONTEXT_DIS" update="set">
+                                <value><![CDATA[/Ontario Content Library/Ontario/News/Top News Stories]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_CONTEXT_IDR" update="set">
+                                <value><![CDATA[b7f0888046516cfdaf24affa1a2027c6]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_CONTEXT_LIB" update="set">
+                                <value><![CDATA[ontario content library]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_CONTEXT_TYPE" update="set">
+                                <value><![CDATA[content]]></value>
+                            </preferences>
+                            <preferences name="WCM_CONTENT_TYPE" update="set">
+                                <value><![CDATA[CONTENT]]></value>
+                            </preferences>
+                            <preferences name="WCM_DESIGN_IDR" update="set">
+                                <value/>
+                            </preferences>
+                            <preferences name="WCM_LISTENS_TO" update="set">
+                                <value><![CDATA[WCM_LINKING_NONE]]></value>
+                            </preferences>
+                            <preferences name="WCM_PORTAL_PAGE_ID" update="set">
+                                <value><![CDATA[6_6D7PQKG1084C50IEJC40D33KU1]]></value>
+                            </preferences>
+                            <preferences name="WCM_PORTLET_TITLE" update="set">
+                                <value><![CDATA[Announcements]]></value>
+                            </preferences>
+                            <preferences name="WCM_PORTLET_TITLE_TYPE" update="set">
+                                <value><![CDATA[WCM_PORTLET_TITLE_TYPE_GENERAL]]></value>
+                            </preferences>
+                            <preferences name="com.ibm.wps.pe.portlet.fragment.cache.expires" update="set">
+                                <value><![CDATA[0]]></value>
+                            </preferences>
+                            <preferences name="com.ibm.wps.pe.portlet.fragment.cache.public" update="set">
+                                <value><![CDATA[true]]></value>
+                            </preferences>
+                        </portletinstance>
+                    </component>
+                </component>
+                <component action="update" active="true" deletable="undefined" domain="rel" modifiable="undefined" objectid="7_6D7PQKG108GG00I50OECNP20M6" ordinal="300" orientation="V" skinref="undefined" type="container" width="undefined">
+                    <component action="update" active="true" deletable="undefined" domain="rel" modifiable="undefined" objectid="7_6D7PQKG108GG00I50OECNP20E7" ordinal="100" skinref="undefined" type="control" width="undefined">
+                        <portletinstance action="update" domain="rel" objectid="5_6D7PQKG108GG00I50OECNP20E3" portletref="3_6D7PQKG1006M00IE6HLO8B08B7" shareref="5_6D7PQKG108GG00I50OECNP20E3">
+                            <parameter name="WCM_BROADCASTS_TO" type="string" update="set"><![CDATA[WCM_LINKING_NONE]]></parameter>
+                            <parameter name="WCM_CONTENT_CONTEXT" type="string" update="set"><![CDATA[/ontario content library/Ontario/News/Newsroom]]></parameter>
+                            <parameter name="WCM_CONTENT_CONTEXT_DIS" type="string" update="set"><![CDATA[/Ontario Content Library/Ontario/News/Newsroom]]></parameter>
+                            <parameter name="WCM_CONTENT_CONTEXT_IDR" type="string" update="set"><![CDATA[04089500464e73beaed3aefa1a2027c6]]></parameter>
+                            <parameter name="WCM_CONTENT_CONTEXT_LIB" type="string" update="set"><![CDATA[ontario content library]]></parameter>
+                            <parameter name="WCM_CONTENT_CONTEXT_TYPE" type="string" update="set"><![CDATA[com.aptrix.pluto.content.Content]]></parameter>
+                            <parameter name="WCM_CONTENT_TYPE" type="string" update="set"><![CDATA[CONTENT]]></parameter>
+                            <parameter name="WCM_LISTENS_TO" type="string" update="set"><![CDATA[WCM_LINKING_NONE]]></parameter>
+                            <parameter name="WCM_PORTAL_PAGE_ID" type="string" update="set"><![CDATA[6_6D7PQKG1084C50IEJC40D33KU1]]></parameter>
+                        </portletinstance>
+                    </component>
+                </component>
+            </component>
+        </content-node>
+    </portal>
+    <status element="all" result="ok"/>
+</request>

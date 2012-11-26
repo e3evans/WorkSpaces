@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="PlaceholderPortlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_PlaceholderPortlet/jsp/html/PlaceholderPortletView.jsp</value>
+        </property>
+    </portlet>
+    <portlet name="Simple IFrame Portlet">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_SimpleIFramePortlet/jsp/html/SimpleIFramePortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

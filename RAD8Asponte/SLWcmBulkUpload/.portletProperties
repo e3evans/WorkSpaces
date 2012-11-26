@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="SLWcmBulkUpload">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_SLWcmBulkUpload/jsp/html/SLWcmBulkUploadPortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

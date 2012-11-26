@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.asponte.portal.designer"
+   name="Asponte Portal Designer Plug-in"
+   version="1.0.0">
+
+   <extension-point id="pageElementTemplates" name="pageElementTemplates" />
+   
+   <!-- TODO: We are missing Event List (BCBST), Video List (BCBST), Poll Archive (BCBST), 
+        Tips n Tricks (Prudential).  Could also do Bulletins (BIPT), FAQs (not developed yet),doc catalog tabbed (HDsmith) -->
+        
+   <extension point="com.asponte.portal.designer.pageElementTemplates" 
+              id="aspontePageElements">
+      <pageElementTemplate
+        name="richTextTemplate"
+        icon="/plugins/rte/rte.png"
+        title="Rich Text"
+        description="Add rich text directly to your page using a rich text editor."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/rte/rte.jsp"
+        wcmTemplateId="rich_text" />      
+      <pageElementTemplate
+        name="anncTemplate"
+        icon="/plugins/annc/annc.png"
+        title="Announcements"
+        description="Add a list of announcements to your page in one of several selectable formats"
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/annc/annc.jsp"
+        wcmTemplateId="annc">
+        <style
+            title="Latest Announcements (One-column, title, image, description, date)"
+            styleId="1c_latest" />
+      </pageElementTemplate>
+      <pageElementTemplate
+        name="docListTemplate"
+        icon="/plugins/dlst/dlst.png"
+        title="Document List"
+        description="Add a Document List to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/dlst/dlst.jsp"
+        wcmTemplateId="doc_list_1c_latest" />     
+	  <pageElementTemplate
+        name="movieTemplate"
+        icon="/plugins/mov/mov.png"
+        title="Videos"
+        description="Add videos directly to your page using a local or remote video file or by embedding html markup."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/mov/mov.jsp"
+        wcmTemplateId="video"> 
+        <style
+            title="Single Video"
+            styleId="single" />
+      </pageElementTemplate>     
+      <pageElementTemplate
+        name="swfTemplate"
+        icon="/plugins/swf/swf.png"
+        title="Flash"
+        description="Add Flash content directly to your page using a local or remote SWF file."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/swf/swf.jsp"
+        wcmTemplateId="swf" />                                                          
+   </extension>  
+</plugin>

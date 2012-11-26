@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="ca.standardlife.wcm.WcmPlugin"
+		name="Standard Life WCM Plugin"
+		version="1.0.0"
+		provider-name="IBM">
+   <extension point="com.ibm.workplace.wcm.api.RenderingPlugin" id="SLRuleHelper">
+     <provider class="ca.standardlife.wcm.plugins.SLRuleHelper"/>
+   </extension> 
+   <extension point="com.ibm.workplace.wcm.api.RenderingPlugin" id="SLDocumentJson">
+     <provider class="ca.standardlife.wcm.plugins.SLDocumentJson"/>
+   </extension> 
+   <extension point="com.ibm.workplace.wcm.api.RenderingPlugin" id="SLNavHeper">
+     <provider class="ca.standardlife.wcm.plugins.SLNavHelper"/>
+   </extension> 
+   <extension point="com.ibm.workplace.wcm.api.RenderingPlugin" id="SLTabHelper">
+     <provider class="ca.standardlife.wcm.plugins.SLTabHelper"/>
+   </extension> 
+   	<extension point="com.ibm.workplace.wcm.api.ContextProcessor" id="SLContextProcessor">
+		<provider class="ca.standardlife.wcm.plugins.SLContextProcessor"/>
+	</extension>
+</plugin>

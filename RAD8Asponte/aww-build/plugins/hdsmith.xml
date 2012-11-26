@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.asponte.portal.designer"
+   name="Asponte Portal Designer Plug-in"
+   version="1.0.0">
+
+   <extension-point id="pageElementTemplates" name="pageElementTemplates" />
+   
+   <extension point="com.asponte.portal.designer.pageElementTemplates" 
+              id="aspontePageElements">
+      <pageElementTemplate
+        name="richTextTemplate"
+        icon="/plugins/rte/rte.png"
+        title="Rich Text"
+        description="Add rich text directly to your page using a rich text editor."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/rte/rte.jsp"
+        wcmTemplateId="rich_text" />   
+      <pageElementTemplate
+        name="docListTemplate"
+        icon="/plugins/dlst/dlst.png"
+        title="Document List"
+        description="Add a Document List to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/dlst/dlst.jsp"
+        wcmTemplateId="doc_list" />  
+      <pageElementTemplate
+        name="anncTemplate"
+        icon="/plugins/annc/annc.png"
+        title="Announcements"
+        description="Add a list of announcements to your page."
+        class="com.asponte.portal.designer.builders.WcmAnncBuilder"
+        path="/plugins/annc/annc.jsp"
+        wcmTemplateId="annc">
+        <style
+            title="Latest Announcements (One-column, title, image, description, date)"
+            styleId="list1c" />
+      </pageElementTemplate>                        
+      <pageElementTemplate
+        name="landingPageTemplate"
+        icon="/plugins/ldpg/ldpg.png"
+        title="Landing Page"
+        description="Add a landing page for links."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/ldpg/ldpg.jsp"
+        wcmTemplateId="landing_page" />                          
+   </extension>  
+</plugin>

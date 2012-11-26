@@ -1,0 +1,56 @@
+<%@ page session="true" contentType="text/html"
+    import="java.util.*,com.ibm.workplace.wcm.api.*"%><%@ taglib
+    uri="/WEB-INF/tld/wcm.tld" prefix="wcm"
+    %><%@page import="com.ibm.workplace.wcm.api.authoring.CustomItemBean"%><%
+
+    CustomItemBean customItem =(CustomItemBean) request.getAttribute("CustomItemBean");
+    customItem.setSubmitFunctionName(customItem.getFieldName()+"_cpicker.save");
+    String fvalue = (String)customItem.getFieldValue();
+    if(fvalue==null||fvalue.trim().length()==0){fvalue="transparent";}
+%>
+<div id="<%=customItem.getFieldName()%>_cpicker" class="tundra">
+<div>
+<%if(wcmColorPickerRequired){%><span class="wcmRequiredField">*</span><%}%>&nbsp;<span class="lbl1"><%if(wcmColorPickerRequired){%><span style="display: none;">Required Field</span><%}%><span class="fieldLabel"><%=wcmColorPickerName%></span></span><br />
+<span class="wcmHelpText"><%=wcmColorPickerDesc%></span></div>
+<button dojoType="dijit.form.Button" type="button" id="<%=customItem.getFieldName()%>_cpicker_button"><div id="<%=customItem.getFieldName()%>_cpicker_palette" style="background:<%=fvalue%> none;border:1px solid #c0c0c0;height:16px;width:16px;">&nbsp;</div></button>
+<div dojoType="dijit.Dialog" title="Choose Color" id="<%=customItem.getFieldName()%>_dialog">
+  <div dojoType="dijit.ColorPalette" palette="7x10" id="<%=customItem.getFieldName()%>_color"></div>
+  <div>
+    <button dojoType="dijit.form.Button" type="button" id="<%=customItem.getFieldName()%>_dialog_ok">OK</button>
+    <button dojoType="dijit.form.Button" type="button" id="<%=customItem.getFieldName()%>_dialog_cancel">Cancel</button>
+  </div>
+</div>
+</div>
+<script language='Javascript'>
+var <%=customItem.getFieldName()%>_cpicker={
+save:function() {
+    var cpicker=dijit.byId('<%=customItem.getFieldName()%>_color');	
+	var val=cpicker.value||'<%=fvalue%>';
+   	document.getElementById("<%=customItem.getFieldName()%>").value = val;
+},
+onChange:function(){
+	var cpicker=dijit.byId('<%=customItem.getFieldName()%>_color');
+	var value=cpicker.value;
+	if(value!=null&&value.length>0){
+		var e=dojo.byId('<%=customItem.getFieldName()%>_cpicker_palette');
+		if(e){dojo.style(e,'background',value+' none');}
+	}
+	dijit.byId('<%=customItem.getFieldName()%>_dialog').hide();
+},
+init:function() {
+    dojo.parser.parse('<%=customItem.getFieldName()%>_cpicker');
+    var f=dojo.byId('<%=customItem.getFieldName()%>_cpicker_button');
+    var g=dojo.byId('<%=customItem.getFieldName()%>_dialog_ok');
+    var h=dojo.byId('<%=customItem.getFieldName()%>_dialog_cancel');
+    if(f&&g&&h){
+		dojo.connect(f,'onclick',null,function(){dijit.byId('<%=customItem.getFieldName()%>_dialog').show();});
+        dojo.connect(g,'onclick',this,this.onChange);
+        dojo.connect(h,'onclick',null,function(){dijit.byId('<%=customItem.getFieldName()%>_dialog').hide();});
+    }
+}
+}
+dojo.require('dijit.Dialog');
+dojo.require('dijit.ColorPalette');
+dojo.require('dijit.form.Button');
+dojo.addOnLoad(dojo.hitch(<%=customItem.getFieldName()%>_cpicker,<%=customItem.getFieldName()%>_cpicker.init));
+</script>

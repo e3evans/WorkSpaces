@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin id="com.ibm.workplace.wcm.sample.customworkflowaction"
+		name="Asponte Custom Workflow Action Factory"
+		version="1.0.0"
+		provider-name="IBM">
+	<extension
+		point="com.ibm.workplace.wcm.api.CustomWorkflowActionFactory"
+		id="AsponteCustomWorkflowActionFactory">
+		<provider class="com.asponte.wcm.workflow.actions.CustomWorkflowActionFactoryImpl"/>
+	</extension>
+</plugin>

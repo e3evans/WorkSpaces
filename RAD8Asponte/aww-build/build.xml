@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Sep 16, 2011 4:59:30 PM                                                        
+
+     project    
+     description
+                   
+     dewittsc                                                                
+     ====================================================================== -->
+<project name="project" default="default">
+    <description>
+            
+    </description>
+
+	<property name="tmpdir" location="${java.io.tmpdir}/asponte-portal-designer"/>
+	<tstamp />
+	<property name="builddir" location="${tmpdir}/${DSTAMP}_${TSTAMP}" />
+
+	<condition property="output_loc" value="builds/${customer}"> 
+		<isset property="development" />
+	</condition>
+	<condition property="output_loc" value="drivers/${customer}/${DSTAMP}_${TSTAMP}"> 
+		<isset property="production" />
+	</condition>
+	<property name="plugin_file" location="plugins/${customer}.xml" />
+	
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" description="description" depends="init,build-asponte-commons,build-portal-designer-war,build-asponte-wcm-ear,cleanup" />
+	
+	<target name="init">
+        <mkdir dir="${tmpdir}" />
+        <delete dir="${builddir}" />
+    	<mkdir dir="${builddir}" />
+    	<delete dir="${output_loc}" />
+    	<mkdir dir="${output_loc}" />
+	</target>
+		
+	<target name="cleanup">
+		<delete dir="${tmpdir}" />
+	</target>
+		
+	<target name="init-build" depends="init-dev-build,init-prod-build" />
+	<target name="init-dev-build" unless="production">
+		<property name="output_loc" location="builds/${customer}" />
+	</target>
+	<target name="init-prod-build" unless="development">
+		<property name="output_loc" location="drivers/${DSTAMP}_${TSTAMP}/${customer}"  />
+	</target>
+	<target name="build-asponte-commons">
+		<mkdir dir="${builddir}/asponte-commons/jar" />
+		<jar basedir="../asponte-commons/bin" destfile="${builddir}/asponte-commons/jar/asponte-commons.jar" />
+	</target>
+
+	<target name="build-portal-designer-war">
+    	<mkdir dir="${builddir}/asponte-portal-designer/war" />
+		<copy todir="${builddir}/asponte-portal-designer/war">
+			<fileset dir="../asponte-portal-designer/WebContent" includes="**/*" />
+		</copy>
+    	<copy file="${builddir}/asponte-commons/jar/asponte-commons.jar" todir="${builddir}/asponte-portal-designer/war/WEB-INF/lib" />		
+    	<copy file="${plugin_file}" tofile="${builddir}/asponte-portal-designer/war/WEB-INF/plugin.xml" />
+    	<zip basedir="${builddir}/asponte-portal-designer/war" destfile="${output_loc}/asponte-portal-designer.war"  />
+	</target>
+		
+	<target name="build-asponte-wcm-ear">        
+		<mkdir dir="${builddir}/asponte-wcm-ear/war" />
+		<mkdir dir="${builddir}/asponte-wcm-ear/ear" />
+		<copy todir="${builddir}/asponte-wcm-ear/war">
+			<fileset dir="../asponte-wcm/WebContent" includes="**/*" />
+		</copy>
+    	<copy file="${builddir}/asponte-commons/jar/asponte-commons.jar" todir="${builddir}/asponte-wcm-ear/war/WEB-INF/lib" />		
+		<antcall target="prepare-asponte-wcm"></antcall>
+		<copy todir="${builddir}/asponte-wcm-ear/ear">
+			<fileset dir="../asponte-wcm-ear/EarContent" includes="**/*" />
+		</copy>
+		<zip basedir="${builddir}/asponte-wcm-ear/war" destfile="${builddir}/asponte-wcm-ear/ear/asponte-wcm.war"  />
+		<zip basedir="${builddir}/asponte-wcm-ear/ear" destfile="${output_loc}/asponte-wcm-ear.ear"  />
+	</target>
+		
+	<target name="prepare-asponte-wcm" depends="prepare-asponte-wcm-v6,prepare-asponte-wcm-v7" />
+	
+	<target name="prepare-asponte-wcm-v6" unless="build_v7">
+    	<copy file="plugins/plugin_61.xml" tofile="${builddir}/asponte-wcm-ear/war/WEB-INF/plugin.xml" />
+	</target>
+		
+	<target name="prepare-asponte-wcm-v7" unless="build_v6">
+    	<copy file="plugins/plugin_70.xml" tofile="${builddir}/asponte-wcm-ear/war/WEB-INF/plugin.xml" />
+	</target>
+</project>

@@ -1,0 +1,170 @@
+*** WCM WIDGETS
+
+20110205	dewittsc		Integrate the IframeDialog.js from Staples into our asponte JS
+
+
+<%--
+       		/* TODO:
+       			Parameterize the library name somehow.  I have spent many hours thinking of a good
+       			way to do this.  WCM does not support saying "just use the same library as the currently
+       			executing component is in".  I thought about adding it as init-params in the ear.  Then
+       			multiple design libraries can't be used unless the init param is a multi-valued field and
+       			then how do figure out which to use - correlate by content -> design mapping?
+       					
+       			I thought about use page metadata or portlet params - but this won't work when run directly
+       			through the WCM servlet.
+       			
+       			I thought about storing the widget config in the content library and using the current content
+       			to find the content library then load the config from there and then get the design library
+       			from that.  But that seems like a lot of work just to get the design library and it can throw
+       			exceptions in the middle of it all that I'd have to catch here since it would have to be lazy
+       			initialized.	        	
+       			
+       			We could have it in a properties file in the ear and preload the file on ear startup and then
+       			correlate by content name.  But then we have duplicate information - some in the widget config
+       			and some in the EAR.
+       			
+       			The easiest option is to use EAR init params to provide a single design library.  This
+       			limits customers to a single design library.  BUT they can always create new components in
+       			a single library rather than a whole new library and use naming conventions to get around this.
+       			It also means we have to customize each EAR that goes out.
+       			
+       			Could 1.5 annotations be used here in some way to inject the dependency at runtime?
+       		*/--%>
+
+
+
+
+
+ENHANCEMENTS
+* Create matching delete functions for create functions
+* Provide several OOB "styles" for each widget plus allow custom "skinning" somehow
+* OOB email distribution lists
+* OOB support for showing lists as RSS feeds
+* authoring menu bar for widgets with edit and delete ( for now edit opens up dialog, and delete deletes all associated artifacts )
+* provide descriptions and previews for each wiindget in the builder
+* when configuring a news widget, maybe should be able to checkbox what different fields you want for each article
+  and a custom AT is created for you with those fields.
+* provide OOB ability to "tag" all pieces of content with tags, auto create tags and manage them, etc
+* edit/delete tooltip placement is funny in various places, especially on table rows - OK for now
+* Should actually USE the title entered in for things like the RTE, doclist, etc?
+* use dojo toolbar for edit/delete widget functionality
+* provide option to attach video/podcasts to every widget with lightbox viewing as well as
+  direct video, podcast widgets
+* What widgets should have paging??  Implement this for each
+* Add navigation arrows for daily message
+* for all widgets, should be able to select and existing data set, e.g. show same announcements over here, etc.
+* build in sametime awareness
+* allow library names to be specified in property file (see below)
+* Allow multiple images to be attached and when click on image, do dojo slideshow lightbox
+* Add video/audio to feeds
+* quicklinks drop down for add image/audio/video etc
+* With PDF navigator, allow the PDF to open in a separate window vs embedded?
+* new presentation template should have awwArticleText class on it
+* fix edit/delete buttons in news article template
+* add thumbnail to news
+
+CLEANUP
+* widgets should always have a unique piece of default content for id reasons
+* all widget jsps should share the common xml output as a jspf
+* Globalization
+* scrub all the jsps - I don't think they need the page vars at the top since those only ever get set during the async requests
+* Scrub error IDs, clean up error handling, add error messages for each ID, add real error reporting
+* Make sure -all- jsps have try/finally and restore current doclib
+* Make sure all non JSP cmpnt jsps have endWorkspace() call
+* WidgetFactory methods should all get/restore doclib
+* Modify all tools to look like showVideoTool.jsp - with try/finally, restore old lib, get/set both libs, etc
+* All dojo widgets need to have namespaced IDs to avoid the bizarre ID collissions.
+* Make styling consistent, remove as much inline styling as possible
+* make sure all menus and menu items have awwMenu and awwMenuItem classes respectively
+* go back over all widgets and make sure to disconnect all connects and dispose of all animations
+* In add*Tool, should either create a new rendering context or restore the original content/sitearea
+* Place extension logic in wizard.jsp in a custom jsp tag
+* Add client side validation of fields rather than making round trip to validate parameters
+* tool JSPs still have hardcoded libraries
+* MUST have only one video AT - don't need two
+
+BACKPORTING TO 6.0:
+* Install Dojo 1.4.2
+* Update IBM theme to source tundra and dojo.js and add appropriate djConfig per below
+	* Uncomment sections in head.jspf and js.jspf to pickup dojo 1.4.2
+* 6.0 compatibility: Change all the "<IdCmpnt ... " to use single quotes on outside - 6.0 can't handle both using double quote
+	*
+* 6.0 compatibility: No URLCmpnt in 6.0 - need to use <PathCmpnt type="noprefixservlet"/>/mlb+content+library/aww/resources/sitecss?subtype=css
+	* PT - Rich Text Plain
+	* AuthTool - Edit Content Tool
+	* AuthTool - Add News Tool
+	* AuthTool - Add Announcement Tool
+	* CMPNT - Announcements Menu HTML
+	* CMPNT - Announcements Menu
+	* in Init - this is probably ok for 6.1 too
+
+
+Why Use PT's for ...
+
+	Newsroom - if use cmpnt, can't do the navigation through to news article
+	Newsroom RSS - subtype=xml is not recognized when srv=cmpnt
+	Newsroom Standalone - b/c
+	
+In all our cmpnt jsps, there is no reason to dynamically get the design library as these are our design library assets so
+we can cheat and not have to check the config.
+
+News Additions
+	* RSS icon
+	* Play video icon
+	
+possible widgets
+
+image gallery widget
+document explorer widget (PDF navigator)
+sidebar ads widget
+banner ad widget
+
+To ADD a Widget
+
+1. Clone and add a new widgetTemplate in plugin.xml
+2. Import an icon
+3. Clone an existing JSP
+4. Make JSP ID/name changes and change WidgetFactory method to use new method
+5. Implement any new JSP form items
+6. Clone an existing WidgetFactory method
+7. Modify method as appropriate (change exceptions, constant names, etc)
+8. Add new constants to Constants and Faults classes
+9. Add new strings
+10. Build WCM assets
+
+NAMING CONVENTIONS
+
+WCM names/titles: 
+	* Use words and spaces to describe the item for both name/title
+	* name/title should be the same
+	* Authoring tools should have "Tool" at the end
+	* JSP components should have "JSP" at the end
+	* HTML components should have "HTML" at the end
+	* example: Announcements Menu
+	* example: Inline List Item Tools
+	* Image components should be all lower case and named the same as the actual filename
+	* example: widget.png
+	
+HTML IDs:
+	* <namespace> followed by camelcase starting with "Aww"
+	* example <ns>AwwConfigForm
+	
+CSS:
+	* Add awwWidget to top level div around all widgets
+	* Use aww<widgettype> as top level css selector for all widgets
+	
+	
+	
+	
+(10:12:13 AM) Craig Yerger: cool.... I just looked in the WCM infocenter and we can do a copy that way
+(10:12:23 AM) Craig Yerger: using the API
+(10:12:34 AM) Craig Yerger: that may be something we want to do
+(10:12:46 AM) Craig Yerger: we can talk about that once we see what MLB decides
+(10:13:12 AM) dewittski@gmail.com/D4799144: yeah.... so you are thinking we copy the library and then start modifying widgets?
+(10:13:52 AM) Craig Yerger: well..... for the customers that say... Hey I love the widgets but I want it to be slightly different this way or that way
+(10:14:16 AM) Craig Yerger: that way we can keep our widgets as is... and still deliver customized ones
+(10:14:24 AM) dewittski@gmail.com/D4799144: right
+(10:15:00 AM) dewittski@gmail.com/D4799144: so we kinda hinted at this before... there will likely be two classes of widget customers
+(10:15:09 AM) dewittski@gmail.com/D4799144: 1) those that are cool with just using it as-is
+(10:15:18 AM) dewittski@gmail.com/D4799144: 2) those that dig it but want custom look/feel or behavior

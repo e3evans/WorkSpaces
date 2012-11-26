@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+                            http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"  
+        version="2.0">
+    <description>@ibm-taglibrary @since 7.0</description>
+	<tlib-version>7.0</tlib-version>
+    <short-name>portlet-ext</short-name>
+    <uri>http://www.ibm.com/xmlns/prod/websphere/portal/v7/portlet/ibm-portlet-ext</uri>
+	
+	<tag>
+        <description>@ibm-api @since 5.1</description>
+		<name>bidi</name>
+        <tag-class>com.ibm.wps.engine.tags.BidiTag</tag-class>
+        <body-content>JSP</body-content>
+  	    <attribute>
+            <name>locale</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>        
+	    <attribute>
+            <name>dir</name>
+            <required>false</required>
+        </attribute>
+    </tag>
+
+	<tag>
+		<description>@ibm-taglibrary @since 6.0</description>
+		<name>portalRenderURL</name>
+		<tag-class>com.ibm.portal.tags.portlet.PortalRenderURLTag</tag-class>
+		<tei-class>com.ibm.portal.tags.portlet.PortalRenderURLTagTEI</tei-class>
+		<body-content>JSP</body-content>
+		<attribute>
+			<description>This attribute specifies the bean name where the URL will be stored</description>
+			<name>var</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Sets the referenced ContentNode</description>
+			<name>contentNode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description></description>
+			<name>portletWindow</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Sets the specified portlet's PortletMode</description>
+			<name>portletMode</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description>Sets the specified portlet's WindowState</description>
+			<name>windowState</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description></description>
+			<name>portalState</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description></description>
+			<name>locale</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.lang.String</type>
+		</attribute>
+
+	</tag>
+
+	<tag>
+		<description>@ibm-taglibrary @since 6.0</description>
+		<name>urlParam</name>
+		<tag-class>com.ibm.portal.tags.portlet.UrlParamTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<description></description>
+			<name>name</name>
+			<required>false</required>
+			<rtexprvalue>false</rtexprvalue>
+			<type>java.util.String</type>
+		</attribute>
+		<attribute>
+			<description></description>
+			<name>value</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+			<type>java.util.String</type>
+		</attribute>
+	</tag>
+	
+    <tag>
+        <description>@ibm-api @since 6.1</description>
+        <name>setBundle</name>
+        <tag-class>com.ibm.wps.engine.tags.SetBundleTag</tag-class>
+        <body-content>empty</body-content>
+  	    <attribute>
+            <name>basename</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>            
+			<type>java.util.String</type>
+        </attribute>        
+  	    <attribute>
+            <name>var</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.String</type>
+        </attribute>        
+  	    <attribute>
+            <name>scope</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.util.String</type>
+        </attribute>        
+  	    <attribute>
+            <name>bundle</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>            
+            <type>java.util.ResourceBundle</type>
+        </attribute>        
+  	    <attribute>
+            <name>provider</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>   
+            <type>com.ibm.portal.model.ResourceBundleProvider</type>         
+        </attribute>        
+    </tag>
+	
+    <tag>
+		<description>
+			Search for resource in the current theme and generates a url to it.
+			If used by a WSRP portlet the resulting URL will point to the
+			resource on the provider, not on the consumer.
+			
+			@ibm-api @since 6.1
+		</description>
+        <name>urlFindInTheme</name>
+        <tag-class>com.ibm.wps.engine.tags.UrlFindInThemeTag</tag-class>
+        <tei-class>com.ibm.wps.engine.tags.UrlFindInThemeTagTEI</tei-class>
+        <body-content>empty</body-content>
+        <attribute>
+			<description>specifies the file to be looked up</description>
+            <name>file</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+			<description>
+				specifies the name of the scripting variable where the 
+				url is stored
+			</description>
+            <name>id</name>
+            <required>false</required>
+        </attribute>
+        <attribute>
+            <description>
+                Specifies whether the URL generated by this tag is to be
+                absolute or not. If absolute URLs are enforced, other
+                settings affecting the generation of URLs may be overridden.
+            </description>
+            <name>forceAbsolute</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <description>
+
+            @ibm-api @since 6.1.0.3
+        </description>
+        <name>out</name>
+        <tag-class>com.ibm.wps.engine.tags.WriterTag</tag-class>
+        <body-content>JSP</body-content>
+        <attribute>
+            <description>
+              specifies the escaping format. Allowed values are
+              - json
+              - xml
+              - none
+              
+              default is xml
+              
+              @since 7.0
+            </description>
+            <name>escape</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        <attribute>
+            <description>
+              Specifies a string to serialize. If the value 
+              attribute is specified the body is not evaluated.
+              
+              @since 7.0
+            </description>
+            <name>value</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+            <type>java.lang.String</type>
+        </attribute>
+        
+    </tag>
+	   
+	
+</taglib>

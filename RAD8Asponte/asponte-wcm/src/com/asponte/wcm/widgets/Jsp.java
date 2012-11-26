@@ -1,0 +1,8 @@
+package com.asponte.wcm.widgets;
+
+import java.util.logging.Logger;
+
+public class Jsp {
+	public static final String CLASS_NAME=Jsp.class.getName();
+	public static final Logger LOGGER=Logger.getLogger(CLASS_NAME);
+}

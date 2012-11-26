@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="GoogleMapsPrototype">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_GoogleMapsPrototype/jsp/html/GoogleMapsPrototypePortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

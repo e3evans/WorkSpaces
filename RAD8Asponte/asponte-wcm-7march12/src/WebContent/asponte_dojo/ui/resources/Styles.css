@@ -1,0 +1,255 @@
+/* ************************ */
+/* Asponte Content Lightbox */
+
+/* dojox.image.Lightbox:base */
+/* FIXME: should be be doing this? I want a black underlay, but this sets ALL dialogs to black,
+    but because it's decendant of body, i can't set this color any other way ... */
+.dijitDialogUnderlay {
+    background-color:#000;
+}
+    
+.asponteContentLightbox {
+    position:absolute;
+    z-index:999;
+    overflow:hidden;
+    width:100px;
+    height:100px;
+    border:11px solid #efefef;
+    background:#fff none no-repeat center center;
+ 	padding:3px;
+
+        /* special safari + FF specific rounding + shadows */
+    -webkit-box-shadow: 0px 6px 10px #636363; /* #adadad; */
+    -webkit-border-radius: 3px;
+    -moz-border-radius:4px;
+}
+
+.asponteContentLightbox.loading{
+    background:#fff url('images/loading.gif') no-repeat center center;
+}
+
+.asponteContentLightboxContainer {
+    position:absolute;
+    top:0; left:0;
+}
+
+.asponteContentLightboxFooter {
+    /*height:50px;*/
+    position:relative;
+    bottom:0;
+    left:0;
+    margin-top:8px;
+    color:#333;
+    z-index:1000;
+    font-size:10pt;
+}
+
+.asponteContentLightboxText{
+	float:left;
+}
+.asponteContentLightboxGroupText {
+    color:#666;
+    font-size:8pt;
+}
+
+.asponteContentLightboxNext,
+.asponteContentLightboxPrev,
+.asponteContentLightboxClose {
+    float:right;
+    width:16px;
+    height:16px;
+    cursor:pointer;
+}
+
+/* dojox.image.asponteContentLightbox:tundra:nihilo */
+
+.nihilo .asponteContentLightboxClose,
+.tundra .asponteContentLightboxClose {
+    background:url('images/close.png') no-repeat center center;
+}
+.nihilo .asponteContentLightboxNext,
+.tundra .asponteContentLightboxNext {
+    background:url('images/right.png') no-repeat center center;
+}
+.nihilo .asponteContentLightboxPrev,
+.tundra .asponteContentLightboxPrev {
+    background:url('images/left.png') no-repeat center center;
+}
+
+/* dojox.image.asponteContentLightbox:soria */
+.soria .asponteContentLightboxClose,
+.soria .asponteContentLightboxNext,
+.soria .asponteContentLightboxPrev {
+    width:15px;
+    height:15px;
+    background:url('../../../dijit/themes/soria/images/spriteRoundedIconsSmall.png') no-repeat center center;
+    background-position:-60px;
+}
+.soria .asponteContentLightboxNext {
+    background-position:-30px 0;
+}
+.soria .asponteContentLightboxPrev {
+    background-position:0 0;
+}
+
+/* ********************* */
+/* Asponte WCM Paginator */
+
+.asponteWcmPaginator{
+	list-style: none inside none;
+	margin:0px;
+	padding:0px;
+}
+
+.asponteWcmPaginator li{
+	float:left;
+	margin:0px 4px;
+	text-align:center;
+	vertical-align:middle;
+	font-weight: bold;
+}
+
+.asponteWcmPaginator li a,.asponteWcmPaginator li a:visited,.asponteWcmPaginator li a:link,.asponteWcmPaginator li a:active{
+	text-decoration:none;
+}
+
+.asponteWcmPaginator li a:hover{
+	text-decoration:underline;
+}
+
+.asponteWcmPaginator li img{
+	width:16px; 
+	height:16px;
+	vertical-align:middle;
+	position:relative;
+	padding-top:2px;
+	top:0px;
+}
+
+.asponteWcmPaginatorCtrl{
+}
+
+.asponteWcmPaginator .paginatorNext,
+.asponteWcmPaginator .paginatorPrev{
+	margin:0px;
+	padding:0px;
+}
+
+.asponteWcmPaginatorPageOver{
+    background-color:#fff;
+}
+
+.asponteWcmPaginatorPage{
+    border:1px solid #ccc;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    padding:4px;
+    font-weight:normal;
+    cursor:pointer;
+}
+
+.asponteWcmPaginatorPageSelected{
+    background: #fff none no-repeat;
+    cursor:default;
+}
+
+
+/* ****************** */
+/* Asponte FormDialog */
+
+.asponteFormDialog{
+    padding:0px;
+}
+
+.asponteFormDialog label{
+    display:block;
+    margin:0px 0px 4px 0px;
+    padding:0px;
+}
+
+/* Unfortunately to override dijit's one we have to do this */
+
+.tundra .asponteFormDialog .dijitDialogPaneContent,
+.nihilo .asponteFormDialog .dijitDialogPaneContent,
+.soria .asponteFormDialog .dijitDialogPaneContent
+{
+    background:#eee none;
+}
+
+#AwwAddMediaForm div{
+    margin:10px 0px;
+}
+
+/* ****************** */
+/* Asponte FormDialog */
+
+.asponteIframeDialog{
+	display:block;
+	overflow: hidden;
+	width:100px;
+	height:100px;
+}
+
+.asponteIframeDialogSplash{
+    background: transparent url('images/loading.gif') no-repeat center center;
+	width:100%;
+	height:60px;
+}
+
+.asponteIframeDialogIframe{
+	position:relative;
+	z-index:999;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+/* ****************** */
+/* Asponte ScrollPane */
+
+.scrollPaneOuter {
+	position:relative;
+}
+.scrollPaneOuter .enabled {
+    background: transparent url("images/buttons.png") no-repeat center center;
+}
+.dj_ie6 .scrollPaneOuter .enabled { background-image: url("images/buttons.gif"); }
+
+.scrollPaneOuter .scrollPaneNav{
+	position:absolute;
+}
+
+.scrollPaneOuter .scrollPaneNav img {
+    width: 48px;
+    height: 75px;
+}
+.scrollPaneOuter .scrollPaneClickable {
+    cursor: pointer;
+}
+
+.scrollPaneOuter .prevHoriz {
+    background-position: -96px 0px;
+    position: relative;
+    height: 100%;
+}
+
+.scrollPaneOuter .nextHoriz {
+    background-position: -144px 0px;
+    position: relative;
+    height: 100%;
+/*  margin-top: -85px;*/
+}
+.scrollPaneOuter .prevVert {
+    background-position: 0px 0px;
+    height: 48px;
+    width:48px;
+}
+
+.scrollPaneOuter .nextVert {
+    background-position: -48px 0px;
+    height: 48px;
+    width:48px;
+}
+
+.scrollPaneInner {
+ 	width:100%; 
+}

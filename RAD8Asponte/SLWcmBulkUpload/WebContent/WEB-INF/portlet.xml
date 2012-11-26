@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.ibm.slwcmbulkupload.SLWcmBulkUploadPortlet.534df86d63">
+	<portlet>
+		<portlet-name>SLWcmBulkUpload</portlet-name>
+		<display-name xml:lang="en">SLWcmBulkUpload</display-name>
+		<display-name>SLWcmBulkUpload</display-name>
+		<portlet-class>com.ibm.slwcmbulkupload.SLWcmBulkUploadPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.slwcmbulkupload.nl.SLWcmBulkUploadPortletResource</resource-bundle>
+		<portlet-info>
+			<title>SLWcmBulkUpload</title>
+			<short-title>SLWcmBulkUpload</short-title>
+			<keywords>SLWcmBulkUpload</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+	<default-namespace>http://SLWcmBulkUpload/</default-namespace>
+</portlet-app>

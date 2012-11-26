@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin
+   id="com.asponte.portal.designer"
+   name="Asponte Portal Designer Plug-in"
+   version="1.0.0">
+
+   <extension-point id="pageElementTemplates" name="pageElementTemplates" />
+   
+   <!-- TODO: We are missing Event List (BCBST), Video List (BCBST), Poll Archive (BCBST), 
+        Tips n Tricks (Prudential).  Could also do Bulletins (BIPT), FAQs (not developed yet),doc catalog tabbed (HDsmith) -->
+        
+   <extension point="com.asponte.portal.designer.pageElementTemplates" 
+              id="aspontePageElements">
+      <pageElementTemplate
+        name="richTextTemplate"
+        icon="/plugins/rte/rte.png"
+        title="Rich Text"
+        description="Add rich text directly to your page using a rich text editor."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/rte/rte.jsp"
+        wcmTemplateId="rich_text" />   
+      <pageElementTemplate
+        name="htmlTemplate"
+        icon="/plugins/html/html.png"
+        title="HTML"
+        description="Add raw HTML code directly to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/html/html.jsp"
+        wcmTemplateId="html" />      
+      <pageElementTemplate
+        name="calendarTemplate"
+        icon="/plugins/cal/cal.png"
+        title="Calendar"
+        description="Add a calendar of events to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/cal/cal.jsp"
+        wcmTemplateId="calendar" /> 
+      <pageElementTemplate
+        name="linksTemplate"
+        icon="/plugins/links/links.png"
+        title="Links"
+        description="Add a list of links to your page in one of several selectable formats."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/links/links.jsp"
+        wcmTemplateId="links">
+        <style
+            title="Latest Links (Two-column)"
+            styleId="2c_latest" />        
+      </pageElementTemplate>
+      <pageElementTemplate
+        name="anncTemplate"
+        icon="/plugins/annc/annc.png"
+        title="Announcements"
+        description="Add a list of announcements to your page in one of several selectable formats"
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/annc/annc.jsp"
+        wcmTemplateId="annc">
+        <style
+            title="Latest Announcements (One-column, title, image, description, date)"
+            styleId="1c_latest" />
+        <style
+            title="Daily Message"
+            styleId="dmsg" />
+      </pageElementTemplate>         
+      <pageElementTemplate
+        name="newsTemplate"
+        icon="/plugins/news/news.png"
+        title="News"
+        description="Add news to your page in one of several selectable formats."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/news/news.jsp"
+        wcmTemplateId="news">
+        <style
+            title="Top Stories (One-column title and publish date)"
+            styleId="1c_latest" /> 
+        <style
+            title="Featured News Combo (Two-column featured, one-column general)"
+            styleId="combo_3c" />  
+        <style
+            title="Rotating Alerts"
+            styleId="alerts" /> 
+      </pageElementTemplate>   
+      <pageElementTemplate
+        name="landingPageTemplate"
+        icon="/plugins/ldpg/ldpg.png"
+        title="Landing Page"
+        description="Add a landing page for links."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/ldpg/ldpg.jsp"
+        wcmTemplateId="landing_page" /> 
+      <pageElementTemplate
+        name="docListTemplate"
+        icon="/plugins/dlst/dlst.png"
+        title="Document List"
+        description="Add a Document List to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/dlst/dlst.jsp"
+        wcmTemplateId="doc_list_1c_latest" />                            
+      <pageElementTemplate
+        name="docCatalogTemplate"
+        icon="/plugins/dcat/dcat.png"
+        title="Document Catalog"
+        description="Add a Document Catalog to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/dcat/dcat.jsp"
+        wcmTemplateId="doc_catalog"
+        requiresSubtitle="true" />                             
+      <pageElementTemplate
+        name="imgTemplate"
+        icon="/plugins/img/img.png"
+        title="Images"
+        description="Add images directly to your page and link them to other pages or sites."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/img/img.jsp"
+        wcmTemplateId="image"> 
+        <style
+            title="Single Image"
+            styleId="single" /> 
+        <style
+            title="Image Rotator"
+            styleId="rotator" />
+      </pageElementTemplate> 
+	  <pageElementTemplate
+        name="movieTemplate"
+        icon="/plugins/mov/mov.png"
+        title="Videos"
+        description="Add videos directly to your page using a local or remote video file or by embedding html markup."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/mov/mov.jsp"
+        wcmTemplateId="video"> 
+        <style
+            title="Single Video"
+            styleId="single" /> 
+        <style
+            title="Video of the Day"
+            styleId="daily" />
+      </pageElementTemplate>         
+      <pageElementTemplate
+        name="swfTemplate"
+        icon="/plugins/swf/swf.png"
+        title="Flash"
+        description="Add Flash content directly to your page using a local or remote SWF file."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/swf/swf.jsp"
+        wcmTemplateId="swf" />
+      <pageElementTemplate
+        name="pollTemplate"
+        icon="/plugins/poll/poll.png"
+        title="Polls"
+        description="Add interactive polls to your page that allows users to cast their vote and view results."
+        class="com.asponte.portal.designer.builders.WcmPollBuilder"
+        path="/plugins/poll/poll.jsp"
+        wcmTemplateId="poll"> 
+        <style
+            title="Poll"
+            styleId="single" /> 
+        <style
+            title="Poll Archive"
+            styleId="archive" />
+      </pageElementTemplate>    
+      <pageElementTemplate
+        name="blogTextTemplate"
+        icon="/plugins/blog/blog.png"
+        title="Blog"
+        description="Add a full-featured blog with rating and commenting directly to your page."
+        class="com.asponte.portal.designer.builders.WcmLrpBuilder"
+        path="/plugins/blog/blog.jsp"
+        wcmTemplateId="blog" />
+      <pageElementTemplate
+        name="webSiteTemplate"
+        icon="/plugins/website/website.png"
+        title="Web Page"
+        description="Embed an existing web page directly on your page using an HTML IFrame."
+        class="com.asponte.portal.designer.builders.WebSiteBuilder"
+        path="/plugins/website/website.jsp" />
+      <pageElementTemplate
+        name="feedTemplate"
+        icon="/plugins/feed/feed.png"
+        title="Feed"
+        description="Add an RSS or ATOM feed directly to your page."
+        class="com.asponte.portal.designer.builders.FeedBuilder"
+        path="/plugins/feed/feed.jsp" />                                                               
+   </extension>  
+</plugin>

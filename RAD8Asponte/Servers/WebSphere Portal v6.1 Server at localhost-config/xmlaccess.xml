@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmlaccess>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.installPredeployedPortlet.portlet">
+    <attribute id="anonymousAccess">false</attribute>
+  </xmldelegate>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.installPredeployedPortletForPortal.portal"/>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.ui.v61.removePreviousPortlets.portlet"/>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.ui.v61.removePreviousPortlets.portal"/>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.createPages.portlet">
+    <attribute id="labelTitle">Rational portlets</attribute>
+    <attribute id="labelOrdinal">first</attribute>
+    <attribute id="multiplePages">true</attribute>
+  </xmldelegate>
+  <xmldelegate enabled="true" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.deployPortal.portal">
+    <attribute id="placeholder">true</attribute>
+    <attribute id="skipxmlaccess">true</attribute>
+  </xmldelegate>
+  <xmldelegate enabled="false" id="com.ibm.etools.portal.ui.v61.resetPortal.portlet"/>
+  <xmldelegate enabled="false" id="com.ibm.etools.portal.ui.v61.resetPortal.portal"/>
+  <xmldelegate enabled="false" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.userRequest.portal">
+    <attribute id="script"></attribute>
+  </xmldelegate>
+  <xmldelegate enabled="false" id="com.ibm.etools.portal.server.ui.v61.xmlaccess.userRequest.portlet">
+    <attribute id="script"></attribute>
+  </xmldelegate>
+</xmlaccess>
