@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="QSPortletPOC">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_QSPortletPOC/jsp/html/QSPortletPOCPortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

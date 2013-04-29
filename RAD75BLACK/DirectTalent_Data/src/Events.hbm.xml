@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.manpower.portal.mpnet.hbn.beans.Event" table="events">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">EVENTS_SEQ</param>
+		</generator>
+		</id>
+  		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+  		<property name="candidateId" type="long">
+			<column name="CANDIDATE_ID" />
+		</property>
+  		<property name="notificationType" type="string">
+			<column name="NOTIFICATION_TYPE" />
+		</property>
+  		<property name="eventType" type="string">
+			<column name="EVENT_TYPE" />
+		</property>
+  		<property name="eventTimestamp" type="timestamp">
+			<column name="EVENT_TIMESTAMP" />
+		</property>
+  		<property name="status" type="string">
+			<column name="STATUS" />
+		</property>
+  		<property name="retry" type="integer">
+			<column name="RETRY" />
+		</property>
+  		<property name="messageOnTimestamp" type="timestamp">
+			<column name="MESSAGE_TIMESTAMP" />
+		</property>
+  		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+  		<property name="createdBy" type="string">
+			<column name="CREATED_BY" />
+		</property>
+  		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>
+  		<property name="changedBy" type="string">
+			<column name="CHANGED_BY" />
+		</property>
+        <property name="cvJobAppId" type="long">
+            <column name="CVJOBAPPID" />
+        </property>
+        
+  </class>
+ <sql-query name="eventSql">
+  <return alias="event"
+   class="com.manpower.portal.mpnet.hbn.beans.Event" />
+   SELECT events.ID AS {event.id}, events.SITE_ID AS {event.siteId}, events.CANDIDATE_ID AS {event.candidateId}, 
+   events.NOTIFICATION_TYPE AS {event.notificationType}, events.EVENT_TYPE AS {event.eventType}, 
+   events.EVENT_TIMESTAMP AS {event.eventTimestamp}, events.STATUS AS {event.status}, events.RETRY AS {event.retry},
+   events.MESSAGE_TIMESTAMP AS {event.messageOnTimestamp}, events.CREATED_ON AS {event.created_On},
+   events.CREATED_BY AS {event.createdBy}, events.CHANGED_ON AS {event.changed_On}, events.CHANGED_BY AS {event.changedBy},
+   events.CVJOBAPPID AS {event.cvJobAppId}
+   FROM EVENTS events WHERE events.status in (:event_status_list) and events.SITE_ID in (:event_siteid_list) 
+   AND events.RETRY &lt; (:retry_count) ORDER BY ID ASC
+ </sql-query>
+  
+</hibernate-mapping>

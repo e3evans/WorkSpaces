@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ 
+<class name="com.manpower.portal.gemt.hbn.beans.GemtSummaryReportHbnBean" table="GEMT_SUMMARY_REPORT" >
+		<id name="id" type="long" column="gemt_sum_id" >
+			<generator class="sequence"> 
+				<param name="sequence">GEMT_SUMMARY_REPORT_SEQ</param>
+			</generator>
+		</id>
+
+		<property name="gemt_sum_empname" column="gemt_sum_empname"/> 
+		<property name="gemt_sum_repdate" column="gemt_sum_repdate" type="timestamp"/> 
+		<property name="gemt_sum_emptitle" column="gemt_sum_emptitle"/> 
+		<property name="gemt_sum_managername" column="gemt_sum_managername"/> 
+		<property name="gemt_sum_managerid" column="gemt_sum_managerid" type="long"/> 
+		<property name="gemt_sum_roleclient" column="gemt_sum_roleclient" type="long"/> 
+		<property name="gemt_sum_rolepeople" column="gemt_sum_rolepeople" type="long"/> 
+		<property name="gemt_sum_rolethought" column="gemt_sum_rolethought" type="long"/> 
+		<property name="gemt_sum_roledaytoday" column="gemt_sum_roledaytoday" type="long"/> 
+		<property name="gemt_sum_overviewscorefinan" column="gemt_sum_overviewscorefinan" type="long"/> 
+		<property name="gemt_sum_overviewscorekpi" column="gemt_sum_overviewscorekpi" type="long"/> 
+		<property name="gemt_sum_perfhighlights" column="gemt_sum_perfhighlights" type="text"/> 
+		<property name="gemt_sum_missedopps" column="gemt_sum_missedopps" type="text"/> 
+		<property name="gemt_sum_overallperf" column="gemt_sum_overallperf" type="long"/> 
+		<property name="gemt_sum_comments" column="gemt_sum_comments" type="text"/> 
+		<property name="gemt_sum_devstrengths" column="gemt_sum_devstrengths" type="text"/> 
+		<property name="gemt_sum_devneeds" column="gemt_sum_devneeds" type="text"/> 
+		<property name="gemt_sum_devactions" column="gemt_sum_devactions" type="text"/> 
+		<property name="gemt_sum_devpriorities" column="gemt_sum_devpriorities" type="text"/>
+		<property name="gemt_sum_locked" column="gemt_sum_locked"/> 
+		<property name="gemt_sum_empemail" column="gemt_sum_empemail"/>
+		<property name="gemt_sum_mgremail" column="gemt_sum_mgremail"/>
+		<property name="gemt_sum_period" column="gemt_sum_period" type="long"/>
+		<property name="gemt_parent_id" column="GEMT_PARENT_ID" type="long"></property>
+		<property name="gemt_sum_status" column="gemt_sum_status" type="long"/>
+		
+		
+		<property name="gemt_sum_roleclient_expected" column="gemt_sum_roleclient_expected" type="long"/> 
+		<property name="gemt_sum_rolepeople_expected" column="gemt_sum_rolepeople_expected" type="long"/> 
+		<property name="gemt_sum_rolethought_expected" column="gemt_sum_rolethought_expected" type="long"/> 
+		<property name="gemt_sum_roledaytoday_expected" column="gemt_sum_roledaytoday_expected" type="long"/> 
+
+		<property name="created_on" column="created_on" type="timestamp"/>
+		<property name="created_by" column="created_by"/>
+		<property name="updated_on" column="updated_on" type="timestamp"/>
+		<property name="updated_by" column="updated_by"/>
+		 
+	</class>
+</hibernate-mapping>

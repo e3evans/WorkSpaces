@@ -1,0 +1,192 @@
+	.greenTableHeader{
+		font-family:Verdana,Arial;
+		font-weight:bold;
+		font-size:8pt;
+		background-color:#7ea490;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+	
+	.greenTableRow{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#6d937f;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #82a797;
+		cursor:pointer;
+	}
+	
+	.greenTableRowHighlighted{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#587d72;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #82a797;
+		cursor:pointer;
+	}
+	
+	.blueTableHeader{
+		font-family:Verdana,Arial;
+		font-weight:bold;
+		font-size:8pt;
+		background-color:#5d87b2;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+	
+	.blueTableRow{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#5476a1;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #5d87b2;
+		cursor:pointer;
+	}
+	
+	.blueTableRowHighlighted{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#446491;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #5d87b2;
+		cursor:pointer;
+	}
+	
+	.redTableHeader{
+		font-family:Verdana,Arial;
+		font-weight:bold;
+		font-size:8pt;
+		background-color:#d96261;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+	
+	.redTableRow{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#c8504f;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #d96261;
+		cursor:pointer;
+	}
+	
+	.redTableRowHighlighted{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#a24447;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #d96261;
+		cursor:pointer;
+	}
+	
+	.orangeTableHeader{
+		font-family:Verdana,Arial;
+		font-weight:bold;
+		font-size:8pt;
+		background-color:#e38821;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+	}
+	
+	.orangeTableRow{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#d47c18;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e38821;
+		cursor:pointer;
+	}
+	
+	.orangeTableRowHighlighted{
+		font-family:Verdana,Arial;
+		font-weight:normal;
+		font-size:8pt;
+		background-color:#c96911;
+		color:#FFFFFF;
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e38821;
+		cursor:pointer;
+	}
+	
+	.orangeTableDisplayArea{
+		padding-left:15px;
+		padding-right:15px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border:2px solid #e38821;
+	}
+	.CommandButtonOrange{
+		background-color: #d47c18;
+		font-family: Verdana;
+		font-size:8pt;
+		border:1px solid #e19844;
+		text-align: center;
+		color:#FFFFFF;
+		vertical-align: middle;
+		cursor:pointer;
+		width:150px;
+
+	}
+
+	.CommandButtonDarkOrange{
+		background-color: #c96911;
+		font-family: Verdana;
+		font-size:8pt;
+		border:1px solid #e19844;
+		text-align: center;
+		color:#FFFFFF;
+		vertical-align: middle;
+		cursor:pointer;
+		width:150px;
+
+	}

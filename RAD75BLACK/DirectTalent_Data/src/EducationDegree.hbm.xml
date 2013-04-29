@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.EducationDegree" table="EDUCATIONDEGREES">
+		
+		<id name="id" type="long" column="ID" />
+
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		
+		<property name="language">
+			<column name="LANG" />
+		</property>		
+		
+		<property name="country">
+			<column name="COUNTRY" />
+		</property>		
+		
+		<property name="degreeCode">
+			<column name="DEGREE_CODE"/>
+		</property>
+
+		<property name="degreeName">
+			<column name="DEGREE_DESC"/>
+		</property>
+
+		
+
+ 	</class>
+</hibernate-mapping>
+

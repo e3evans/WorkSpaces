@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.jsftester.JSFTesterPortlet.b13354c282">
+	<portlet>
+		<portlet-name>JSFTester</portlet-name>
+		<display-name xml:lang="en">JSFTester</display-name>
+		<display-name>JSFTester</display-name>
+		<portlet-class>com.manpower.jsftester.JSFTesterPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/JSFTesterView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/JSFTesterEdit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.jsftester.nl.JSFTesterPortletResource</resource-bundle>
+		<portlet-info>
+			<title>JSFTester</title>
+			<short-title>JSFTester</short-title>
+			<keywords>JSFTester</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

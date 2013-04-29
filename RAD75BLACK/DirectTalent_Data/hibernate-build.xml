@@ -1,0 +1,137 @@
+<project name="DirectTalentData" default="compile-source" basedir=".">
+	<!-- Name of project and version -->
+	<property name="project.name" value="DirectTalentData" />
+	<property name="project.version" value="1.0" />
+	<!-- Global properties for this build -->
+	<property name="build.debug" value="true" />
+	<!-- Source code directories -->
+	<property name="src.dir" value="src" />
+	<property name="test.src.dir" location="test" />
+	<!-- Classpath dependencies -->
+	<property name="lib.dir" value="c:/java" />
+	<property name="os.dir" value="${lib.dir}/opensource" />
+	<property name="hibernate.lib.dir" value="${os.dir}/sourceforge/hibernate-3.2" />
+	<property name="hibernate-tools.lib.dir" value="${os.dir}/sourceforge/HibernateTools-3.2.0.beta9a/plugins/org.hibernate.eclipse_3.2.0.beta9a/lib/tools" />
+	<property name="jdbc.lib.dir" value="${lib.dir}/jdbc/Oracle/9i" />
+	<property name="jndi.lib.dir" value="${lib.dir}/jndi/fscontext-1_2-beta3/lib" />
+	<property name="junit.jar" value="${os.dir}/sourceforge/junit3.8.2/junit.jar" />
+	<property name="dbunit.jar" value="${os.dir}/sourceforge/dbunit-2.2/dbunit-2.2.jar" />
+	<!-- Compiled code destinations -->
+	<property name="build.dir" value="build" />
+	<property name="classes.dir" value="${build.dir}/classes" />
+	<property name="dist.dir" value="${build.dir}/dist" />
+	<property name="test.dir" location="${build.dir}/test" />
+	<property name="test.classes.dir" location="${test.dir}/classes" />
+	<property name="test.data.dir" location="${test.dir}/data" />
+	<property name="test.reports.dir" location="${test.dir}/reports" />
+
+	<!-- Project classpath -->
+	<path id="project.classpath">
+		<fileset dir="${hibernate.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<fileset dir="${hibernate-tools.lib.dir}">
+			<include name="hibernate-tools.jar" />
+		</fileset>
+		<fileset dir="${jdbc.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${dbunit.jar}" />
+		<pathelement location="${classes.dir}" />
+	</path>
+
+	<!-- JUnit classpath -->
+	<path id="test.classpath">
+		<path refid="project.classpath" />
+		<pathelement location="${build.dir}" />
+		<pathelement location="${junit.jar}" />
+		<pathelement location="${classes.dir}" />
+		<pathelement location="${test.classes.dir}" />
+		<fileset dir="${jndi.lib.dir}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<!-- Useful shortcuts to metadata files -->
+	<patternset id="meta.files">
+		<include name="**/*.properties" />
+		<include name="**/*.xml" />
+	</patternset>
+
+	<!-- Initialize -->
+	<target name="init">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="test-init">
+		<mkdir dir="${test.classes.dir}" />
+		<mkdir dir="${test.data.dir}" />
+		<mkdir dir="${test.reports.dir}" />
+	</target>
+
+	<!-- Clean up -->
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
+	<!-- Compile Java source -->
+	<target name="compile-source" depends="clean,init">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" nowarn="on">
+			<classpath refid="project.classpath" />
+		</javac>
+	</target>
+
+	<!-- Compile JUnit source -->
+	<target name="test-compile" depends="compile-source,test-init">
+		<javac destdir="${test.classes.dir}" debug="${build.debug}" includeAntRuntime="true" srcdir="${test.src.dir}">
+			<classpath refid="test.classpath" />
+		</javac>
+		<copy todir="${test.classes.dir}">
+			<fileset dir="test" excludes="**/*.java" />
+		</copy>
+	</target>
+
+	<!-- Copy metadata to build classpath -->
+	<target name="copy-metadata">
+		<copy todir="${build.dir}">
+			<fileset dir="${src.dir}">
+				<patternset refid="meta.files" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Run JUnit test cases -->
+	<target name="test" depends="compile-source,test-compile,copy-metadata" description="Build and run test cases">
+		<junit fork="true" errorproperty="test.failed" failureproperty="test.failed">
+			<classpath refid="test.classpath" />
+			<formatter type="brief" usefile="false" />
+			<formatter type="xml" />
+			<!-- run single or multiple test cases -->
+			<test todir="${test.data.dir}" name="${test.case}" if="testcase" />
+			<batchtest todir="${test.data.dir}" unless="testcase">
+				<fileset dir="${test.classes.dir}" includes="**/*Test.class" />
+			</batchtest>
+		</junit>
+
+		<junitreport todir="${test.data.dir}">
+			<fileset dir="${test.data.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${test.reports.dir}" />
+		</junitreport>
+		<fail message="Tests failed. Check log and/or reports." if="test.failed" />
+	</target>
+
+	<!-- Export database schema -->
+	<target name="export-db-schema" depends="copy-metadata" description="Exports a generated schema to DB and file">
+		<hibernatetool destdir="${basedir}">
+			<classpath path="${build.dir}" />
+			<configuration configurationfile="${build.dir}/hibernate.cfg.xml" />
+			<hbm2ddl drop="true" create="true" export="true" outputfilename="export/directTalent-ddl.sql" delimiter=";" format="true" />
+		</hibernatetool>
+	</target>
+
+	<taskdef name="hibernatetool" classname="org.hibernate.tool.ant.HibernateToolTask" classpathref="project.classpath" />
+</project>

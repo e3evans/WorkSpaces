@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateJobApplication" table="CANDIDATEJOBAPPLICATIONS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEJOBAPPLICATIONS_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="testTaken">
+			<column name="TESTTAKEN" />
+		</property>		
+		<property name="dateApplied"  type="timestamp">
+			<column name="DATEAPPLIED" />
+		</property>	
+		<many-to-one
+				name="advertisement"
+				column="ADVERTISEMENT_ID"
+				update="false"
+				cascade="none"
+				class="com.manpower.portal.mpnet.hbn.beans.Advertisement"
+				not-null="true"
+				outer-join="true"
+				access="field"/>
+		
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		
+		
+			
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<property name="coverLetter">
+			<column name="COVERLETTER" />
+		</property>	
+		<property name="cvName">
+			<column name="CVNAME" />
+		</property>
+		<property name="cvUpdatedOn" type="timestamp">
+			<column name="CVUPDATEDON" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>		
+		<property name="chScore">
+			<column name="CH_SCORE" />
+		</property>	
+		<property name="bgScore">
+			<column name="BG_SCORE" />
+		</property>	
+		<property name="chLink">
+			<column name="CH_LINK" />
+		</property>	
+		<property name="chTestLink">
+			<column name="CH_TEST_LINK" />
+		</property>
+		<property name="rating">
+			<column name="RATING" />
+		</property>			
+		<property name="deleted" type="boolean">
+			<column name="DELETED" sql-type="integer"></column>
+		</property>
+		<property name="jobBoard">
+			<column name="JOB_BOARD" />
+		</property>
+		<property name="punchTime">
+			<column name="PUNCH_TIME" />
+		</property>		
+		<property name="resume"  type="blob">
+			<column name="RESUME" />
+		</property>	
+		<property name="resumeMimeType">
+			<column name="MIME_TYPE"></column>
+		</property>					
+ 	</class>
+</hibernate-mapping>

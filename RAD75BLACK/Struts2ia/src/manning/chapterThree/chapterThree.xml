@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<!-- 
+		This package contains the non-secure portions of the Struts 2 Portfolio.  This allows these
+		public actions to share inheritance of things specialized to the non-secure portions of the application.
+		
+		Note, at this point, the Struts 2 Portfolio doesn't actually have any security functionality to
+		check credentials or restrict access, but we have already packaged in a way that anticipates these
+		needs.
+	-->
+
+	<package name="chapterThreePublic" namespace="/chapterThree"
+		extends="struts-default">
+
+		<action name="PortfolioHomePage">
+			<result>/chapterThree/PortfolioHomePage.jsp</result>
+		</action>
+
+    <!--  Just a stub at this point.  It's easy and helpful to stub out your pages and actions
+          even when you don't have the implementations yet.
+     -->
+		<action name="ViewPortfolios">
+			<result>/chapterThree/ViewPortfolios.jsp</result>
+		</action>
+
+		<action name="Registration">
+			<result>/chapterThree/Registration.jsp</result>
+		</action>
+
+		<action name="Register" class="manning.chapterThree.Register">
+			<result>/chapterThree/RegistrationSuccess.jsp</result>
+			<result name="input">/chapterThree/Registration.jsp</result>
+		</action>
+
+	</package>
+
+
+
+
+</struts>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.manpower.translations.beans.Propertylines" table="PROPERTYLINES">
+       <id name="id" type="java.math.BigDecimal">
+            <generator class="sequence">
+            	<param name="sequence">PROPERTYLINES_SEQ</param>
+        	</generator>
+		</id>
+        <property name="countryCode" type="java.lang.String">
+            <column name="COUNTRY_CODE" length="30" not-null="true" />
+        </property>
+        <property name="createdBy" type="java.lang.String">
+            <column name="CREATED_BY" length="765" />
+        </property>
+        <property name="createdOn" type="java.util.Date">
+            <column name="CREATED_ON" />
+        </property>
+        <property name="propertyKey" type="java.lang.String">
+            <column name="PROPERTY_KEY" length="300" not-null="true" />
+        </property>
+        <property name="lang" type="java.lang.String">
+            <column name="LANG" length="6" not-null="true" />
+        </property>
+        <property name="propertyfileName" type="java.lang.String">
+            <column name="PROPERTYFILE_NAME" length="600" not-null="true" />
+        </property>
+        <property name="translationString" type="java.lang.String">
+            <column name="TRANSLATION_STRING" length="4000" not-null="true" />
+        </property>
+        <property name="updatedBy" type="java.lang.String">
+            <column name="UPDATED_BY" length="765" />
+        </property>
+        <property name="updatedOn" type="java.util.Date">
+            <column name="UPDATED_ON" />
+        </property>
+        <property name="defaultLang" type="java.lang.String">
+            <column name="DEFAULT_LANG" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+<jsp-scripting>
+        <session>
+            <variable name="gemtentryformcontextpath" type="java.lang.String"/>
+        
+        <variable name="gemtentryformreportlist" type="java.lang.String"/>
+        <variable name="gemtentryformemail" type="java.lang.String"/>
+        <variable name="gemtentryformactivetab" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_gemtmanager_managerdisplay" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_gemtmanager_managerlist" type="java.util.List">
+                <collectionProperty name="com_manpower_portal_portlet_gemtmanager_managerlist">
+                    <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            </variable>
+        <variable name="com_manpower_portal_portlet_gemt_gemtmanager_selectedmanager" type="java.lang.String"/>
+        <variable name="GemtSummaryReportUIBean" type="com.manpower.portal.gemt.ui.beans.GemtSummaryReportUIBean"/>
+        <variable name="com_manpower_portal_portlet_gemtentryformedit_sess_mgremp" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_gemtwelcome_sess_displaypage" type="java.lang.String"/>
+        <variable name="ERROR_LOGIN_ERROR" type="java.lang.String"/>
+        <variable name="gemtentryformportletmode" type="java.lang.String"/>
+        </session>
+    </jsp-scripting>
+<beanData/>
+</persistence>

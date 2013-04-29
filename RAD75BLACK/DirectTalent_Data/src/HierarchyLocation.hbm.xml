@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.HierarchyLocation" table="V_LOCATIONS_HIERARCHY">
+		<id column="ID" name="id"></id>		
+		<property name="locationName" column="LOCATION_NAME"></property>
+		<property name="parentName" column="ROOT_LOCATION_NAME"></property>
+		<property name="level" column="LOCATION_LEVEL"></property>
+		<property name="locationPath" column="LOCATIONPATH"></property>
+		<property name="parentId" column="PARENT_ID"></property>
+		<property name="locationIdPath" column="LOCATION_ID_PATH"></property>
+		<property name="language" column="LANG"></property>
+		<property name="leaf" type="boolean">
+			<column name="LEAF" sql-type="integer"/>
+		</property>
+	</class>
+</hibernate-mapping>

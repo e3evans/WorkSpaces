@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.VCandidateApplication" table="V_CANDIDATEAPPLICATIONS" mutable="false">
+		<id name="application_id" type="long" column="APPLICAION_ID"/>
+		<property name="candidate_id" type="long" column="CANDIDATE_ID"/>
+		<property name="resume_id" type="long" column="RESUME_ID"/>
+		<property name="firstname" column="FIRSTNAME"/>
+		<property name="lastname" column="LASTNAME"/>
+		<property name="testTaken" column="TESTTAKEN"/>
+		<property name="testScore" column="TEST_SCORE"/>
+		<property name="lensScore" column="LENS_SCORE"/>
+		<property name="contact_by_email" column="CONTACT_BY_EMAIL"/>
+		<property name="candidate_email" column="CANDIDATE_EMAIL"/>		
+		<property name="branchId" column="BRANCH_ID"/>
+		<property name="branch_city" column="BRANCH_CITY"/>
+		<property name="branchname" column="BRANCHNAME"/>
+		<property name="branch_address1" column="BRANCH_ADDRESS1"/>
+		<property name="branch_address2" column="BRANCH_ADDRESS2"/>
+		<property name="branch_state" column="BRANCH_STATE"/>
+		<property name="branch_country" column="BRANCH_COUNTRY"/>
+		<property name="branch_postalcode" column="BRANCH_POSTALCODE"/>
+		<property name="branch_phone" column="BRANCH_PHONE"/>
+		<property name="branch_fax" column="BRANCH_FAX"/>
+		<property name="branch_email" column="BRANCH_EMAIL"/>
+		<property name="branch_language" column="BRANCH_LANGUAGE"/>		
+		<property name="site_country" column="SITE_COUNTRY"/>
+		<property name="siteId" column="site_id"></property>
+		<property name="resume_name" column="RESUME_NAME"/>
+		<property name="lensId" column="LENS_ID"/>
+		<property name="resume" type="blob" column="RESUME"/>
+		<property name="advertisementNumber" column="ADVERTISEMENT_NUMBER"/>
+		<property name="advertisementId" column="ADVERTISEMENT_ID"/>
+		
+		<property name="dateApplied" column="DATEAPPLIED"/>		
+	</class>
+</hibernate-mapping>

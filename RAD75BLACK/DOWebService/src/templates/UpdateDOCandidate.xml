@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CandidateSSS>
+    <CandidateReference />
+    <BOCountry />
+    <PayAddress different="">
+      <CountryCode />
+      <PostalCode />
+      <Region />
+      <Municipality />
+      <AddressLine />
+      <AddressLine />
+    </PayAddress>
+    <PersonalData>
+      <DateOfBirth />
+      <GenderCode />
+      <Nationality />
+      <MaritalStatus />
+    </PersonalData>
+    <RightToWork>
+      <Adult></Adult>
+      <RightToWork />
+      <Citizen />
+      <HasNationalID />
+      <NationalID />
+      <WorkVisa />
+      <WorkVisaExpiry />
+      <CriminalConviction />
+      <WillDrugTest />
+      <ElectronicStatement />
+    </RightToWork>
+</CandidateSSS>
+

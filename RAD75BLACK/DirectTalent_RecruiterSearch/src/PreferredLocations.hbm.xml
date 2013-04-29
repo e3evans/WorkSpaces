@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.beans.PreferredLocations" table="bjh_resumes"  >
+	
+		<id name="location_id" type="long" column="location_id" />
+		<property name="prefered_location" column="prefered_location"/>
+			
+	</class>
+</hibernate-mapping>

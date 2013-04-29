@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.vlado2.Vlado2Portlet.879fb044b2">
+	<portlet>
+		<portlet-name>Vlado2</portlet-name>
+		<display-name xml:lang="en">Vlado2</display-name>
+		<display-name>Vlado2</display-name>
+		<portlet-class>com.ibm.vlado2.Vlado2Portlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.vlado2.nl.Vlado2PortletResource</resource-bundle>
+		<portlet-info>
+			<title>Vlado2</title>
+			<short-title>Vlado2</short-title>
+			<keywords>Vlado2</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

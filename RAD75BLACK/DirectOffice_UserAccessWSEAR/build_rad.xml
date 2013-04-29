@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     May 11, 2007 9:22:17 AM                                                        
+
+     DirectOffice_UserAccessWSEAR
+     J2EE and web services components for DirectOffice_UserAccessWSEAR project
+     This build file is used to build in a RAD ANT environment
+                   
+     root                                                                
+     ====================================================================== -->
+<project name='DirectOffice_UserAccessWSEAR' default='all'>
+    <description>
+            J2EE and web services components for DirectOffice_UserAccessWSEAR project
+    </description>
+	<property file='build.properties'/>
+	<property name='dist' value='${dir.work}/dist'/>
+    
+<!-- Initialization targets -->
+	<target name='init'>
+		<!-- Create the timestamp -->
+		<tstamp/>
+		<!-- Create the distribution directory -->
+		<mkdir dir='${dist}'/>
+	</target>
+	
+	<target name="info">
+		<echo message="Build information..."/>
+		<echo message="Project name: ${project.name}"/>
+		<echo message="Output directory: ${dist}"/>
+		<echo message="Build for ${build.environment} environment"/>
+		<echo message="RAD build: ${build.rad}"/>
+		<echo message="Is debug information included in the build: ${build.debug}"/>
+		<echo message="Is this a full or incremental build: ${build.type}"/>
+		<echo message="Is metadata included in the archive(s): ${build.metadata}"/>
+		<echo message="Is project validated prior to the builld: ${build.validate}"/>
+		<echo message="Is existing archive(s) overwritten by this build process: ${build.overwrite}"/>
+	</target>
+
+<!-- build -->
+	<target name="build-ear" description="Refreshes and compiles an enterprise application project" if="build.rad">
+		<echo message="Building project ${project.ear}"/>
+		<eclipse.refreshLocal description="Eclipse provided task to refresh project in local workspace" resource="${project.ear}"/>
+		<projectBuild projectname="${project.ear}" buildtype="${build.type}" debugcompilation="${build.debug}" description="RAD provided task to build a project ina local workspace."/>
+	</target>
+	
+
+<!-- export -->
+	<target name="export-ear" depends="init" description="Export a deployable EAR file from RAD" if="build.rad">
+		<earExport earprojectname="${project.name}" earexportfile="${dist}/${project.name}-${DSTAMP}-${TSTAMP}.ear" exportsource="${build.source}" includeprojectmetafiles="${build.metadata}" overwrite="${build.overwrite}"/>
+	</target>
+		
+	<target name='build-all'  if='build.rad'/> 
+	<target name='export-all' depends='export-ear' if='build.rad'/>
+    <target name='all' depends='init, info, export-all'/>
+    
+	<!-- unear 
+	<target name="unear-temp-file">
+		<unjar src="${dist}/${project.name}-${DSTAMP}-${TSTAMP}.ear" dest="${dist}/temp" />	
+	</target>
+		
+	<target name="copy_war">
+		<copy file='${dir.root}/projects/Manpower/${project.webservice}/configuration/build/dist/${project.webservice}.war' 
+		tofile='${dist}/temp/${project.webservice}.war'
+		verbose='true'/>
+	</target>
+	
+	<target name='modified-ear' depends='unear-temp-file,copy_war'>
+		<jar destfile="${dist}/${project.name}.ear">
+			<fileset dir='${dist}/temp'/>
+		</jar>
+	</target>
+	-->
+</project>
+

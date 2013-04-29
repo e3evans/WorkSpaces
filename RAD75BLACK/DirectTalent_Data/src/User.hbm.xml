@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.User" table="USERS">
+		<id name="id" type="long" column="ID" >
+			<generator class="increment"/>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<property name="password">
+			<column name="PASSWORD" />
+		</property>		
+		<property name="passwordHintQuestion">
+			<column name="PASSWORDHINTQUESTION" />
+		</property>		
+		<property name="passwordHintAnswer">
+			<column name="PASSWORDHINTANSWER" />
+		</property>		
+		<property name="userapplicationlanguage">
+			<column name="USERAPPLICATIONLANGUAGE" />
+		</property>		
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>	
+		<property name="userRole">
+   			<column name="USERROLE_ID"/>
+  		</property>	
+  		<property name="firstName">
+  			<column name="FIRSTNAME"/>
+  		</property>	
+  		<property name="lastName">
+  			<column name="LASTNAME"/>
+  		</property>
+  		<property name="middleName">
+  			<column name="MIDDLENAME"/>
+  		</property>
+  		<property name="nationalNumber">
+  			<column name="NATIONALNUMBER"/>
+  		</property>
+ 	</class>
+</hibernate-mapping>

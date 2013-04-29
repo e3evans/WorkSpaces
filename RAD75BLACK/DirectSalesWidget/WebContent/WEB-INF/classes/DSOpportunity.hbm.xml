@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.widget.hbn.beans.OpportunityReport" table="ps_rsf_opportunity" mutable="false">
+		<id name="opp_id" type="long" column="opp_id"/>
+		<property name="sales_stage" column="sales_stage" />
+		<property name="est_revenue" column="est_revenue" type="long"/>
+	</class>
+</hibernate-mapping>
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping> 
+
+<class name="com.manpower.portal.gemt.hbn.beans.GemtNotesHbnBean" table="GEMT_NOTES" >
+		<id name="id" type="long" column="gemt_notes_user_id" >
+			<generator class="sequence"> 
+				<param name="sequence">GEMT_NOTES_SEQ</param>
+			</generator>
+		</id>
+
+		<property name="gemt_notes_user_name" column="gemt_notes_user_name"/> 
+		<property name="gemt_notes_content" column="gemt_notes_content" type="text"/> 
+		<property name="gemt_notes_user_email" column="gemt_notes_user_email"/>
+
+		<property name="created_on" column="created_on" type="timestamp"/>
+		<property name="created_by" column="created_by"/>
+		<property name="updated_on" column="updated_on" type="timestamp"/>
+		<property name="updated_by" column="updated_by"/>
+		 
+	</class>
+</hibernate-mapping>
+

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+	version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+	id="mpnet.SSS.96c6783490">
+	<portlet>
+		<portlet-name>DirectOffice_SecureServicePortlet</portlet-name>
+		<display-name>DirectOffice_SecureServicePortlet</display-name>
+		<display-name xml:lang="bg">DT_TestPortlet</display-name>
+		<portlet-class>com.ibm.faces.portlet.FacesPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DO_Logon/Logon.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/Config/Config.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<portlet-info>
+			<title>DirectOffice_SecureServicePortlet</title>
+			<short-title>DirectOffice_SecureServicePortlet</short-title>
+			<keywords>DirectOffice_SecureServicePortlet</keywords>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<portlet-name>DirectOffice_Test</portlet-name>
+		<display-name>DirectOffice_Test</display-name>
+		<portlet-class>com.ibm.faces.portlet.FacesPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DO_Logon/SecurityPage.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<resource-bundle>directoffice_secureselfservice.nl.DirectOffice_SecureSelfServicePortletResource</resource-bundle>
+		<portlet-info>
+			<title>DirectOffice_Test</title>
+			<short-title>DirectOffice_Test</short-title>
+			<keywords>DirectOffice_Test</keywords>
+		</portlet-info>
+	</portlet>
+		<user-attribute><name>user.id.login</name></user-attribute>
+	<user-attribute><name>user.gender</name></user-attribute> 	
+	<user-attribute><name>user.employer</name></user-attribute>	
+	<user-attribute><name>user.department</name></user-attribute> 	
+	<user-attribute><name>user.jobtitle</name></user-attribute>
+	<user-attribute><name>user.name.prefix</name></user-attribute> 	
+	<user-attribute><name>user.name.given</name></user-attribute>	
+	<user-attribute><name>user.name.family</name></user-attribute>	
+	<user-attribute><name>user.name.middle</name></user-attribute> 	
+	<user-attribute><name>user.home-info.telecom.telephone.number</name></user-attribute> 	
+	<user-attribute><name>user.home-info.online.email</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.street</name></user-attribute>	
+	<user-attribute><name>user.business-info.postal.stateprov</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.postalcode</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.country</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.telephone.number</name></user-attribute> 	
+	<user-attribute><name>user.business-info.telecom.fax.number</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.mobile.number</name></user-attribute>	
+	<user-attribute><name>user.business-info.telecom.pager.number</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.online.email</name></user-attribute>
+	
+</portlet-app>

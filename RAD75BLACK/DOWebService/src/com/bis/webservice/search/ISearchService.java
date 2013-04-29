@@ -1,0 +1,26 @@
+/**
+ * ISearchService.java
+ *
+ * This file was auto-generated from WSDL
+ * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
+ */
+
+package com.bis.webservice.search;
+
+public interface ISearchService extends java.rmi.Remote {
+    public void deleteSearchResult(java.lang.String string_1, long long_2) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public com.bis.webservice.search.types.SearchParameter[] echoParameters(com.bis.webservice.search.types.SearchParameter[] arrayOfSearchParameter_1) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public long[] getAllSearchDefinitionIDs(java.lang.String string_1) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public java.lang.String[] getAllSearchDefinitionNames(java.lang.String string_1) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public long[] getAllSearchResultsForUser(java.lang.String string_1, java.lang.String string_2) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public long[] getAllSearchResultsForWebUser(java.lang.String string_1) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public java.lang.String getFormattedSearchResult(java.lang.String string_1, long long_2, int int_3, int int_4, com.bis.webservice.search.types.SearchFormattedDateBean searchFormattedDateBean_5) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public com.bis.webservice.search.types.SearchResultBean getSearchResult(java.lang.String string_1, long long_2) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public long getSearchResultCount(java.lang.String string_1, long long_2) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public long[] getStoredResultList(java.lang.String string_1, java.lang.String string_2, com.bis.webservice.search.types.SearchParameter[] arrayOfSearchParameter_3) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public void resetToDefaultFormatter(java.lang.String string_1, long long_2) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public com.bis.webservice.search.types.SearchResultBean runSearchAndAssignToUser(java.lang.String string_1, java.lang.String string_2, com.bis.webservice.search.types.SearchParameter[] arrayOfSearchParameter_3, int int_4, java.lang.String string_5) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public com.bis.webservice.search.types.SearchResultBean runSearchById(java.lang.String string_1, long long_2, com.bis.webservice.search.types.SearchParameter[] arrayOfSearchParameter_3, int int_4) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public com.bis.webservice.search.types.SearchResultBean runSearchByName(java.lang.String string_1, java.lang.String string_2, com.bis.webservice.search.types.SearchParameter[] arrayOfSearchParameter_3, int int_4) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+    public void setSearchResultFormatter(java.lang.String string_1, long long_2, com.bis.webservice.search.types.SearchColumnBean[] arrayOfSearchColumnBean_3) throws java.rmi.RemoteException, com.bis.webservice.search.types.ServerErrorException, com.bis.webservice.search.types.InvalidArgumentException, com.bis.webservice.search.types.DataNotFoundException;
+}

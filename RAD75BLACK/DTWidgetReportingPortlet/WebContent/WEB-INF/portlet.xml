@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.portal.portlet.dtwidgetreportingportlet.DTWidgetReportingPortlet.a6a4c06a81">
+	<portlet>
+		<portlet-name>DTWidgetReportingPortlet</portlet-name>
+		<display-name>DTWidgetReportingPortlet</display-name>
+		<display-name xml:lang="en">DTWidgetReportingPortlet</display-name>
+		<portlet-class>com.manpower.portal.portlet.dtwidgetreportingportlet.DTWidgetReportingPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DTWidgetReportingPortlet/DTWidgetReportingPortletView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/DTWidgetReportingPortlet/DTWidgetReportingPortletEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/DTWidgetReportingPortlet/DTWidgetReportingPortletConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.dtwidgetreportingportlet.nl.DTWidgetReportingPortletResource</resource-bundle>
+		<portlet-info>
+			<title>DTWidgetReportingPortlet</title>
+			<short-title>DTWidgetReportingPortlet</short-title>
+			<keywords>DTWidgetReportingPortlet</keywords>
+		</portlet-info>
+	</portlet>
+	
+	<portlet>
+		<portlet-name>DTWidgetReportDownload</portlet-name>
+		<display-name>DTWidgetReportDownload</display-name>
+		<display-name xml:lang="en">DTWidgetReportDownload</display-name>
+		<portlet-class>com.manpower.portal.portlet.dtwidgetreportdownload.DTWidgetReportDownload</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DTWidgetReportDownload/DTWidgetReportDownloadView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>DTWidgetReportDownload</title>
+			<short-title>DTWidgetReportDownload</short-title>
+			<keywords>DTWidgetReportDownload</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

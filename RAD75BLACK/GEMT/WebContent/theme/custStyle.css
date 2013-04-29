@@ -1,0 +1,592 @@
+
+#modalContainer {
+	background-color:transparent;
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	z-index:10000;
+	
+}
+
+#alertBox {
+	position:relative;
+	width:300px;
+	min-height:100px;
+	margin-top:50px;
+	border:2px solid #000;
+	background-color:#F2F5F6;
+	background-repeat:no-repeat;
+	background-position:20px 30px;
+}
+
+#modalContainer > #alertBox {
+	position:fixed;
+}
+
+#alertBox h1 {
+	margin:0;
+	font:bold 0.9em verdana,arial;
+	background-color:#78919B;
+	color:#FFF;
+	border-bottom:1px solid #000;
+	padding:2px 0 2px 5px;
+}
+
+#alertBox p {
+	font:0.7em verdana,arial;
+	height:50px;
+	padding-left:5px;
+	margin-left:55px;
+}
+
+#alertBox #closeBtn {
+	display:block;
+	position:relative;
+	margin:5px auto;
+	padding:3px;
+	border:2px solid #000;
+	width:70px;
+	font:0.7em verdana,arial;
+	text-transform:uppercase;
+	text-align:center;
+	color:#FFF;
+	background-color:#78919B;
+	text-decoration:none;
+}
+
+/* unrelated styles */
+
+#mContainer {
+	position:relative;
+	width:600px;
+	margin:auto;
+	padding:5px;
+	border-top:2px solid #000;
+	border-bottom:2px solid #000;
+	font:0.7em verdana,arial;
+}
+
+h1,h2 {
+	margin:0;
+	padding:4px;
+	font:bold 1.5em verdana;
+	border-bottom:1px solid #000;
+}
+
+code {
+	font-size:1.2em;
+	color:#069;
+}
+
+#credits {
+	position:relative;
+	margin:25px auto 0px auto;
+	width:350px; 
+	font:0.7em verdana;
+	border-top:1px solid #000;
+	border-bottom:1px solid #000;
+	height:90px;
+	padding-top:4px;
+}
+
+#credits img {
+	float:left;
+	margin:5px 10px 5px 0px;
+	border:1px solid #000000;
+	width:80px;
+	height:79px;
+}
+
+.important {
+	background-color:#F5FCC8;
+	padding:2px;
+}
+
+code span {
+	color:green;
+}
+
+	.colOneOverall{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:9pt;
+		color:#5f81aa;
+		padding-left:5px;
+		vertical-align:middle;
+		width25px;
+		border-right:1px solid #e1e3e8;	
+		padding-right:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e1e3e8;
+		
+	}
+	.colReport{
+		font-size:8pt;
+		font-family:Arial;
+		border-bottom:1px solid #b9b9b9;
+		font-weight:bold;
+	}
+	.colDarkReport{
+		background-color:#b9b9b9;
+		font-size:8pt;
+		font-family:Arial;
+		font-weight:bold;
+		border-bottom:1px solid #b9b9b9;
+				
+	}
+	
+	.GEMTlrSumBlue{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:9pt;
+		color:#6698c2;
+		padding-left:5px;
+		vertical-align:middle;
+		width25px;
+		border-right:1px solid #e1e3e8;	
+		padding-right:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e1e3e8;
+	}
+	.GEMTlrSumGreen{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:9pt;
+		color:#7ea190;
+		padding-left:5px;
+		vertical-align:middle;
+		border-right:1px solid #e1e3e8;	
+		padding-right:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e1e3e8;
+	}
+	.GEMTlrSumOrange{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:9pt;
+		color:#d47c18;
+		padding-left:5px;
+		vertical-align:middle;
+		border-right:1px solid #e1e3e8;	
+		padding-right:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e1e3e8;
+	}
+	.GEMTlrSumRed{
+		font-family:Arial;
+		font-weight:bold;
+		font-size:9pt;
+		color:#c8504f;
+		padding-left:5px;
+		vertical-align:middle;
+		border-right:1px solid #e1e3e8;	
+		padding-right:3px;
+		padding-top:3px;
+		padding-bottom:3px;
+		border-bottom:1px solid #e1e3e8;
+	}
+	
+	.GEMTHeader{
+	font-family:Arial;
+	font-size:12pt;
+	color:#FFFFFF;
+	background-color:#d47c18;
+}
+
+.GEMTinputText{
+	font-family:Arial;
+	font-size:9.5pt;
+	color:#000000;
+	border-left:0px solid #000000;
+	border-top:0px solid #000000;
+	border-right:0px solid #000000;
+	border-bottom:1px solid #000000;
+	width:275px;
+	background-color:#FFFFFF;
+}
+.GEMTinputTextActive{
+	font-family:Arial;
+	font-size:9.5pt;
+	color:#000000;
+	border-left:0px solid #000000;
+	border-top:0px solid #000000;
+	border-right:0px solid #000000;
+	border-bottom:1px solid #000000;
+	width:275px;
+	background-color:#eabe8c;
+}
+.GEMTTable{
+	width:100%;
+	border:0px;
+}
+.GEMTTitleCol{
+	border-bottom:1px solid #000000;
+	font-family:Arial;
+	font-size:10pt;
+	font-weight:bold;
+	vertical-align:middle;
+	padding-left:5px;
+	width:250px;
+}
+.GEMTRatingCol{
+	border-bottom:1px solid #000000;
+	font-family:Arial;
+	font-size:8pt;
+	font-weight:bold;
+	text-align:center;
+	vertical-align:middle;
+}
+.GEMTRadioCol{
+	text-align:center;
+	vertical-align:middle;
+	font-size:12pt;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.GEMTlrBlue{
+	font-family:Arial;
+	font-weight:bold;
+	font-size:9pt;
+	color:#6698c2;
+	padding-left:5px;
+	vertical-align:middle;
+}
+.GEMTlrGreen{
+	font-family:Arial;
+	font-weight:bold;
+	font-size:9pt;
+	color:#7ea190;
+	padding-left:5px;
+	vertical-align:middle;
+}
+.GEMTlrOrange{
+	font-family:Arial;
+	font-weight:bold;
+	font-size:9pt;
+	color:#d47c18;
+	padding-left:5px;
+	vertical-align:middle;
+}
+.GEMTlrRed{
+	font-family:Arial;
+	font-weight:bold;
+	font-size:9pt;
+	color:#c8504f;
+	padding-left:5px;
+	vertical-align:middle;
+}
+
+.GEMTDefaultEditor{
+	font-family:Arial;
+	font-size:8pt;
+	
+	padding-left:5px;
+	border:5px;
+}
+
+.GEMTPlainResults{
+	font-family:Arial;
+	font-size:9pt;
+	margin-left:5px;
+	vertical-align:middle;
+	
+}
+
+
+.GEMTOrangeTitleCol{
+	font-family:Arial;
+	font-size:9pt;
+	color:#FFFFFF;
+	background-color:#d47c18;
+	padding-left:5px;
+}
+.GEMTOrangeSectionTitleCol{
+	font-family:Arial;
+	font-size:10pt;
+	color:#FFFFFF;
+	background-color:#d47c18;
+	padding-left:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+.GEMTOrangeSectionResults{
+	font-family:Arial;
+	font-size:8pt;
+	font-weight:normal;
+	color:#000000;
+	padding-left:5px;
+	padding-top:5px;
+}
+.GEMTOrangeRatingCol{
+	font-family:Arial;
+	font-size:8pt;
+	font-weight:bold;
+	color:#FFFFFF;
+	background-color:#d47c18;
+	padding-left:5px;
+	text-align:center;
+	padding-top:5px;
+	padding-bottom:5px;
+	
+}
+.GEMTOrangeTableContainer{
+	width:100%;
+	border: 3px solid #d47c18;
+}
+
+.GEMTOrangeWhiteHeader{
+	font-family:Arial;
+	font-size:12pt;
+	font-weight:bold;
+	color:#d47c18;
+}
+.GEMTWrapMe{
+	width:220px;
+	margin-left:5px;
+	font-family:Arial;
+	font-size:9pt;
+	padding-left:5px;
+	vertical-align:middle;
+}
+
+
+.GEMTHeaderClass{
+	font-family:Arial;
+	font-size:8pt;
+	background-color:#FFFFFF;
+	
+	border-bottom:2px solid #5f81aa;
+	text-align:left;
+
+}
+
+.GEMTCommandButtonGray {
+	background-color: #ebebeb;
+	font-family: Verdana;
+	font-size: 7pt;
+	border-bottom-color:#7EA190;;
+	border-bottom-width: 1;
+	border-left-color: #ebebeb;
+	border-right-color: #7ea190;
+	border-right-width: 1;
+	border-top-color: #ebebeb;
+	text-align: center;
+	vertical-align: middle;
+	
+}
+
+.GEMTCommandButtonOrange{
+	background-color: #5476a1;
+	font-family: Verdana;
+	font-size:8pt;
+	border:1px solid #648cb3;
+	text-align: center;
+	color:#FFFFFF;
+	vertical-align: middle;
+	cursor:pointer;
+	width:150px;
+
+}
+
+.GEMTUploadButtonOrange{
+	background-color: #ffffff;
+	font-family: Verdana;
+	font-size:8pt;
+	border:1px solid #e19844;
+	text-align: center;
+	color:#d47c18;
+	vertical-align: middle;
+	cursor:pointer;
+	width:350px;
+
+}
+
+.GEMTCommandButtonDarkOrange{
+	background-color: #446491;
+	font-family: Verdana;
+	font-size:8pt;
+	border:1px solid #648cb3;
+	text-align: center;
+	color:#FFFFFF;
+	vertical-align: middle;
+	cursor:pointer;
+	width:150px;
+
+}
+
+.GEMTCommandButtonWhite{
+	background-color: #FFFFFF;
+	font-family: Verdana;
+	font-size:xx-small;
+	border:1px solid #d47d18;
+	text-align: center;
+	color:#d47d18;
+	vertical-align: middle;
+	cursor:pointer;
+
+}
+.GEMTdataTable {
+	border:2px solid #d47c18;
+}
+
+.mpThemeCommandLink:link, .mpThemeCommandLink:visited, mpThemeCommandLink:active {
+	font-family: Verdana;
+	font-size: 10pt;
+	color:#0068e4;
+	text-decoration: underline;
+}
+
+.mpThemeCommandLink:link:hover, .mpThemeCommandLink:visited:hover{
+	font-family: Verdana;
+	font-size: 10pt;
+	color:#d47c18;
+	text-decoration: underline;
+}
+
+.mpThemeCommandLink:active:hover {
+	font-family: Verdana;
+	font-size: 10pt;
+	color:#d47c18;
+	text-decoration: underline;
+}
+
+.GEMTUnselectedTab{
+	background-color:#6698c2;
+	color:#FFFFFF;
+	font-size:8pt;
+	font-weight:bold;
+	text-align:center;
+	border-right:1px solid #d47d18;
+	border-left:1px solid #d47d18;
+}
+.GEMTSelectedTab{
+	background-color:#FFFFFF;
+	color:#6698c2;
+	font-size:8pt;
+	font-weight:bold;
+	text-align:center;
+	border-right:1px solid #d47d18;
+	border-left:1px solid #d47d18;
+	
+}
+
+.GEMTSelector{
+		LEFT: 4px;
+	font-weight: normal;
+	font-family: verdana;;
+	border: #d47d18;;
+	border-bottom-style: solid; 	 
+	border-left-style: solid; 	 
+	border-right-style: solid; 	 
+	border-style: solid; 
+	border-top-style: solid; 	 
+	border-width: 1px; 
+	font-size: 8pt; 
+	width: 259;
+	}
+.tableSummaryGraph{
+		background-color:#ffffff;
+		border:2px solid #5f81aa;
+		
+		
+	}
+		.GemtTab1{
+			background-color:#7ea490;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+			
+		}
+		.GemtTab1High{
+			background-color:#587d72;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+			border-top:2px inset #7ea490;
+			border-right:2px inset #7ea490;
+		}
+		.GemtTab2{
+			background-color:#5d87b2;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+		}
+		.GemtTab2High{
+			background-color:#446491;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+			border-top:2px inset #446491;
+			border-right:2px inset #446491;
+		}
+		.GemtTab3{
+			background-color:#d96261;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+		}
+		.GemtTab3High{
+			background-color:#a24447;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+			border-top:2px inset #a24447;
+			border-right:2px inset #a24447;
+		}
+		.GemtTab4{
+			background-color:#e38821;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+		}
+		.GemtTab4High{
+			background-color:#c96911;
+			color:#FFFFFF;
+			font-family:Arial;
+			text-align:center;
+			border-top:2px inset #c96911;
+			border-right:2px inset #c96911;
+		}
+		.GemtBlueHeader{
+			font-weight:bold;color:#FFFFFF;background-color:#5f81aa;
+			padding:5px;
+			text-align:left;
+		}
+		
+		.GEMTRegularText{
+			font-face:Arial;
+			font-size:8pt;
+			
+		}
+		
+		.GEMTCommandButtonDarkBlue{
+			background-color: #446491;
+			font-family: Verdana;
+			font-size:8pt;
+			border:1px solid #648cb3;
+			text-align: center;
+			color:#FFFFFF;
+			vertical-align: middle;
+			cursor:pointer;
+			width:150px;
+
+		}
+		.GEMTCommandButtonBlue{
+			background-color: #5476a1;
+			font-family: Verdana;
+			font-size:8pt;
+			border:1px solid #648cb3;
+			text-align: center;
+			color:#FFFFFF;
+			vertical-align: middle;
+			cursor:pointer;
+			width:150px;
+
+		}

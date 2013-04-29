@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	GlobalResumeSearch</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		TikaTest</display-name>
+		<servlet-name>TikaTest</servlet-name>
+		<servlet-class>
+		testing.TikaTest</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		HibeTest</display-name>
+		<servlet-name>HibeTest</servlet-name>
+		<servlet-class>
+		testing.HibeTest</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		Indexer</display-name>
+		<servlet-name>Indexer</servlet-name>
+		<servlet-class>
+		com.manpower.lucene.servlets.Indexer</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		BlackOpsSearchService</display-name>
+		<servlet-name>BlackOpsSearchService</servlet-name>
+		<servlet-class>
+		com.manpower.lucene.globalresumesearch.services.BlackOpsSearchService</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		BlackOpsDownloadService</display-name>
+		<servlet-name>BlackOpsDownloadService</servlet-name>
+		<servlet-class>
+		com.manpower.lucene.globalresumesearch.services.BlackOpsDownloadService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>TikaTest</servlet-name>
+		<url-pattern>/TikaTest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HibeTest</servlet-name>
+		<url-pattern>/HibeTest</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Indexer</servlet-name>
+		<url-pattern>/Indexer</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BlackOpsSearchService</servlet-name>
+		<url-pattern>/BlackOpsSearchService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BlackOpsSearchService</servlet-name>
+		<url-pattern>/BOSS</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BlackOpsDownloadService</servlet-name>
+		<url-pattern>/BlackOpsDownloadService</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BlackOpsDownloadService</servlet-name>
+		<url-pattern>/BODS</url-pattern>
+	</servlet-mapping>
+	
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.FilterDispatcher</filter-class>
+		<init-param>
+			<param-name>actionPackages</param-name>
+			<param-value>manning</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	<welcome-file-list>
+		<welcome-file>/GRSearchForms/CandidateSearch.jsp</welcome-file>
+	</welcome-file-list>
+	
+	
+</web-app>

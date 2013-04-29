@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.Region" table="V_LOCATIONS">
+		
+		<id name="id" type="long" column="ID" />
+
+		<property name="language">
+			<column name="LANG" />
+		</property>		
+		
+		<property name="country">
+			<column name="country_code" />
+		</property>		
+		
+		<property name="region">
+			<column name="region_code"/>
+		</property>
+
+		<property name="regionName">
+			<column name="region_name"/>
+		</property>
+
+		<property name="locationCode">
+			<column name="location_code"/>
+		</property>
+
+		<property name="preferedLocation">
+			<column name="prefered_location"/>
+		</property>
+
+				
+		<property name="longitude">
+			<column name="LONGITUDE"/>
+		</property>
+
+		<property name="latitude">
+			<column name="LATITUDE"/>
+		</property>
+
+ 	</class>
+</hibernate-mapping>
+

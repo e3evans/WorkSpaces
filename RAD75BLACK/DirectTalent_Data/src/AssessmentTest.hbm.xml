@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.AssessmentTest" table="ASSESSMENT_TEST">
+		<id name="id" type="long" column="ID" >
+			<generator class="sequence"> 
+				<param name="sequence">ASSESSMENT_TEST_SEQ</param>
+			</generator>
+		</id>
+		<property name="name">
+			<column name="NAME" />
+		</property>	
+		<property name="skillMeasured">
+			<column name="SKILLS_MEASURED" />
+		</property>	
+		<property name="providerId">
+			<column name="PROVIDER_ID" />
+		</property>	
+		<set name="deliveryFormats" table="ASSESSMENT_TEST_FORMAT" lazy="true">
+			<key column="ASSESSMENT_TEST_ID"></key>
+			<many-to-many column="ASSESSMENT_DELIVERY_FORMAT_ID" class="com.manpower.portal.mpnet.hbn.beans.AssessmentDeliveryFormat"></many-to-many>
+		</set>
+		<set name="ratings" table="ASSESSMENT_TEST_RATING" lazy="true">
+			<key column="ASSESSMENT_TEST_ID"></key>
+			<many-to-many column="ASSESSMENT_RATING_ID" class="com.manpower.portal.mpnet.hbn.beans.AssessmentRating"></many-to-many>
+		</set>
+ 	</class>
+</hibernate-mapping>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.ajaxspecialchars.AjaxSpecialCharsPortlet.f65f935f22">
+	<portlet>
+		<portlet-name>AjaxSpecialChars</portlet-name>
+		<display-name xml:lang="en">AjaxSpecialChars</display-name>
+		<display-name>AjaxSpecialChars</display-name>
+		<portlet-class>com.ibm.ajaxspecialchars.AjaxSpecialCharsPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/AjaxSpecialCharsView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/AjaxSpecialCharsEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/AjaxSpecialCharsHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/AjaxSpecialCharsConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.ajaxspecialchars.nl.AjaxSpecialCharsPortletResource</resource-bundle>
+		<portlet-info>
+			<title>AjaxSpecialChars</title>
+			<short-title>AjaxSpecialChars</short-title>
+			<keywords>AjaxSpecialChars</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

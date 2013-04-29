@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directtalentseo.hbn.beans.VAdsIndSecList" table="v_ads_indsec13"  >
+ 		<id name="id" type="long" column="rownumber" />
+		<property name="sitename" column="sitename"/>
+		<property name="industry_sector" column="industry_sector"/>
+		<property name="language" column="language"/>
+	</class>
+</hibernate-mapping>

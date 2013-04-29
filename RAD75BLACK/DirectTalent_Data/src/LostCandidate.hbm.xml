@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.LostCandidate" table="LOSTCANDIDATES">
+		
+		<id name="id" type="long" column="ID" >
+			<generator class="sequence"> 
+				<param name="sequence">LOSTCANDIDATES_SEQ</param>
+			</generator>
+		</id>
+		
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		
+		<property name="reason">
+			<column name="REASON" />
+		</property>		
+
+		<property name="reasonDesc">
+			<column name="REASON_COMMENTS" />
+		</property>		
+
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATED_ON" />
+		</property>
+		
+		<property name="updatedBy">
+			<column name="UPDATED_BY" />
+		</property>		
+
+		<property name="email">
+			<column name="EMAIL" />
+		</property>		
+
+		
+ 	</class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.manpower.upconnections.UPConnectionsPortlet.23f3cbd882">
+	<portlet>
+		<portlet-name>UP_ConnectionsPortlet</portlet-name>
+		<display-name xml:lang="en">UP_ConnectionsPortlet</display-name>
+		<display-name>UP_ConnectionsPortlet</display-name>
+		<portlet-class>com.manpower.upconnections.UPConnectionsPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+			<portlet-mode>edit_defaults</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.upconnections.nl.UPConnectionsPortletResource</resource-bundle>
+		<portlet-info>
+			<title>UP_ConnectionsPortlet</title>
+			<short-title>UP_ConnectionsPortlet</short-title>
+			<keywords>UP_ConnectionsPortlet</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+	<custom-portlet-mode>
+		<portlet-mode>edit_defaults</portlet-mode>
+	</custom-portlet-mode>
+	<default-namespace>http://UP_ConnectionsPortlet/</default-namespace>
+</portlet-app>

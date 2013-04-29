@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     October 1, 2007 9:22:17 AM                                                        
+
+     DirectTalent_Data
+     DirectTalent data layer
+     This build file is used to build in a RAD ANT environment, it MUST be
+     called from build.xml.
+     To use eclipse and WebSphere tasks, you MUST run ANT in the SAME JRE
+     as the workspace, otherwise these tasks will not be found on the classpath.
+                   
+     dcook                                                                
+     ====================================================================== -->
+
+<project name="DirectTalent_Data" default="all" basedir=".">
+	<description>
+		DirectTalent data layer
+	</description>
+
+	<!-- Build the project -->
+	<target name="build-project">
+		<!-- Refresh the project -->
+		<echo message="Refeshing ${project.name}" />
+		<eclipse.refreshLocal resource="${project.name}" />
+		<projectBuild ProjectName="${project.name}" BuildType="${build.type}" DebugCompilation="${build.debug}" />
+	</target>
+
+	<target name="export-project-jar" depends="create-manifest">
+		<!-- export the JAR file -->
+		<jar destfile="${dist}/${project.jar}" manifest="${dir.work}/MANIFEST.MF" basedir="bin" />
+	</target>
+		
+	<target name="create-manifest" description="generates a manifest file">
+		<manifest file="${dir.work}/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}"/>
+			<attribute name="Built-On" value="${DSTAMP}:${TSTAMP}"/>
+		</manifest>
+	</target>
+	
+	<target name="build-all" depends="build-project">
+		<!-- Builds all projects -->
+		<echo message="Built all projects" />
+	</target>
+
+	<target name="export-all" depends="export-project-jar">
+		<!-- Exports all files -->
+		<echo message="Exported all files" />
+	</target>
+	
+<!-- Testing related targets -->
+	<target name="junit-test">
+		<junit haltonfailure="true" printsummary="true">
+			<test name="com.manpower.*"/>
+		</junit>
+	</target>
+	
+	<target name="all" depends="build-all, export-all">
+		<!-- Build all projects and exports all files -->
+		<echo message="Build finished!" />
+	</target>
+	
+</project>

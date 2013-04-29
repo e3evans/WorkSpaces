@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	 <class name="com.manpower.portal.mpnet.hbn.beans.RecruiterReport" table="V_RECRUITER_REPORT" mutable="false">	 
+		 <composite-id>
+		 	<key-property name="resumeId" type="long" column="RESUME_ID"/>
+		 	<key-property name="candidateId" column="CANDIDATE_ID"/>
+ 			<key-property name="siteId" column="SITE_ID"/>
+		 </composite-id>		 
+		 <property name="candidateFirstName" column="FIRSTNAME"/>
+		 <property name="candidateLastName" column="LASTNAME"/>		 
+ 		 <property name="candidateMiddleName" column="MIDDLENAME"/>		 
+		 <property name="advertisementId" column="ADVERTISEMENT_ID" type="long"/>
+		 <property name="preferredBranchName" column="BRANCHNAME"/>
+		<property name="dateApplied"  type="timestamp">
+			<column name="DATEAPPLIED" />
+		</property>	
+		
+		<property name="lastLoginDate" column="LAST_LOGIN_DATE" type="timestamp"></property>
+		<property name="rating" column="RATING" type="string"></property>
+		<property name="status" column="STATUS" type="string"></property>		
+		<property name="sentToFO" column="SENT_TO_FO" type="boolean"></property>
+		<property name="bgScore" column="BG_SCORE" type="string"></property>
+		<property name="chScore" column="CH_SCORE" type="string"></property>	
+		<property name="countOfJobsAppliedFor" column="COUNT_OF_JOBS_APPLIED_FOR" type="integer"></property>					
+		<property name="activeStatus" column="ACTIVE_STATUS" type="boolean"></property>			
+		<property name="primaryResume" type="boolean" column="PRIMARY_RESUME"></property>		
+	 </class>
+</hibernate-mapping>

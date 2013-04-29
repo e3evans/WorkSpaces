@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.hellowsrp.HelloWSRPPortlet.2b10074412">
+	<portlet>
+		<portlet-name>HelloWSRP</portlet-name>
+		<display-name xml:lang="en">HelloWSRP</display-name>
+		<display-name>HelloWSRP</display-name>
+		<portlet-class>com.ibm.hellowsrp.HelloWSRPPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/HelloWSRPView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/HelloWSRPEdit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.hellowsrp.nl.HelloWSRPPortletResource</resource-bundle>
+		<portlet-info>
+			<title>HelloWSRP</title>
+			<short-title>HelloWSRP</short-title>
+			<keywords>HelloWSRP</keywords>
+		</portlet-info>
+	</portlet>
+	<user-attribute><name>user.id.login</name></user-attribute>
+	<user-attribute><name>user.gender</name></user-attribute> 	
+	<user-attribute><name>user.employer</name></user-attribute>	
+	<user-attribute><name>user.department</name></user-attribute> 	
+	<user-attribute><name>user.jobtitle</name></user-attribute>
+	<user-attribute><name>user.name.prefix</name></user-attribute> 	
+	<user-attribute><name>user.name.given</name></user-attribute>	
+	<user-attribute><name>user.name.family</name></user-attribute>	
+	<user-attribute><name>user.name.middle</name></user-attribute> 	
+	<user-attribute><name>user.home-info.telecom.telephone.number</name></user-attribute> 	
+	<user-attribute><name>user.home-info.online.email</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.street</name></user-attribute>	
+	<user-attribute><name>user.business-info.postal.stateprov</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.postalcode</name></user-attribute>
+	<user-attribute><name>user.business-info.postal.country</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.telephone.number</name></user-attribute> 	
+	<user-attribute><name>user.business-info.telecom.fax.number</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.mobile.number</name></user-attribute>	
+	<user-attribute><name>user.business-info.telecom.pager.number</name></user-attribute>
+	<user-attribute><name>user.business-info.telecom.online.email</name></user-attribute>
+</portlet-app>

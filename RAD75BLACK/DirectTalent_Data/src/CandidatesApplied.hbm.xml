@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.CandidatesApplied" table="V_CANDIDATES_APPLIED" mutable="false">
+		<id name="candidateId" column="CANDIDATE_ID" type="long"></id>
+		<property name="advertisementId" column="ADVERTISEMENT_ID" type="long"></property>
+		<property name="firstName" column="FIRSTNAME" type="string"></property>
+		<property name="lastName" column="LASTNAME" type="string"></property>
+		<property name="dateApplied" column="DATEAPPLIED" type="timestamp"></property>
+		<property name="lastLoginDate" column="LAST_LOGIN_DATE" type="timestamp"></property>
+		<property name="rating" column="RATING" type="string"></property>
+		<property name="status" column="STATUS" type="string"></property>
+		<property name="preferredBranch" column="PREFERRED_BRANCH" type="string"></property>
+		<property name="sentToFO" column="SENT_TO_FO" type="boolean"></property>
+		<property name="bgScore" column="BG_SCORE" type="string"></property>
+		<property name="chScore" column="CH_SCORE" type="string"></property>
+		<property name="jobAppID" column="JOB_APPLICATION_ID" type="long"></property>
+		<property name="activeCandidate" column="ACTIVE_CANDIDATE" type="long"></property>
+		<property name="hasResume" column="HAS_RESUME" type="string"></property>
+	</class>
+</hibernate-mapping>

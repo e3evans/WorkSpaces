@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.Site" table="SITES">
+		
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">SITES_SEQ</param>
+		</generator>
+		</id>
+		<property name="siteCode">
+			<column name="SITECODE"/>
+		</property>
+		<property name="siteName">
+			<column name="SITENAME"/>
+		</property>
+		<property name="owner">
+			<column name="SITEOWNER" />
+		</property>		
+		
+		<property name="firstLangauge">
+			<column name="SITEFIRSTLANG" />
+		</property>		
+
+		<property name="secondLangauge">
+			<column name="SITESECONDLANG" />
+		</property>		
+		
+		<property name="thirdLangauge">
+			<column name="SITETHIRDLANG"/>
+		</property>
+		
+		<property name="country">
+			<column name="COUNTRYCODE"/>
+		</property>
+		
+		<property name="status">
+			<column name="SITESTATUS"/>
+		</property>
+
+		<property name="defaultLevel">
+			<column name="DEFAULT_LEVEL"/>
+		</property>
+		
+		<property name="integrationFlag">
+			<column name="INTEGRATIONFLAG"/>
+		</property>
+
+		<property name="distanceUnit">
+			<column name="DISTANCE_UNIT"/>
+		</property>
+		
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON"/>
+		</property>
+		
+		<property name="updatedBy">
+			<column name="UPDATEDBY"/>
+		</property>
+		
+		<property name="lensFlag">
+			<column name="BG_FLAG"/>
+		</property>
+				<property name="resourcePrefix">
+			<column name="resource_prefix"/>
+		</property>
+		
+		
+ 	</class>
+</hibernate-mapping>

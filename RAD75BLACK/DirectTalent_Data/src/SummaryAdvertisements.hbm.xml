@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	 <class name="com.manpower.portal.mpnet.hbn.beans.SummaryAdvertisements" table="V_SUMMARY_ADVERTISEMENTS" mutable="false">	 	 
+	 	<id name="id" column="ADVERTISEMENTID" type="long"/>
+		 <property name="recruiterId" type="long" column="ADVERTCONTACTID"/>
+		 <property name="branchId" type="long" column="BRANCH_ID"/>		 
+ 		 <property name="updatedOn" type="timestamp" column="UPDATEDON"/>
+ 		 <property name="publicationDate" type="timestamp" column="PUBLICATIONDATE"/> 		 
+ 		 <property name="jobTitle" column="JOBTITLE"></property>	
+ 		 <property name="referenceNumber" column="REFERENCENUMBER"></property>	
+ 		 <property name="expDate" type="timestamp" column="EXPIRATIONDATE"></property> 
+ 		 <property name="appliedCount" type="int" column="APPLIED"></property>
+ 		 <property name="externalAppliedCount" type="int" column="EXT_APPLIED"></property>
+		 <property name="appliedFor">
+		 	<column name="APPLIED_FOR" />
+		 </property>
+		 <property name="fromFrontOffice">
+		 	<column name="FROM_FRONT_OFFICE" />
+		 </property>
+	 </class>
+</hibernate-mapping>

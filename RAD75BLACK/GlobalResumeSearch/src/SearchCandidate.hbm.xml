@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.beans.SearchCandidate" table="candidates" mutable="false">
+	
+		<id name="id" type="long" column="id"/>
+		<property name ="resumeid" column="resumeid" type="long"/>
+		<property name="mycount" column="mycount" type="long"/>
+		<property name="resume" column="resume" type="blob"/>
+		<property name="firstname" column="firstname"/>
+		<property name="lastname" column="lastname"/>	
+		<property name="middlename" column="middlename"/>	
+		<property name="status" column="status"/>
+		<property name="nationality" column="nationality"/>
+		<property name="nationalnumber" column="nationalnumber"/>
+		<property name="nativelanguage" column="nativelanguage"/>
+		<property name="email" column="email"/>
+		<property name="correspondemail" column="correspondemail"/>
+		<property name="resumename" column="resumename"/>
+		<property name ="mimetype" column="mimetype"/>
+		
+	</class>
+</hibernate-mapping>

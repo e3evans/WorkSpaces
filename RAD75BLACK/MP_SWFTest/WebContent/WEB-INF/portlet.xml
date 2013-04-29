@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.mp_swftest.MP_SWFTestPortlet.646b972a12">
+	<portlet>
+		<portlet-name>MP_SWFTest</portlet-name>
+		<display-name xml:lang="en">MP_SWFTest</display-name>
+		<display-name>MP_SWFTest</display-name>
+		<portlet-class>com.ibm.mp_swftest.MP_SWFTestPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/MP_SWFTestView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.mp_swftest.nl.MP_SWFTestPortletResource</resource-bundle>
+		<portlet-info>
+			<title>MP_SWFTest</title>
+			<short-title>MP_SWFTest</short-title>
+			<keywords>MP_SWFTest</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

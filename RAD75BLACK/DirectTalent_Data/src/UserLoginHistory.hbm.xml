@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.UserLoginHistory" table="USERLOGINHISTORIES">
+		<id name="id" type="long" column="ID" >
+			<generator class="increment"/>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>		
+		<property name="loginDate"  type="timestamp">
+			<column name="LOGINDATE" />
+		</property>		
+		<property name="success">
+			<column name="SUCCESS" />
+		</property>		
+		<many-to-one name="user" column="USER_ID" class="com.manpower.portal.mpnet.hbn.beans.User"
+			not-null="true" />
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>		
+ 	</class>
+</hibernate-mapping>

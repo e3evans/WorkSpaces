@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.Identity" table="T_IDENTITY">
+		<id name="id" type="long" column="IDENTITY_ID" >
+			<generator class="sequence"> 
+				<param name="sequence">T_IDENTITY_SEQ</param>
+			</generator>
+		</id>
+		<property name="key" type="string" not-null="true" unique="true">
+			<column name="IDENTITY_KEY" />
+		</property>
+		<property name="nextValue" type="long">
+			<column name="IDENTITY_NEXT_VALUE" />
+		</property>
+		<property name="incrementValue" type="int">
+			<column name="IDENTITY_INCREMENT" />
+		</property>
+		<property name="cacheSize" type="int">
+			<column name="CACHE_SIZE" />
+		</property>
+		<property name="description" type="string">
+			<column name="DESCRIPTION" />
+		</property>
+ 	</class>
+</hibernate-mapping>

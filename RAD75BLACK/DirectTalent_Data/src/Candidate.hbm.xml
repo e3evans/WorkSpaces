@@ -1,0 +1,169 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.Candidate" table="CANDIDATES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+		<param name="sequence">CANDIDATES_SEQ</param>
+		</generator>
+		<!-- 	<generator class="increment"/> -->
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="status">
+			<column name="STATUS" />
+		</property>		
+		<property name="workPermitExpDate"  type="timestamp">
+			<column name="WORKPERMITEXPDATE" />
+		</property>			 
+		<property name="workPermits">
+			<column name="WORKPERMITS" />
+		</property>			
+		<property name="nationality">
+			<column name="NATIONALITY" />
+		</property>			
+		<property name="residenceStatus">
+			<column name="RESIDENCESTATUS" />
+		</property>
+		<property name="residencePermit">
+			<column name="RESIDENCEPERMIT" />
+		</property>
+		<property name="residencePermitExpDate"  type="timestamp">
+			<column name="RESIDENCEPERMINTEXPDATE" />
+		</property>			
+		<property name="passportExpDate"  type="timestamp">
+			<column name="PASSPORTEXPDATE" />
+		</property>		
+		<property name="branchId" type="long">
+			<column name="BRANCH_ID" />
+		</property>		
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<!-- ADDED FROM PERSON XML -->
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>
+		<property name="middleName">
+			<column name="MIDDLENAME" />
+		</property>				
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>		
+		<property name="nationalNumber">
+			<column name="NATIONALNUMBER" />
+		</property>	
+		<property name="birthdate" type="timestamp">
+			<column name="BIRTHDATE" />
+		</property>
+		<property name="birthplace">
+			<column name="BIRTHPLACE" />
+		</property>
+		<property name="gender">
+			<column name="GENDER" />
+		</property>
+		<property name="maritialStatus">
+			<column name="MARITIALSTATUS" />
+		</property>
+		<!-- ADDED FROM USER XML -->
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<property name="password">
+			<column name="PASSWORD" />
+		</property>		
+		<property name="passwordHintQuestion">
+			<column name="PASSWORDHINTQUESTION" />
+		</property>		
+		<property name="passwordHintAnswer">
+			<column name="PASSWORDHINTANSWER" />
+		</property>		
+		<property name="userapplicationlanguage">
+			<column name="USERAPPLICATIONLANGUAGE" />
+		</property>
+		<!-- Added new columns - MStoffel -->
+		<property name="contactByEmail">
+			<column name="CONTACT_BY_EMAIL" />
+		</property>
+		<property name="regLevel">
+			<column name="REG_LEVEL" />
+		</property>
+		<property name="correspondEmail">
+			<column name="CORRESPONDEMAIL" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>	
+		<property name="nativeLanguage">
+			<column name="NATIVE_LANGUAGE" />
+		</property>	
+		<property name="badPwdCount" type="integer">
+			<column name="BADPWDCOUNT" />
+		</property>	
+		
+		<set name="history" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateJobHistory"/>
+		</set> 
+		<set name="coverLetter" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateCoverletter"/>
+		</set>
+		<set name="education" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateEducation"/>
+		</set>
+		<set name="jobAgents" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateJobAgents"/>
+		</set>
+		<set name="jobApplication" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateJobApplication"/>
+		</set>
+		<set name="preferences" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidatePreferences"/>
+		</set>
+		<set name="references" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateReferences"/>
+		</set>
+		<set name="resume" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateResume"/>
+		</set>
+		<set name="saveJobs" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateSaveJobs"/>
+		</set>
+		<set name="skills" inverse="true" lazy="true" cascade="all">
+			<key column="CANDIDATE_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.CandidateSkills"/>
+		</set>		
+		<!-- ADDED FROM THE PERSON XML -->
+		<set name="address" inverse="true" lazy="true" cascade="all,delete-orphan">
+			<key column="CANDIDATE_ID" on-delete="cascade"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.Address"/>
+		</set>
+		<set name="phone" inverse="true" lazy="true" cascade="all,delete-orphan">
+			<key column="CANDIDATE_ID" on-delete="cascade"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.Phone"/>
+		</set>
+		
+		<set name="otherCandidateDetails" inverse="true" lazy="true" cascade="all,delete-orphan">
+			<key column="CANDIDATE_ID" on-delete="cascade"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.OtherCandidateDetails"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

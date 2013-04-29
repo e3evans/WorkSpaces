@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateResume" table="CANDIDATERESUMES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATERESUMES_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="dateCreated"  type="timestamp">
+			<column name="DATECREATED" />
+		</property>
+		<property name="resume"  type="blob">
+			<column name="RESUME" />
+		</property>
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>	
+		<property name="cvName">
+			<column name="NAME"/>
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>	
+		<property name="lensID" type="string">
+			<column name="LENS_ID"/>
+		</property>
+		<property name="mimeType" type="string">
+			<column name="MIME_TYPE"/>
+		</property>
+		<property name="resumeName" type="string">
+			<column name="RESUME_NAME"></column>
+		</property>
+		<property name="savedResume" type="boolean">
+			<column name="SAVED_RESUME" sql-type="integer"/>
+		</property>		
+		<property name="defaultResume" type="boolean">
+			<column name="PRIMARY_RESUME" sql-type="integer"/>
+		</property>		
+		<property name="myManpowerCreatedResume" type="boolean">
+			<column name="MYMANPOWER_RESUME" sql-type="integer"/>
+		</property>		
+		
+ 	</class>
+</hibernate-mapping>

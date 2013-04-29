@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>
+	DirectTalent_SEO</display-name>
+	<servlet>
+		<description>
+		</description>
+		<display-name>
+		ActiveAdvertsServlet</display-name>
+		<servlet-name>ActiveAdvertsServlet</servlet-name>
+		<servlet-class>
+		com.manpower.directtalentseo.servlets.ActiveAdvertsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>JobsByCategory</display-name>
+		<servlet-name>JobsByCategory</servlet-name>
+		<servlet-class>
+		com.manpower.directtalentseo.servlets.JobsByCategory</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<description></description>
+		<display-name>
+			Results By Job Category
+		</display-name>
+		<servlet-name>VwResultsforJobCategory</servlet-name>
+		<jsp-file>/html/VwResultsforJobCategory.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<description></description>
+		<display-name>
+			Job Description
+		</display-name>
+		<servlet-name>VwJobDescription</servlet-name>
+		<jsp-file>/html/VwJobDescription.jsp</jsp-file>
+	</servlet>
+	<servlet>
+		<description/>
+		<display-name>
+			Jobs By Category
+		</display-name>
+		<servlet-name>VwJobsByCategory</servlet-name>
+		<jsp-file>/html/VwJobsByCategory.jsp</jsp-file>
+
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>Twitterizer</display-name>
+		<servlet-name>Twitterizer</servlet-name>
+		<servlet-class>
+		com.manpower.directtalentseo.servlets.Twitterizer</servlet-class>
+	</servlet>
+ 	<servlet-mapping>
+ 		<servlet-name>VwJobDescription</servlet-name>
+ 		<url-pattern>/Job/*</url-pattern>
+ 	</servlet-mapping>
+ 	<servlet-mapping>
+ 		<servlet-name>VwResultsforJobCategory</servlet-name>
+ 		<url-pattern>/Results/*</url-pattern>
+ 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VwJobsByCategory</servlet-name>
+		<url-pattern>/Categories/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>ActiveAdvertsServlet</servlet-name>
+		<url-pattern>/ActiveAdvertsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ActiveAdvertsServlet</servlet-name>
+		<url-pattern>/sitemap.xml</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JobsByCategory</servlet-name>
+		<url-pattern>/JobsByCategory</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JobsByCategory</servlet-name>
+		<url-pattern>/JobsByCategory/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Twitterizer</servlet-name>
+		<url-pattern>/Twitterizer</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

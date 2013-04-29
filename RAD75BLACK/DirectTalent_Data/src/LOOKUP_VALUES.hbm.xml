@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.Enumeration" table="LOOKUP_VALUES">
+	
+		<id name="id" column="LOOKUP_ID">
+			<generator class="sequence"> 
+				<param name="sequence">LOOKUP_VALUES_SEQ</param>
+			</generator>
+		</id>
+	
+		<property name="siteId" 	column="SITE_ID"/>
+		<property name="lookupLang" column="LANG"/>
+		<property name="lookupName" column="LOOKUP_NAME"/>
+		<property name="lookupDesc" column="LOOKUP_DESCRIPTION"/>	
+		<property name="lookupCode" column="VALUE_CODE"/>
+		<property name="lookupSort" column="SORT_CODE"/>				
+		<property name="updatedBy" 	column="UPDATED_BY"/>				
+		<property name="updatedOn" 	column="UPDATE_ON"/>				
+	
+	</class>
+
+</hibernate-mapping>

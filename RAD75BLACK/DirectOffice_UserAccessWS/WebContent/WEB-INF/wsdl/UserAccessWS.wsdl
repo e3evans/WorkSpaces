@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.ldap.manpower.com" xmlns:impl="http://ws.ldap.manpower.com" xmlns:intf="http://ws.ldap.manpower.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+ <wsdl:types>
+  <schema targetNamespace="http://ws.ldap.manpower.com" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <element name="candidateId" type="xsd:long"/>
+   <element name="country" nillable="true" type="xsd:string"/>
+   <element name="grantAccess" type="xsd:boolean"/>
+   <element name="grantRemoveAccessReturn" type="xsd:boolean"/>
+   <element name="long" type="xsd:long"/>
+   <element name="hasAccess_CanadaReturn" type="xsd:boolean"/>
+   <element name="hasAccess_USAReturn" type="xsd:boolean"/>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="hasAccess_CanadaRequest">
+     <wsdl:part name="candidateId" type="xsd:long"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="grantRemoveAccessRequest">
+     <wsdl:part name="candidateId" type="xsd:long"/>
+
+     <wsdl:part name="country" type="xsd:string"/>
+
+     <wsdl:part name="grantAccess" type="xsd:boolean"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="hasAccess_USARequest">
+     <wsdl:part name="candidateId" type="xsd:long"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="hasAccess_CanadaResponse">
+     <wsdl:part name="hasAccess_CanadaReturn" type="xsd:boolean"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="grantRemoveAccessResponse">
+     <wsdl:part name="grantRemoveAccessReturn" type="xsd:boolean"/>
+
+  </wsdl:message>
+
+   <wsdl:message name="hasAccess_USAResponse">
+     <wsdl:part name="hasAccess_USAReturn" type="xsd:boolean"/>
+
+  </wsdl:message>
+
+   <wsdl:portType name="UserAccessWS">
+     <wsdl:operation name="grantRemoveAccess" parameterOrder="candidateId country grantAccess">
+       <wsdl:input message="intf:grantRemoveAccessRequest" name="grantRemoveAccessRequest"/>
+
+       <wsdl:output message="intf:grantRemoveAccessResponse" name="grantRemoveAccessResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="hasAccess_Canada" parameterOrder="candidateId">
+       <wsdl:input message="intf:hasAccess_CanadaRequest" name="hasAccess_CanadaRequest"/>
+
+       <wsdl:output message="intf:hasAccess_CanadaResponse" name="hasAccess_CanadaResponse"/>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="hasAccess_USA" parameterOrder="candidateId">
+       <wsdl:input message="intf:hasAccess_USARequest" name="hasAccess_USARequest"/>
+
+       <wsdl:output message="intf:hasAccess_USAResponse" name="hasAccess_USAResponse"/>
+
+    </wsdl:operation>
+
+  </wsdl:portType>
+
+   <wsdl:binding name="UserAccessWSSoapBinding" type="intf:UserAccessWS">
+     <wsdlsoap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+     <wsdl:operation name="grantRemoveAccess">
+       <wsdlsoap:operation soapAction="grantRemoveAccess"/>
+
+       <wsdl:input name="grantRemoveAccessRequest">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="grantRemoveAccessResponse">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="hasAccess_Canada">
+       <wsdlsoap:operation soapAction="hasAccess_Canada"/>
+
+       <wsdl:input name="hasAccess_CanadaRequest">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="hasAccess_CanadaResponse">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+     <wsdl:operation name="hasAccess_USA">
+       <wsdlsoap:operation soapAction="hasAccess_USA"/>
+
+       <wsdl:input name="hasAccess_USARequest">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:input>
+
+       <wsdl:output name="hasAccess_USAResponse">
+         <wsdlsoap:body namespace="http://ws.ldap.manpower.com" use="literal"/>
+
+      </wsdl:output>
+
+    </wsdl:operation>
+
+  </wsdl:binding>
+
+   <wsdl:service name="UserAccessWSService">
+     <wsdl:port binding="intf:UserAccessWSSoapBinding" name="UserAccessWS">
+       <wsdlsoap:address location="http://localhost:9080/DirectOffice_UserAccessWS/services/UserAccessWS"/>
+
+    </wsdl:port>
+
+  </wsdl:service>
+
+</wsdl:definitions>

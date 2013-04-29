@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.hbn.beans.RecruiterAuditing" table="RECRUITER_AUDITING">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+		<param name="sequence">RECRUITER_AUDITING_SEQ</param>
+		</generator>
+		</id>
+	
+		<property name="site_id" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="recruiter_id" type="long">
+			<column name="RECRUITER_ID" />
+		</property>
+		<property name="action">
+			<column name="ACTION" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="search_data">
+			<column name="SEARCH_DATA" />
+		</property>		
+ 	</class>
+</hibernate-mapping>

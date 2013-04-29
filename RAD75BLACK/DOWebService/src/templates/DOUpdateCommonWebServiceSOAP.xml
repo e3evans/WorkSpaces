@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAPENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.bis.com/" xmlns:types="http://webservice.bis.com/encodedTypes">
+	<soapenv:Body>
+		<tns:executeBOMessage>
+			<String_1 xsi:type="xsd:string">IBO_SSS_Common</String_1>
+			<!-- DEV -->
+			<String_2 xsi:type="xsd:string">mpdomain1_dev</String_2>
+			<!-- UAT -->
+			<!-- String_2 xsi:type="xsd:string">americas.douat.manpower.com</String_2-->
+			<String_3 xsi:type="xsd:string"></String_3>
+		</tns:executeBOMessage>
+	</soapenv:Body>
+</soapenv:Envelope>

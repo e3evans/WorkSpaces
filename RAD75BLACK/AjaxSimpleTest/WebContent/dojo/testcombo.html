@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+            "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Data-Enabled FilteringSelect</title>
+    <style type="text/css">
+        @import "dijit/themes/tundra/tundra.css";
+        @import "dojo/resources/dojo.css"
+    </style>
+    <script type="text/javascript" src="dojo/dojo.js"
+        djConfig="parseOnLoad: true"></script>
+        <script type="text/javascript">
+       dojo.require("dojo.parser");
+       dojo.require("dijit.form.FilteringSelect");
+       dojo.require("dojo.data.ItemFileReadStore");
+	   
+	   function getvalue(){
+	   	var atFName=dijit.byId("state1");
+		alert(atFName);
+	   }
+   </script>
+</head>
+<body class="tundra">
+        <div dojoType="dojo.data.ItemFileReadStore" jsId="stateStore"
+              url="states.txt"></div>
+
+                <input dojoType="dijit.form.FilteringSelect"
+                    	store="stateStore"
+                        searchAttr="name"
+                        name="state1"
+                        autocomplete="true"
+						id="state1"
+                        />
+ 
+			<input type="button" value="test" onclick="getvalue()">
+        
+</body></html>
+

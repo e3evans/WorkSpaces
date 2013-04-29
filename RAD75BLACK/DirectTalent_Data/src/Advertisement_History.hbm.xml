@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.Advertisement_History" table="ADVERTISEMENT_HISTORY">
+		<id name="id" type="long" column="id" >
+		<generator class="sequence"> 
+			<param name="sequence">ADV_HST_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="candidate_id" column="candidate_id" type="long"/>
+		<property name="advertisement_id" column="advertisement_id" type="long"/>
+		<property name="advertisement_name" column="advertisement_name"/>
+		<property name="created_on" column="created_on" type="timestamp"/>
+ 	</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directalent.rss.hbn.beans.RptResults" table="RPT_RESULTS" >
+ 		<id name="rpt_id" column="rpt_id"/>
+ 		<property name="rpt_wk_range" column="rpt_wk_range"/>
+ 		<property name="rpt_proc_name" column="rpt_proc_name" />
+ 		<property name="rpt_xls_name" column="rpt_xls_name" type="text"/>
+ 		<property name="rpt_ins_date" column="rpt_ins_date" type="timestamp"/>
+
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+
+		 <!-- 
+		 			This package contains the model driven version of the Register action.  We have separated it into
+		 			a separate package for the sake of clarity.  Note, we are extending the chapterThreePublic package
+		 			so that we can inherit all of the components.  We will reuse many of them.  We merely want to 
+		 			take advantage of the modularization of Struts 2 to make the sample code more clear.  Note also 
+		 			that we are still  using the same namespace as in the original chapter three version.   
+		 -->
+		
+		
+    <package name="chapterThreeModelDriven" namespace="/chapterThree" extends="chapterThreePublic">
+
+      	<action name="RegistrationMD" >
+					<result>/chapterThree/Registration_MD.jsp</result>
+        </action>
+        
+        <action name="RegisterMD" class="manning.chapterThree.modelDriven.ModelDrivenRegister">
+					<result>/chapterThree/RegistrationSuccess.jsp</result>
+					<result name="input">/chapterThree/Registration_MD.jsp</result>
+        </action>
+   	 	
+     </package>
+
+</struts>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.BranchTable" table="BRANCHES">
+	
+		<!--  	
+				Alexander Todorov 
+				Date 07.02.2006
+				The branches will be accessed using the view.
+		 -->
+
+		<id name="id" type="long" column="ID">
+			<generator class="sequence"> 
+				<param name="sequence">BRANCHES_SEQ</param>
+			</generator>
+		</id>
+		
+		<property name="siteId" column="SITE_ID"/>			
+		<property name="branchName"	column="BRANCHNAME"/>
+		<property name="address1" column="ADDRESS1"/>
+		<property name="address2" column="ADDRESS2"/>		
+		<property name="city" column="CITY"/>
+		<property name="state" column="STATE"/>
+		<property name="branchCode" column="CODE"/>
+		<property name="country" column="COUNTRY"/>
+		<property name="createdOn" column="CREATED_ON" />
+		<property name="createdBy" column="CREATED_BY"/>
+		<property name="changedOn" column="CHANGED_ON" />
+		<property name="changedBy" column="CHANGED_BY" />
+		<property name="updatedOn" column="UPDATEDON" />
+		<property name="updatedBy" column="UPDATEDBY" />
+		<property name="speciality" column="SPECIALITY"/>
+		<property name="street" column="STREET"/>
+		<property name="email" column="EMAIL"/>
+		<property name="phoneNumber" column="PHONENUMBER"/>
+		<property name="faxNumber" column="FAXNUMBER"/>
+		<property name="postalCode" column="POSTALCODE"/>
+		<property name="locationInfo" column="LOCATION_INFO"/>
+		<property name="operationHours" column="OPERATION_HOURS"/>
+		<property name="comments" column="ADDITIONAL_INFO"/>						
+		<property name="language" column="LANG"/>			
+		<property name="externalId"	column="EXTERNAL_ID"/>
+		<property name="mapId" column="MAP_ID"/>
+		<property name="mapUrl" column="MAP_URL"/>
+ 	</class>
+</hibernate-mapping>

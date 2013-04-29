@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.gemt.hbn.beans.GemtSummaryReportFileHbnBean" table="GEMT_SUMMARY_REPORT_FILE" >
+		<id name="id" type="long" column="GEMT_SUM_FILE_ID" >
+			<generator class="sequence"> 
+				<param name="sequence">GEMT_SUMMARY_REPORT_FILE_SEQ</param>
+			</generator>
+		</id>
+		<many-to-one name="gemt_sum_report" column="GEMT_SUM_REPORT_ID" not-null="true" 
+			class="com.manpower.portal.gemt.hbn.beans.GemtSummaryReportHbnBean"></many-to-one>
+		<property name="gemt_sum_file_name" column="GEMT_SUM_FILE_NAME" type="string"></property>
+		<property name="gemt_sum_file_object" column="GEMT_SUM_FILE_OBJECT" type="blob"></property>
+		
+		<property name="created_on" column="created_on" type="timestamp"/>
+		<property name="created_by" column="created_by"/>
+		<property name="updated_on" column="updated_on" type="timestamp"/>
+		<property name="updated_by" column="updated_by"/>		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.ReportingMetrics" table="REPORTING_METRICS">
+		
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">REPORTING_METRICS_SEQ</param>
+		</generator>
+		</id>
+		
+		<property name="siteId">
+			<column name="SITE_ID"/>
+		</property>
+		<property name="countryCode">
+			<column name="COUNTRY_CODE"/>
+		</property>
+		<property name="applicants">
+			<column name="NO_APPLICANTS" />
+		</property>		
+		
+		<property name="candidates">
+			<column name="NO_CANDIDATES" />
+		</property>		
+
+		<property name="loggedIn">
+			<column name="NO_LOGGED_IN" />
+		</property>		
+		
+		<property name="activeJobs">
+			<column name="ACTIVE_JOBS"/>
+		</property>
+		
+		<property name="reviewedCandidates">
+			<column name="REVIEWED_CANDIDATES"/>
+		</property>
+		
+		<property name="createdOn" >
+			<column name="CREATED_ON"/>
+		</property>
+	</class>
+</hibernate-mapping>

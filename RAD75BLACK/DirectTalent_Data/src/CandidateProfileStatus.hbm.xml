@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateProfileStatus" table="CANDIDATEPROFILESTATUS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEPROFILESTATUS_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="candidateId" type="long">
+			<column name="CANDIDATEID" />
+		</property>	
+		<property name="createdOn" type="date">
+			<column name="CREATED_ON" />
+		</property>		
+		<property name="statusActive" type="boolean">
+			<column name="STATUS" sql-type="integer"/>
+		</property>
+ 	</class>
+</hibernate-mapping>

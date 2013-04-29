@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.ApplicantResponse" table="APPLICANTRESPONSE">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">APPLICANTRESPONSE_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="advertId" type="long">
+			<column name="ADVERT_ID" />
+		</property>	
+		<property name="externalId">
+			<column name="EXTERNALID" />
+		</property>	
+		<property name="email">
+			<column name="EMAIL" />
+		</property>	
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>	
+		<property name="middleName">
+			<column name="MIDDLENAME" />
+		</property>	
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>	
+		<property name="phoneOne">
+			<column name="PHONEONE" />
+		</property>	
+		<property name="phoneTwo">
+			<column name="PHONETWO" />
+		</property>	
+		<property name="phoneThree">
+			<column name="PHONETHREE" />
+		</property>	
+		<property name="addressLineOne">
+			<column name="ADDRESSLINEONE" />
+		</property>	
+		<property name="addressLineTwo">
+			<column name="ADDRESSLINETWO" />
+		</property>	
+		<property name="city">
+			<column name="CITY" />
+		</property>	
+		<property name="state">
+			<column name="STATE" />
+		</property>	
+		<property name="country">
+			<column name="COUNTRY" />
+		</property>	
+		<property name="postalCode">
+			<column name="POSTALCODE" />
+		</property>	
+		<property name="resume"  type="blob" update="false" >
+			<column name="RESUME" />
+		</property>
+		<property name="lensId">
+			<column name="LENS_ID" />
+		</property>	
+		<property name="mimeType">
+			<column name="MIME_TYPE" />
+		</property>	
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="createdBy">
+			<column name="CREATED_BY"></column>
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>	
+		<property name="updatedBy">
+			<column name="CHANGED_BY"></column>
+		</property>		
+		<property name="rating">
+			<column name="RATING" />
+		</property>	
+		<property name="bgScore">
+			<column name="BG_SCORE" />
+		</property>		
+		<property name="resumeName">
+			<column name="RESUME_NAME"></column>
+		</property>	
+		<property name="rawRespId" type="long">
+			<column name="RAWRESP_ID"></column>
+		</property>
+		<property name="iphoneUID">
+			<column name="IPHONE_UID"></column>
+		</property>				
+ 	</class>
+</hibernate-mapping>

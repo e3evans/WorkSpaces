@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.ajaxsimpletest.AjaxSimpleTestPortlet.8b2e0c4342">
+	<portlet>
+		<portlet-name>AjaxSimpleTest</portlet-name>
+		<display-name xml:lang="en">AjaxSimpleTest</display-name>
+		<display-name>AjaxSimpleTest</display-name>
+		<portlet-class>com.ibm.ajaxsimpletest.AjaxSimpleTestPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/AjaxSimpleTestView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.ajaxsimpletest.nl.AjaxSimpleTestPortletResource</resource-bundle>
+		<portlet-info>
+			<title>AjaxSimpleTest</title>
+			<short-title>AjaxSimpleTest</short-title>
+			<keywords>AjaxSimpleTest</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

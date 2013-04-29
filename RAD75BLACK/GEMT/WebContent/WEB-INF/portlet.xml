@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app
+	xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+	version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+	id="com.manpower.portal.portlet.gemt.GEMTEntryForm.a1054a7101">
+	<portlet>
+		<portlet-name>GEMTEntryForm</portlet-name>
+		<display-name>
+			Global Executive Management Entry Tool
+		</display-name> 
+		<display-name xml:lang="en">GEMT portlet</display-name>
+		<portlet-class> 
+			com.manpower.portal.portlet.gemt.GEMTEntryForm
+		</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/GEMTEntryForm/GEMTEntryFormView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/GEMTEntryForm/GEMTEntryFormEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/GEMTEntryForm/GEMTEntryFormHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/GEMTEntryForm/GEMTEntryFormConfigure.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		
+		<resource-bundle>
+			com.manpower.portal.portlet.gemt.nl.GEMTEntryFormResource
+		</resource-bundle>
+		<portlet-info>
+			<title>Global Executive Management Entry Tool</title>
+			<short-title>GEMT Entry</short-title>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<portlet-name>GEMTNotes</portlet-name>
+		<display-name>GEMT Notes</display-name>
+		<display-name xml:lang="en">GEMT</display-name>
+		<portlet-class>com.manpower.portal.portlet.notes.GEMTNotesPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/GEMTNotes/GEMTNotesView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/GEMTNotes/GEMTNotesEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/GEMTNotes/GEMTNotesHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/GEMTNotes/GEMTNotesConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.notes.nl.GEMTNotesPortletResource</resource-bundle>
+		<portlet-info>
+			<title>GEMT Notes</title>
+			<short-title>GEMT Notes</short-title>
+			<keywords>GEMT Notes</keywords>
+		</portlet-info>
+	</portlet>
+	<portlet>
+		<portlet-name>GEMTManager</portlet-name>
+		<display-name>Global Executive Manage Users Portlet</display-name>
+		<portlet-class>com.manpower.portal.portlet.GEMTManagerPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/GEMTManager/GEMTManagerView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/GEMTManager/GEMTManagerEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/GEMTManager/GEMTManagerHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/GEMTManager/GEMTManagerConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.nl.GEMTManagerPortletResource</resource-bundle>
+		<portlet-info>
+			<title>GEMTManager</title>
+			<short-title>GEMTManager</short-title>
+			<keywords>GEMTManager</keywords>
+		</portlet-info>
+		<portlet-preferences>
+			<preference>
+				<name>com.manpower.portal.portlet.gemt.gemtmanager.availregions</name>
+				<value>AsiaPac</value>				
+				<value>Corp./Global Comm.</value>
+				<value>EMEA</value>
+				<value>EMT</value>
+				<value>Finance</value>
+				<value>Global HR</value>
+				<value>Global Sales</value>
+				<value>Jefferson Wells</value>
+				<value>MeCa</value>
+				<value>NA</value>
+				<value>Right</value>
+			</preference>
+		</portlet-preferences>
+	</portlet>
+	<portlet>
+		<portlet-name>GEMTWelcome</portlet-name>
+		<display-name>Global Executive Management Welcome / Login</display-name>
+		<display-name xml:lang="en">GEMTWelcome</display-name>
+		<portlet-class>com.manpower.portal.portlet.gemt.GEMTWelcomePortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/GEMTWelcome/GEMTWelcomeView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/GEMTWelcome/GEMTWelcomeEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/GEMTWelcome/GEMTWelcomeHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/GEMTWelcome/GEMTWelcomeConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.gemtwelcome.nl.GEMTWelcomePortletResource</resource-bundle>
+		<portlet-info>
+			<title>Global Executive Managment Welcome / Login Portlet</title>
+			<short-title>GEMT Welcome / Login Portlet</short-title>
+			<keywords>GEMTWelcome</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+<class name="com.manpower.portal.mpnet.hbn.beans.Person" table="PERSONS">
+		<id name="id" type="long" column="ID" >
+			<generator class="assigned"/>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>
+		<property name="middleName">
+			<column name="MIDDLENAME" />
+		</property>				
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>		
+		<property name="nationalNumber">
+			<column name="NATIONALNUMBER" />
+		</property>	
+		
+		<property name="birthdate" type="timestamp">
+			<column name="BIRTHDATE" />
+		</property>
+		
+		<property name="birthplace">
+			<column name="BIRTHPLACE" />
+		</property>
+		<property name="gender">
+			<column name="GENDER" />
+		</property>
+		<property name="nationality">
+			<column name="NATIONALITY" />
+		</property>
+		<property name="maritialStatus">
+			<column name="MARITIALSTATUS" />
+		</property>	 
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>		
+		
+		<!-- 
+			Alexander Todorov. 
+			The property's name [userFK] could be changed.
+		 -->
+		<property name="userFK">
+			<column name="USER_ID"/>
+		</property>
+		
+		<one-to-one name="user"  class="com.manpower.portal.mpnet.hbn.beans.User"
+			cascade="save-update"/>
+				
+		<set name="address" inverse="true" lazy="true" cascade="all,delete-orphan">
+					<key column="ID" on-delete="cascade"/>
+					<one-to-many class="com.manpower.portal.mpnet.hbn.beans.Address"/>
+		</set>
+		<set name="phone" inverse="true" lazy="true" cascade="all,delete-orphan">
+					<key column="ID" on-delete="cascade"/>
+					<one-to-many class="com.manpower.portal.mpnet.hbn.beans.Phone"/>
+		</set>
+ 	</class>
+</hibernate-mapping>

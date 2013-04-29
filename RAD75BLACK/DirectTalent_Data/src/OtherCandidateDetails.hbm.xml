@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.OtherCandidateDetails"
+			table="OTHER_CANDIDATE_DETAILS">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence"> 
+				<param name="sequence">OTHER_CANDIDATE_DETAILS_SEQ</param>
+			</generator>
+		</id>
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+
+		<property name="marketingQuestionCode">
+			<column name="MARKETING_QUESTION_CODE"/>
+		</property>
+		<property name="marketingQuestionAnswer">
+			<column name="MARKETING_QUESTION_ANSWER"/>
+		</property>
+
+		<many-to-one name="candidate"
+				column="CANDIDATE_ID"
+				class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+				not-null="true"
+				update="false"/>
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON"/>
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY"/>
+		</property>		
+				<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>
+		<property name="lastLoginDate" type="timestamp">
+			<column name="LAST_LOGIN_DATE"></column>
+		</property>
+		<property name="onAssignement" type="boolean">
+			<column name="IS_ON_ASSIGNEMENT" sql-type="integer"></column>
+		</property>
+		<property name="onAssignementAsOfDate" type="timestamp">
+			<column name="ON_ASSIGNEMENT_AS_OF_DATE"></column>
+		</property>
+		<property name="emailRemainderLastDate" type="timestamp">
+			<column name="EMAIL_REMAINDER_LAST_DATE"></column>
+		</property>
+		<property name="sentToFO" type="boolean">
+			<column name="SENT_TO_FO" sql-type="integer"></column>
+		</property>
+		<property name="secureSelfServiceEnabled" type="boolean">
+			<column name="SECURE_SELF_SERVICE_ENABLED" sql-type="integer"></column>
+		</property>
+		<property name="resetPasswordToken">
+			<column name="RESET_PASSWORD_TOKEN"></column>
+		</property>
+		<property name="reviewStatus">
+			<column name="REVIEW_STATUS"/>
+		</property>	
+ 	</class>
+</hibernate-mapping>
+

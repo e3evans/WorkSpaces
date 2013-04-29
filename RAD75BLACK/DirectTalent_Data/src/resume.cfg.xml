@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE hibernate-configuration
+   PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+      <session-factory>
+     <property name="session_factory_name">java:hibernate/HibernateFactoryResume</property>
+      <!-- Data Source -->
+      <property name="connection.datasource">jdbc/mpnetds</property>
+		
+      <!-- Database Settings -->
+     <!-- <property name="default_schema">MPNETADMINDV</property> -->
+      <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+      <property name="show_sql">true</property>
+      
+      <!-- JDBC Settings -->
+      <property name="jdbc.use_streams_for_binary">true</property>
+      <property name="max_fetch_depth">1</property>
+      <property name="jdbc.batch_size">0</property>
+        
+      <!-- Cache settings -->
+      <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+      <!-- Transaction API -->
+      <property name="transaction.manager_lookup_class">org.hibernate.transaction.WebSphereTransactionManagerLookup</property>
+              
+      <!-- Mapping files -->
+
+        <!-- MPNet Mapping files -->
+       <mapping resource="Candidate.hbm.xml"/>
+       <mapping resource="CandidateJobHistory.hbm.xml"/>
+       <mapping resource="Address.hbm.xml"/>
+       <mapping resource="Advertisement.hbm.xml"/>
+       <mapping resource="AdvertisementContact.hbm.xml"/>
+       <mapping resource="CandidateCoverletter.hbm.xml"/>
+       <mapping resource="CandidateEducation.hbm.xml"/>
+       <mapping resource="CandidateJobAgents.hbm.xml"/>
+      <mapping resource="CandidateJobApplication.hbm.xml"/>
+      <mapping resource="CandidatePreferences.hbm.xml"/>
+       <mapping resource="CandidateReferences.hbm.xml"/>
+       <mapping resource="CandidateResume.hbm.xml"/>
+       <mapping resource="CandidateSaveJobs.hbm.xml"/>
+       <mapping resource="CandidateSkills.hbm.xml"/>
+       <mapping resource="Phone.hbm.xml"/>
+       <mapping resource="Skills.hbm.xml"/>
+       <mapping resource="DomainValue.hbm.xml"/>
+       <mapping resource="Branch.hbm.xml"/>
+       <mapping resource="SteeringQuestions.hbm.xml"/>
+       <mapping resource="Email.hbm.xml"/>
+       <mapping resource="Sites.hbm.xml"/>
+       <mapping resource="LostCandidate.hbm.xml"/>
+       <mapping resource="UIConfiguration.hbm.xml"/>
+       <mapping resource="Geolocation.hbm.xml"/>
+       <mapping resource="VCandidateResume.hbm.xml"/>
+       <mapping	resource="PostalCode.hbm.xml"/>
+       <mapping	resource="Region.hbm.xml"/>
+       <mapping resource="VCandidateApplication.hbm.xml"/>  
+       <mapping resource="RecruiterReport.hbm.xml"/> 
+       <mapping resource="CareerHarmony.hbm.xml"/>   
+       <mapping resource="RecruiterLocationReport.hbm.xml"/>  
+       <mapping resource="Consent.hbm.xml"/>
+       <mapping resource="Identity.hbm.xml"/>
+       <mapping resource="OtherCandidateDetails.hbm.xml"/>
+       <mapping resource="CountryLocation.hbm.xml"/>
+       <mapping resource="CountryRegion.hbm.xml"/>
+        <mapping resource="PreferredLocation.hbm.xml"/>
+       <!--  added by Mantosh as part of refactoring -->
+       <mapping resource="VCandidateSearchResults.hbm.xml"/>  
+		<mapping resource="FlexField.hbm.xml"/>
+		<mapping resource="ReportingMetrics.hbm.xml"/>
+		<mapping resource="SummaryAdvertisements.hbm.xml"/>
+	    <mapping resource="CandidatesApplied.hbm.xml"/>
+	    <mapping resource="RecruiterComments.hbm.xml"/>
+	    <mapping resource="HistoryLog.hbm.xml"/> 
+	    <mapping resource="CandidateAssessments.hbm.xml"/>
+	    <mapping resource="ApplicantResponse.hbm.xml"/>
+	    <mapping resource="ApplicantResponseDetail.hbm.xml"/>
+		<mapping resource="CandidateResumeInfo.hbm.xml"/>
+		<mapping resource="Person.hbm.xml"/>
+		<mapping resource="User.hbm.xml"/>
+		<mapping resource="UserLoginHistory.hbm.xml"/>
+		<mapping resource="EducationDegree.hbm.xml"/>
+		<mapping resource="NA_JobType.hbm.xml"/>
+	    <mapping resource="NA_JobClass.hbm.xml"/>
+	
+		<mapping resource="AssessmentSkillGroup.hbm.xml"/>
+		<mapping resource="AssessmentSkillCategory.hbm.xml"/>
+		<mapping resource="AssessmentProvider.hbm.xml"/>
+		<mapping resource="AssessmentTest.hbm.xml"/>
+		<mapping resource="AssessmentDeliveryFormat.hbm.xml"/>
+		<mapping resource="AssessmentRating.hbm.xml"/>
+       
+    </session-factory>
+   </hibernate-configuration>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.faces.portlet.FacesPortlet.d6f753c912">
+	<portlet>
+		<portlet-name>DT201ThemeMenus</portlet-name>
+		<display-name xml:lang="en">DT201ThemeMenus</display-name>
+		<display-name>DT201ThemeMenus</display-name>
+		<portlet-class>com.ibm.faces.portlet.FacesPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DT201ThemeMenusView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.dt201thememenus.nl.DT201ThemeMenusPortletResource</resource-bundle>
+		<portlet-info>
+			<title>DT201ThemeMenus</title>
+			<short-title>DT201ThemeMenus</short-title>
+			<keywords>DT201ThemeMenus</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

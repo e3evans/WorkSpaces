@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<update xmlns="http://ns.adobe.com/air/framework/update/description/1.0">  
+   <version>v1.05</version>  
+	<!-- <url>http://localhost:9083/DTReportingProject/air/update/DTReportingTool.air</url> -->    
+	<url>http://dtuat.recruiter.manpower.com/DTReportingProject/air/update/DTReportingTool.air</url>     
+   <description><![CDATA[ 
+	v1.05
+	*Added Automatic Update functionality.
+   ]]></description>  
+</update>  

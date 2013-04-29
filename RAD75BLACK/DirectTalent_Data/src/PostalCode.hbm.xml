@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.PostalCodeAddress" table="POSTAL_CODE_CAMPUS">
+		<id name="id" type="long" column="ID" />
+
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		
+		<property name="language">
+			<column name="LANG" />
+		</property>		
+		
+		<property name="country">
+			<column name="COUNTRYCODE" />
+		</property>		
+		
+		<property name="postalCode">
+			<column name="POSTALCODE"/>
+		</property>
+
+		<property name="state">
+			<column name="STATE"/>
+		</property>
+
+
+		<property name="city">
+			<column name="CITY"/>
+		</property>
+
+		<property name="remarks">
+			<column name="REMARKS"/>
+		</property>
+
+
+		
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATED_ON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATED_BY" />
+		</property>		
+		<property name="createdOn" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changedOn" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>	
+ 	</class>
+</hibernate-mapping>
+

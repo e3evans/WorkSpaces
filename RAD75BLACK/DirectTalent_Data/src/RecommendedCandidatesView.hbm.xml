@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.RecommendedCandidatesView" table="V_RECOMMENDEDCANDIDATES" mutable="false">
+		<composite-id>
+			<key-property name="advertisementId"  type="long" column="ADVERT_ID"/>
+			<key-property name="recruiterId"  type="long" column="RECRUITER_ID"/>
+			<key-property name="siteId" type="long" column="SITE_ID"/>
+		</composite-id>
+
+		<property name="jobTitle"  type="string">
+			<column name="JOBTITLE" />
+		</property>
+		<property name="referenceNumber"  type="string">
+			<column name="REFERENCENUMBER" />
+		</property>
+ 	</class>
+</hibernate-mapping>

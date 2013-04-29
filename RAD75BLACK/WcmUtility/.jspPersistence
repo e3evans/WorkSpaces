@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+<jsp-scripting>
+        <request id="/WcmUtility/WebContent/WcmViewer/WcmViewerView.jsp">
+            <variable name="wcm_content_display" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_storedcontentpreview" type="java.lang.String"/>
+        </request>
+    <session>
+            
+        <variable name="com_manpower_portal_portlet_wcmviewer_siteareas" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_storedcontent" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_expandlist" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_storedcontentpreview" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_superusername" type="java.lang.String"/>
+        <variable name="com_manpower_portal_portlet_wcmviewer_superuserpw" type="java.lang.String"/>
+        </session>
+    </jsp-scripting>
+<beanData/>
+</persistence>

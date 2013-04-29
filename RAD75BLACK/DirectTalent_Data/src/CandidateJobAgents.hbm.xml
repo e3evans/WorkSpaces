@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateJobAgents" table="CANDIDATEJOBAGENTS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEJOBAGENTS_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="agentName">
+			<column name="AGENTNAME" />
+		</property>
+		<property name="jobIndustry">
+			<column name="JOBINDUSTRY" />
+		</property>
+		<property name="jobTitle">
+			<column name="JOBTITLE" />
+		</property>
+		<property name="jobCountry">
+			<column name="JOBCOUNTRY"/>
+		</property>
+		<property name="jobProximity">
+			<column name="JOBPROXIMITY" />
+		</property>
+		<property name="jobProximityUnit">
+			<column name="JOBPROXIMITYUNIT" />
+		</property>
+		<property name="contractType">
+			<column name="CONTRACTTYPE" />
+		</property>
+		<property name="contentType">
+			<column name="CONTENTTYPE" />
+		</property>		
+		<property name="frequency">
+			<column name="FREQUENCY" />
+		</property>
+		<property name="lastActive"   type="timestamp">
+			<column name="LASTACTIVE" />
+		</property>		
+		<property name="useSkill">
+			<column name="USESKILL" />
+		</property>		
+		<property name="exactMatch">
+			<column name="EXACTMATCH" />
+		</property>
+		<property name="query">
+			<column name="QUERY" />
+		</property>
+		<property name="sendEmail">
+			<column name="SENDEMAIL" />
+		</property>
+		<property name="matchingJobs">
+			<column name="MATCHINGJOBS" />
+		</property>
+		<property name="candidateSkills">
+			<column name="CANDIDATESKILLS" />
+		</property>
+		<property name="jobLocation">
+			<column name="JOBLOCATION" />
+		</property>
+		<property name="jobLanguage">
+			<column name="JOBLANGUAGE" />
+		</property>
+
+		<property name="hoursWorked">
+			<column name="HOURSWORKED" />
+		</property>
+		
+		<property name="businessArea">
+			<column name="BUSINESSARREA" />
+		</property>	
+		
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>	
+		<property name="emailSentDate" type="timestamp">
+			<column name="AGENTEMAILSENTDATE" />
+		</property>	
+ 	</class>
+</hibernate-mapping>

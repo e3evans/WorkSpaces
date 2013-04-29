@@ -1,0 +1,2651 @@
+/*******
+This is the MyManpower portlet stylesheet
+*************/
+
+
+form {
+    margin: 0;
+    padding: 0;
+}
+* html input { overflow: visible; }
+
+	
+.myManpowerCSS_upload_box_blue{
+		vertical-align:middle;
+		text-align:center;
+		width:180px;
+		height:165px;
+	 	background: url(../theme/img/upload_resume_box.gif) no-repeat;
+		margin: 5px;
+		padding-right: 10px;
+		padding-left: 5px;
+}
+
+.myManpowerCSS_paste_box_blue{
+		vertical-align:middle;
+		text-align:center;
+		width:180px;
+		height:165px;
+		 background: url(../theme/img/paste_resume_box.gif) no-repeat;
+		margin:5px;
+		padding-right: 10px;
+		padding-left: 15px;
+}
+
+.myManpowerCSS_returnToMyManpower
+{
+	background: url(../theme/img/returnToMyManpower.gif) no-repeat;
+	color:#b75856;
+	font-size:15px;
+	height: 160px;
+	padding:20px 30px 20px 20px;
+	font-weight:Bold;
+}
+
+
+#myManpowerCSS_steps{
+	color: #3176B1;
+	font-size: 11px;
+	 font-style:Arial;
+	 font-weight:bold;
+	}
+
+
+body {
+	font-family: arial,verdana;
+	margin: 0;
+	padding: 0;
+	color: #525252;
+	font-size: 12px;
+}
+
+.logon_title {
+	font-family: verdana;
+	text-align: left;
+	color: #fff;
+}
+
+input, textarea, select, option {
+	font-family: tahoma, arial;
+	font-size: 11px;
+	color: #000000;
+}
+
+hr { margin: 0; padding: 0px 0; }	
+
+			
+.myManpowerCSS_indicatorOn {
+	background-color: #C9C8C6;
+	border: 1px solid #819EB0;
+	text-align: right;
+	padding-right: 7px;
+}
+.myManpowerCSS_indicatorOff {
+	background-color: #C9C8C6;
+	border: 1px solid #819EB0;
+	text-align: left;
+	padding-left:3px;
+}
+#mainContent {
+	padding: 20px 20px 10px 35px; 
+	width: 370px;
+} 
+
+#mainContent .title {
+	font-weight: bold;
+	font-size: 14px;
+}
+
+a.myManpowerCSS_titleLink {
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	color: #46617E;
+}
+
+.myManpowerCSS_popup_titleLink
+{
+	text-decoration: none;
+	font-size: 11px;
+	font-weight: bold;
+	color: #46617E;
+}
+
+a.myManpowerCSS_smallLink {
+	font-size: 10px;
+	text-decoration: underline;
+}
+
+.myManpowerCSS_rule {
+	font-size: 6px;
+	margin: 10px 0px 3px;
+	background-image: url(../theme/img/rule.gif);
+	background-repeat: no-repeat;
+}
+
+#centerBottom {
+	padding: 0px 0px 0px 9px;
+	background: url(../theme/img/centerFiller.gif) ;
+}
+
+
+.myManpowerCSS_rightBlueHeaderStyle{
+	background-image: url(../theme/img/rightBlueHeader.gif);
+	height:15px;
+	padding: 5px 0px 10px 5px;
+	vertical-align: top;
+	font-size:medium;
+	font-weight: bold;
+	font-family:Arial;
+	color:#3176b1;
+}
+
+a {
+	color: #8CB1CC;
+	text-decoration: none;
+}
+
+.positionTop{
+	text-align: top;
+}
+
+
+.textField input {
+	width: 150px;
+	margin: 2px 0;
+	padding: 3px;
+	font-family: arial,verdana;
+	border: 1px solid #d4cfc2;
+	font-size: 10px;
+	color: #666666;
+}
+em {
+	color: #a6c3de;
+	font-size: 10px;
+	display: block;
+	text-align: right;
+}
+
+p	{
+	font-family:arial, verdana;
+	font-size:11px;
+	line-height:18px;
+	}
+h1 {
+	text-transform: uppercase;
+	color: #FFF;
+	margin: 0;
+	padding: 9px 14px 7px 14px;
+	font-size: 15px;
+	width: 269px;
+}
+
+  
+a.myManpowerCSS_lightlink {
+	color: #6698c2;
+	font-size: 11px;
+}
+
+input.button {
+    margin: 0;
+    padding: 0;
+    padding-left: 7px;/* minimum of 7 */
+    margin-right: 7px;/* minimum of 7 */
+    border: 0;
+    font-weight: bold;
+    /* used to catch the buttonEnding */
+    position: relative;
+    cursor: pointer;
+    
+	font-family: arial,verdana;    
+}
+.buttonend {
+}
+
+.myManpowerCSS_orange24 {
+    height: 24px;
+    font-size: 12px;
+    background: url(../theme/img/button-orange24.gif) no-repeat;
+    color: #FFF;
+    font-weight: bold;
+    font-family: arial,verdana;
+    border: none;
+}
+
+.myManpowerCSS_blue24 {
+    height: 24px;
+    font-size: 12px;
+	
+    background: url(../theme/img/button-blue24.gif) no-repeat;
+   	font-family:Arial;
+	color:White;
+	border: none;
+}
+
+.myManpowerCSS_blue24_disable{
+	height: 24px;
+    font-size: 12px;
+	background: url(../theme/img/button-blue24.gif) no-repeat;
+   	font-family:Arial;
+	color: #Fdd;
+}
+
+.myManpowerCSS_orange24end {
+ 	    position: absolute;
+	    display: inline;
+	    width: 7px;
+	    height: 24px;
+   		background: url(../theme/img/button-orange24end.gif) no-repeat;
+   		border: none;
+}
+
+.myManpowerCSS_blue24end {
+   	    position: absolute;
+	    display: inline;
+	    width: 7px;
+	    height: 24px;
+	    background: url(../theme/img/button-blue24end.gif) no-repeat;
+	    border: none;
+}
+
+.headerClass {
+	background-color: ThreeDFace;
+	color: WindowText;
+	border-width: 1px;
+	border-style: solid;
+	border-color: ThreeDShadow;
+	margin:2px;
+	padding:0px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	font-weight: 400;
+	overflow: -moz-scrollbars-none;
+}
+
+.myManpowerCSS_rowClass1 {
+	background-color: window;
+}
+
+.rowClass2 {
+	background-color: ThreeDFace;
+}
+
+.myManpowerCSS_columnClass1 {
+	background-color: window;
+	margin:2px;
+	padding:0px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	overflow: -moz-scrollbars-none;
+}
+
+.columnClass2 {
+	background-color: ThreeDFace;
+	margin:2px;
+	padding:0px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;	
+}
+
+.commandExButton {
+	
+}
+
+.commandExButton_Label {
+	color: windowtext;
+	text-align: center;
+	vertical-align: middle
+}
+
+.commandExButton_Icon {
+	text-align: left;
+	margin-left: 4px;
+	height: 17px;
+	width: 17px
+}
+
+.commandExButton_Icon_moused {
+	text-align: left;
+	margin-left: 4px;
+	height: 17px;
+	width: 17px
+}
+
+.commandExButton_Icon_depressed {
+	text-align: left;
+	margin-left: 4px;
+	height: 17px;
+	width: 17px
+}
+
+.commandExButton_Icon_disabled {
+	text-align: left;
+	margin-left: 4px;
+	height: 17px;
+	width: 17px
+}
+
+
+.inputText_DatePicker-Size {
+	
+}
+
+.inputText_DatePicker-Header {
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	border-color: ButtonShadow
+}
+
+.inputText_DatePicker-Body {
+	border-width: 0px;
+	border-style: none;
+	background-color: window
+}
+
+.inputText_DatePicker-HeaderLine1 {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputText_DatePicker-HeaderLine2 {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputText_DatePicker-HeaderWeekday {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputText_DatePicker-HeaderYear {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputText_DatePicker-HeaderMonth {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputText_DatePicker-HeaderLine1 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 1px
+}
+
+.inputText_DatePicker-HeaderYear {
+	color: WindowText;
+	padding-top: 2px;
+	padding-bottom: 1px
+}
+
+.inputText_DatePicker-HeaderLine2 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px
+}
+
+.inputText_DatePicker-HeaderMonth {
+	color: WindowText;
+	padding-bottom: 3px
+}
+
+.inputText_DatePicker-Button {
+	border: 0px;
+	width: 12px;
+	height: 12px
+}
+
+.inputText_DatePicker-HeaderWeekday {
+	color: WindowText;
+	background-color: ButtonFace;
+	padding-top: 1px;
+	padding-bottom: 2px
+}
+
+.inputText_DatePicker-OtherMonth {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-CurrentMonth {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-InvalidDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-CurrentDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-CurrentOtherDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-Today {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-CurrentToday {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-Hover {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-Hover {
+	background-color: InactiveCaptionText
+}
+
+.inputText_DatePicker-OtherMonth {
+	color: GrayText;
+	border-color: Window
+}
+
+.inputText_DatePicker-CurrentMonth {
+	color: WindowText;
+	border-color: Window
+}
+
+.inputText_DatePicker-Today {
+	border-color: Window;
+	color: Window;
+	background-color: ThreeDDarkShadow;
+	font-weight: bold
+}
+
+.inputText_DatePicker-Today A {
+	border-color: Window;
+	color: Window;
+	background-color: ThreeDDarkShadow;
+	font-weight: bold
+}
+
+.inputText_DatePicker-CurrentDay {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputText_DatePicker-CurrentToday {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputText_DatePicker-CurrentToday {
+	font-weight: bold
+}
+
+.inputText_DatePicker-CurrentOtherDay {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputText_DatePicker-InvalidDay {
+	color: GrayText;
+	background-color: buttonface;
+	border-color: buttonface
+}
+
+.inputText_DatePicker {
+	background-color: ButtonFace;
+	border: 1px;
+	border-style: solid;
+	border-color: ButtonShadow;
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: normal;
+	color: WindowText;
+	padding: 2px;
+	margin: 0px;
+}
+
+.inputText_DatePicker-Size {
+}
+
+.inputText_DatePicker-Header {
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	border-color: ButtonShadow;
+}
+
+.inputText_DatePicker-Body {
+	border-width: 0px;
+	border-style: none;
+	background-color: window;
+}
+
+.inputText_DatePicker-HeaderLine1,
+.inputText_DatePicker-HeaderLine2,
+.inputText_DatePicker-HeaderWeekday, 
+.inputText_DatePicker-HeaderYear,
+.inputText_DatePicker-HeaderMonth {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+.inputText_DatePicker-HeaderLine1 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 1px;
+}
+
+.inputText_DatePicker-HeaderYear {
+	color: WindowText;
+	padding-top:2px;
+	padding-bottom:1px; 
+}
+
+.inputText_DatePicker-HeaderLine2 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+}
+
+.inputText_DatePicker-HeaderMonth {
+	color: WindowText;
+	padding-bottom: 3px;
+}
+
+.inputText_DatePicker-Button {
+	border: 0px;
+	width:  12px;
+	height: 12px;
+}
+
+.inputText_DatePicker-HeaderWeekday {
+	color: WindowText;
+	background-color: ButtonFace;
+	padding-top: 1px;
+	padding-bottom: 2px;
+}
+
+.inputText_DatePicker-OtherMonth,
+.inputText_DatePicker-CurrentMonth,
+.inputText_DatePicker-CurrentDay, 
+.inputText_DatePicker-CurrentOtherDay, 
+.inputText_DatePicker-InvalidDay, 
+.inputText_DatePicker-Today,
+.inputText_DatePicker-CurrentToday {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+}
+
+.inputText_DatePicker-OtherMonth {
+	color: GrayText;
+	border-color: Window;
+}
+.inputText_DatePicker-CurrentMonth {
+	color: WindowText;
+	border-color: Window;
+}
+
+.inputText_DatePicker-CurrentDay {
+	color: HighlightText;
+	background-color: Highlight;
+	border-color: Window;
+}
+
+.inputText_DatePicker-CurrentOtherDay {
+	color: HighlightText;
+	background-color: Highlight;
+	border-color: Window;
+}
+
+.inputText_DatePicker-InvalidDay {
+	color: GrayText;
+	background-color: buttonface;
+	border-color: buttonface;
+}
+
+.inputText_DatePicker-Today {
+	color: WindowText;
+	font-weight: bold;
+	background-color: Window;
+	border-color: ButtonShadow;
+}
+
+.inputText_DatePicker-Hover {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: none;
+	padding: 2px;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+.inputText_DatePicker-Hover {
+	background-color: InactiveCaptionText
+}
+
+.inputText_DatePicker-Today A {
+	border-color: Window;
+	color: Window;
+	background-color: ThreeDDarkShadow;
+	font-weight: bold
+}
+
+.inputText_DatePicker-CurrentToday {
+	color: HighlightText;
+	font-weight: bold;
+	background-color: Highlight;
+	border-color: Window;
+}
+
+.inputText_Typeahead {
+	background-color: Window;
+	border-width: 1px;
+	border-style: solid;
+	border-color: ThreeDDarkShadow
+}
+
+.inputText_Typeahead-List {
+	background-color: Window;
+	text-align: left;
+	vertical-align: middle;
+	height: auto;
+	font-family: sans-serif;
+	font-weight: 400;
+	font-size: 10pt;
+	border-collapse: collapse
+}
+
+.inputText_Typeahead-Item {
+	background-color: Window;
+	color: WindowText;
+	padding-left: 1pt;
+	padding-right: 1pt
+}
+
+.inputText_Typeahead-Item-Selected {
+	color: Window;
+	background-color: Highlight;
+	padding-left: 1pt;
+	padding-right: 1pt
+}
+
+.inputText_Typeahead-Item a {
+	text-decoration: none;
+	color: WindowText
+}
+
+.inputText_Typeahead-Item-Selected a {
+	text-decoration: none;
+	color: Window
+}
+
+.dataTableEx {
+	empty-cells: show
+}
+
+.panelRowCategory {
+	
+}
+
+.inputRowSelect {
+	vertical-align: middle;
+	margin: 0px;
+	margin-top: 1px;
+	margin-left: 3px
+}
+
+.commandExRowEdit {
+	
+}
+
+.editStyleClass {
+	background-color: Window;
+	border-color: WindowFrame;
+	border-style: solid;
+	border-width: 1px;
+	padding-bottom: 4px;
+	text-align: right
+}
+
+.editStyleClass A {
+	margin: 0px;
+	padding: 0px;
+	border-width: 0px;
+	border-style: none;
+	width: 1px;
+	height: 1px
+}
+
+
+.pagerDeluxe {
+	background-color: ThreeDFace;
+	border-color: ThreeDFace;
+	border-width: 1px;
+	border-style: solid
+}
+
+.pagerDeluxeActive {
+	padding: 0px;
+	margin: 0px;
+	border-width: 1px;
+	border-color: ThreeDShadow;
+	border-style: solid;
+	background-color: transparent
+}
+
+.pagerDeluxeHidden {
+	padding: 0px;
+	margin: 0px;
+	border-width: 0px;
+	border-color: transparent;
+	border-style: solid;
+	background-color: transparent
+}
+
+.pagerDeluxeActive_button {
+	padding: 0px;
+	margin: 0px;
+	width: 22px;
+	height: 19px;
+	background-color: ThreeDFace;
+	border-style: solid;
+	border-width: 1px;
+	border-color: Window;
+	font-size: 13px
+}
+
+.pagerDeluxeHidden_button {
+	padding: 0px;
+	margin: 0px;
+	width: 22px;
+	height: 19px;
+	background-color: transparent;
+	border-style: solid;
+	border-width: 0px;
+	border-color: transparent
+}
+
+.pagerDeluxe_text {
+	vertical-align: middle;
+	text-align: center;
+	padding: 0px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin: 0px;
+	background-color: ThreeDFace;
+	border-width: 0px;
+	border-style: solid;
+	border-color: ThreeDFace;
+	font-size: 13px;
+	color: windowtext
+}
+
+.pagerDeluxe_button_twistie {
+	color: windowtext;
+	border-color: windowtext;
+	list-style-type: none
+}
+
+.pagerDeluxeActive_button_twistie {
+	color: windowtext;
+	border-color: windowtext;
+	list-style-type: none
+}
+
+.sortHeader_sortasc-img {
+	background-image: url("img/JSF_sort_asc.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 5px;
+	border-style: none
+}
+
+.sortHeader_sortascon-img {
+	background-image: url("img/JSF_sort_ascon.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 5px;
+	border-style: none
+}
+
+.sortHeader_sortdesc-img {
+	background-image: url("img/JSF_sort_desc.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 5px;
+	border-style: none
+}
+
+.sortHeader_sortdescon-img {
+	background-image: url("img/JSF_sort_descon.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 5px;
+	border-style: none
+}
+
+.sortHeader_sortbi-img {
+	background-image: url("img/JSF_sort_bi.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 11px;
+	border-style: none
+}
+
+.sortHeader_sortbiup-img {
+	background-image: url("img/JSF_sort_biup.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 11px;
+	border-style: none
+}
+
+.sortHeader_sortbidown-img {
+	background-image: url("img/JSF_sort_bidown.gif");
+	background-repeat: no-repeat;
+	width: 11px;
+	height: 11px;
+	border-style: none
+}
+
+.sortHeader_sortasc {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortascon {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortdesc {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortdescon {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortbi {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortbiup {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.sortHeader_sortbidown {
+	text-decoration: none;
+	border: none;
+	color: #000000
+}
+
+.inputMiniCalendar {
+	background-color: ButtonFace;
+	border: 1px;
+	border-style: solid;
+	border-color: ButtonShadow;
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: normal;
+	color: WindowText;
+	padding: 2px;
+	margin: 0px;
+	width: 130pt
+}
+
+.inputMiniCalendar-Size {
+	
+}
+
+.inputMiniCalendar-Header {
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-style: solid;
+	border-color: ButtonShadow
+}
+
+.inputMiniCalendar-Body {
+	border-width: 0px;
+	border-style: none;
+	background-color: window
+}
+
+.inputMiniCalendar-HeaderLine1 {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputMiniCalendar-HeaderLine2 {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputMiniCalendar-HeaderWeekday {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputMiniCalendar-HeaderYear {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputMiniCalendar-HeaderMonth {
+	font-family: Arial, sans-serif;
+	font-size: 8pt;
+	text-decoration: none;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+.inputMiniCalendar-HeaderLine1 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-top: 2px;
+	padding-bottom: 1px
+}
+
+.inputMiniCalendar-HeaderYear {
+	color: WindowText;
+	padding-top: 2px;
+	padding-bottom: 1px
+}
+
+.inputMiniCalendar-HeaderLine2 {
+	width: 12px;
+	padding-left: 2px;
+	padding-right: 2px;
+	padding-bottom: 3px
+}
+
+.inputMiniCalendar-HeaderMonth {
+	color: WindowText;
+	padding-bottom: 3px
+}
+
+.inputMiniCalendar-Button {
+	border: 0px;
+	width: 12px;
+	height: 12px
+}
+
+.inputMiniCalendar-HeaderWeekday {
+	color: WindowText;
+	background-color: ButtonFace;
+	padding-top: 1px;
+	padding-bottom: 2px
+}
+
+.inputMiniCalendar-OtherMonth {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-CurrentMonth {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-CurrentDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-CurrentOtherDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-InvalidDay {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-Today {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-CurrentToday {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-Hover {
+	font-family: Arial, sans-serif;
+	font-size: 9pt;
+	text-decoration: none;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 1px;
+	border-style: solid;
+	padding: 1px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-color: window
+}
+
+.inputMiniCalendar-Hover {
+	background-color: InactiveCaptionText;
+	border-color: black
+}
+
+.inputMiniCalendar-OtherMonth {
+	color: GrayText
+}
+
+.inputMiniCalendar-CurrentMonth {
+	color: WindowText
+}
+
+.inputMiniCalendar-Today {
+	border-color: Window;
+	color: Window;
+	background-color: ThreeDDarkShadow;
+	font-weight: bold
+}
+
+.inputMiniCalendar-CurrentDay {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputMiniCalendar-CurrentToday {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputMiniCalendar-CurrentToday {
+	font-weight: bold
+}
+
+.inputMiniCalendar-CurrentOtherDay {
+	color: HighlightText;
+	background-color: Highlight
+}
+
+.inputMiniCalendar-InvalidDay {
+	color: GrayText;
+	background-color: buttonface;
+	border-color: buttonface
+}
+
+.selectOneColor {
+	
+}
+
+.selectOneColor_ColorPicker {
+	background-color: white;
+	border: 1px;
+	border-style: solid;
+	border-color: ButtonShadow;
+	margin: 0px;
+	padding: 0px
+}
+
+.selectOneColor_ColorPicker-Body {
+	background-color: white;
+	border-width: 0px;
+	border-style: none;
+	margin: 2px
+}
+
+.selectOneColor_ColorPicker-GridCell {
+	padding: 2px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white
+}
+
+.selectOneColor_ColorPicker-GridCell-Hover {
+	padding: 2px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white
+}
+
+.selectOneColor_ColorPicker-GridCell-Selected {
+	padding: 2px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white
+}
+
+.selectOneColor_ColorPicker-GridCell-Hover-Selected {
+	padding: 2px;
+	border-color: white;
+	border-style: solid;
+	border-width: 1px;
+	background-color: white
+}
+
+.selectOneColor_ColorPicker-GridCell-Hover {
+	border-color: Highlight;
+	background-color: InactiveCaptionText
+}
+
+.selectOneColor_ColorPicker-GridCell-Selected {
+	border-color: Highlight;
+	background-color: ThreeDLightShadow
+}
+
+.selectOneColor_ColorPicker-GridCell-Hover-Selected {
+	border-color: black;
+	background-color: InactiveCaptionText
+}
+
+.selectOneColor_ColorPicker-GridSwatch {
+	width: 10px;
+	height: 10px;
+	border-width: 1px;
+	border-color: ThreeDShadow;
+	border-style: solid
+}
+   
+.button {
+    margin: 0;
+    padding: 0;
+    padding-left: 7px;
+    margin-right: 7px;
+    border: 0;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+    font-family: arial,verdana; 
+}
+
+input.submit {
+    margin: 0;
+    padding: 0;
+    
+    padding-left: 7px;/* minimum of 7 
+    margin-right: 7px;/* minimum of 7 */
+    border: 0;
+    font-weight: bold;
+    /* used to catch the buttonEnding 
+    position: relative;*/
+    cursor: pointer;
+    
+	font-family: arial,verdana;    
+}
+	
+.buttonend {
+}
+
+.input{
+}
+
+.myManpowerCSS_orange24 {
+	    height: 24px;
+	    font-size: 12px;
+	    font-weight: bold;
+	    background: url("img/button-orange24.gif");
+	    color: #FFF;
+	    font-family: arial,verdana;
+}
+
+.myManpowerCSS_orange24disable {
+	    height: 24px;
+	    font-size: 12px;
+	    font-weight: bold;
+	    background: url("img/button-orange24.gif");
+	    color: #Fdd;
+	    font-family: arial,verdana;
+}
+
+.myManpowerCSS_applyTitle {
+		font-size:18pt;
+		font-weight:bolder;
+		color: #FFF;
+}
+
+.myManpowerCSS_optionsTitle {
+		color: #000000;
+		text-decoration: underline;
+		font-size: x-small;
+}
+
+.myManpowerCSS_panelHeaderStyle{
+	font-weight: bold;
+	font-size: 16pt;
+}
+
+.myManpowerCSS_panelHeaderStyle{
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.myManpowerCSS_column-left-aligned{
+	text-align: left;
+}
+.usaNameHeader{
+	text-align: left;
+	padding-top: 2px;
+}
+.myManpowerCSS_column-right-aligned{
+	text-align: right;
+}
+
+.myManpowerCSS_column-right-aligned_50{
+	text-align: right;
+	width: 50%;
+}
+
+.myManpowerCSS_column-left-aligned_50{
+	text-align: left;
+	width: 50%;
+}
+
+
+.myManpowerCSS_column100{
+	text-align:left;
+	width: 100%;
+}
+
+
+.myManpowerCSS_ajaxMainPanelStyle{
+	width:565;
+	border-width:thin;
+	border-color: gray; 
+	border-style: solid;
+}
+
+
+
+.myManpowerCSS_outputTextBoldAlignLeft{
+	text-align: left;
+	font-weight: bold;
+	font-size: 12pt;
+}
+
+.myManpowerCSS_outputTextBoldAlignLeft8pt{
+	text-align: left;
+	font-weight: bold;
+	font-size: 8pt;
+	color: gray;
+}
+
+.myManpowerCSS_outputTextBoldAlignLeftGray{
+	text-align: left;
+	font-weight: bold;
+	font-size: 10pt;
+	color: gray;
+}
+
+.myManpowerCSS_column55Left{
+	width: 55%;
+	text-align: left;
+}
+.myManpowerCSS_column45Left{
+	text-align:left;
+	width: 45%;
+}
+
+.myManpowerCSS_column33{
+	width: 33%;
+	height: 175px;
+	margin: 5px;
+	padding: 5px;
+	
+}
+
+.myManpowerCSS_standartPanelStyle{
+	width: 565;
+	padding: 5px;
+	margin: 5px;
+}
+
+.myManpowerCSS_tablestyle{
+
+	min-width:250px;
+	max-width:250px;
+	min-height:50px;
+	max-height:200px;
+	overflow:scroll;
+	border-color:Silver;
+	border-style:groove;
+	background-color:white;
+}
+
+.myManpowerCSS_centeraligned{
+	text-align: center;
+}
+
+.myManpowerCSS_justifyaligned{
+	text-align: justify;
+}
+
+.myManpowerCSS_defaultForm{
+	width: 615px;
+}
+
+
+.myManpowerCSS_accountBgStyle{
+	background:url(../theme/img/smallBlueFiller.gif);
+	background-repeat: repeat-y;
+}
+
+.myManpowerCSS_accountBgHeader{
+	background:url(../theme/img/smallBlueTop.gif);
+	background-repeat: no-repeat;
+	color: white;
+	text-transform: none;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	padding-left:5px;
+	padding-top:0px;
+	padding-bottom:10px;
+}
+
+.myManpowerCSS_accountBgFooter{
+	background:url(../theme/img/smallBlueBottom.gif);
+	background-repeat: no-repeat;
+}
+
+.blueHeader_body{
+		background:url(../theme/img/BlueBoxes_02.jpg);
+		background-repeat: repeat-y;
+		padding-left:5px;
+		padding-right:5px;
+		padding-bottom:5px;
+		color:#FFFFFF;
+		font-family:Helvetica,Verdana,Arial,sans-serif;
+		font-size:11px;
+		font-weight:bold;
+		width:119px;
+	}
+
+.blueHeader_MainContent{
+		font-family:Helvetica,Verdana,Arial,sans-serif;
+		font-size:11px;
+		background:url(../theme/img/BlueBoxes_04.jpg);
+		background-repeat:repeat-y;
+		width:119px;
+		padding-left:3px;
+		padding-right:3px;
+		padding-top:5px;
+	
+	}
+.blueHeader_top{
+	font-family:Helvetica,Verdana,Arial,sans-serif;
+	height:5px;
+	max-height:5px;
+	background:url(../theme/img/BlueBoxes_01.gif);
+	background-repeat:no-repeat;
+	width:119px;
+
+}
+.blueHeader_foot{
+	font-family:Helvetica,Verdana,Arial,sans-serif;
+	height:9px;
+	max-height:9px;
+	background:url(../theme/img/BlueBoxes_05.gif);
+	background-repeat:no-repeat;
+	width:119px;
+}
+
+input.myManpowerCSS_blue24 {
+	    height: 24px;
+	    font-size: 12px;
+	    background: url("img/button-blue24.gif"); 
+	    background-repeat: no-repeat;
+	   	font-family:Arial;
+		color:White;
+		font-weight: bold;
+}
+
+.mympProfile_header{
+		background:url(../theme/img/profileBg_01.gif);
+		background-repeat:no-repeat;
+		width:157px;
+		height:12px;
+	}
+	.mympProfile_body{
+		font-size:11px;
+		font-family:Helvetica,Verdana,sans-serif;
+		background:url(../theme/img/profileBg_03.gif);
+		background-repeat:repeat-y;
+		padding-left:10px;
+		padding-right:10px;
+		
+	
+	}
+	.mympProfile_footer{
+		background:url(../theme/img/profileBg_04.gif);
+		background-repeat:no-repeat;
+		width:157px;
+		height:24px;
+	
+	}
+
+.myManpowerCSS_blue24 {
+	    height: 24px;
+	    font-size: 12px;
+	    font-weight: bold;
+	    background: url("img/button-blue24.gif");
+	    color: #000;
+	    font-family: arial,verdana;
+	    color:White;
+}
+
+.myManpowerAccountStyle{
+	background:url(../theme/img/profileBg.gif);
+	background-repeat: no-repeat;
+	min-height: 460px;
+	padding: 5px;
+}
+
+
+.myManpowerAccountStyleEnd{
+	background:url(../theme/img/profileBgEnd.PNG);
+	background-repeat: no-repeat;
+	padding: 5px;
+}
+
+.myManpowerAccountColumnStyle{
+	padding: 5px;
+	margin: 5px;
+	width: 140px;
+}
+
+.myManpowerMainPageStyle{
+	background:url(../theme/img/greenBoxTop2.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin:2px;
+	padding:2px;
+	width: 300px;
+}
+
+
+.myManpowerMainPageStyleEnd{
+	background:url(../theme/img/greenBoxEnd.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin:2px;
+	padding:2px;
+	width: 300px;
+}
+
+.myManpowerMainPageColumn1Style{
+	margin-top:45px;
+	width: 175px;
+	vertical-align: top;
+	
+}
+.myManpowerMainPageColumn2Style{
+	margin-top:45px;
+
+	width: 125px;
+	vertical-align: top;
+	
+}
+
+.myManpowerMainPageHederStyle{
+	padding: 15px 0px 5px 10px;
+	color: white;
+	font-family: arial,verdana;
+	font-size: 10pt;
+	font-weight: bold;
+	
+}
+.myManpowerCSS_smallLinkWhite{
+	font-size: 10px;
+	text-decoration: underline;
+	color: #FFF;
+}
+
+.myManpowerCSS_columnClassBlueBottomRight {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight : normal;
+	text-align: right;
+	
+	border-top: 1px solid #FFFFFF;
+    border-right: 0px solid #FFFFFF;
+    border-bottom:1px solid #5F81AA;
+    border-left: 0px solid #FFFFFF;
+	padding: 4px 4px;
+	margin : 0px;
+	white-space: nowrap;
+}
+
+.myManpowerCSS_columnClassBlueBottomMiddle {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight : normal;
+	text-align: center;
+	
+	border-top: 1px solid #FFFFFF;
+    border-right: 0px solid #FFFFFF;
+    border-bottom:1px solid #5F81AA;
+    border-left: 0px solid #FFFFFF;
+	padding: 4px 4px;
+	margin : 0px;
+	white-space: nowrap;
+}
+
+.myManpowerCSS_columnClassBlueBottom {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	font-weight : normal;
+	
+	border-top: 1px solid #FFFFFF;
+    border-right: 0px solid #FFFFFF;
+    border-bottom:1px solid #5F81AA;
+    border-left: 0px solid #FFFFFF;
+	padding: 4px 4px;
+	margin : 0px;
+	white-space: nowrap;
+}
+
+.myManpowerCSS_resultsBlueHeading{
+	text-align: left;
+	text-decoration: underline;
+	font-weight: bold;
+	font-size: 12pt;
+	font-family: arial,verdana;
+}
+
+.myManpowerCSS_resultsBlueHeadingMiddle{
+	text-align: center;
+}
+.resultsBlueHeadingRight{
+	text-align: right;
+}
+
+.myManpowerCSS_columnClass1 {
+	background-color: window;
+	margin:2px;
+	padding:0px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	overflow: -moz-scrollbars-none;
+}
+
+.myManpowerCSS_rowClass1 {
+	background-color: window;
+}
+
+.myManpowerCSS_roundtable{
+	background-image: url(../theme/img/round_button.gif);
+	background-repeat:no-repeat;
+	background-position: center center;
+	
+	font-size: 30pt;
+	font-weight:bold;
+	color:#FFF;
+}
+
+.myManpowerCSS_roundtablegreyfull{
+	background-image: url(../theme/img/greyballfull.gif);
+	background-repeat:no-repeat;
+	background-position: center center;
+	
+	font-size: 30pt;
+	font-weight:bold;
+	color:#3173A5;
+}
+
+.myManpowerCSS_roundtablegrey{
+	background-image: url(../theme/img/greyball.gif);
+	background-repeat:no-repeat;
+	background-position: center center;
+	
+	font-size: 30pt;
+	font-weight:bold;
+	color:#3173A5;
+}
+
+.myManpowerCSS_roundtablefull{
+	background-image: url(../theme/img/blueballfull.PNG);
+	background-repeat:no-repeat;
+	background-position: center center;
+	
+	font-size: 30pt;
+	font-weight:bold;
+	color:#FFF;
+}
+
+.myManpowerCSS_buildlevel{
+	font-size: 11pt;
+	font-weight:bold;
+	
+	color:#2A70AE;
+	position:center ;
+	
+	width:20%;
+	font-family:arial;
+	text-align: center;
+
+}
+
+.myManpowerCSS_columClassHeader{
+	text-align: center;
+}
+
+.myManpowerCSS_popUpHelpGeneral {
+	position: absolute;
+	visibility: hidden;
+	left: 150px;
+	top: 150px;
+	z-index: 1500;
+	width: 513px;
+}
+
+.myManpowerCSS_popUpHelpGeneralManageResumes {
+	position: absolute;
+	width: 513px;
+}
+
+
+#close {
+	float: right;
+}
+
+.myManpowerCSS_branchesHeaderStyle{
+	background-image: url(../theme/img/blueBoxTop.gif);
+	background-repeat:no-repeat;
+	padding:5px;
+	font-size: 16px;
+    font-weight: bolder;
+    color: #FFF;
+    font-family: arial,verdana;
+	width: 310px;
+}
+
+.myManpowerCSS_branchesBackgroundStyle{
+	background-image: url(../theme/img/boxContent2.gif);
+	background-repeat:no-repeat;
+	padding:5px;
+	width: 310px;
+}
+
+.myManpowerCSS_branchColumnClass1{
+	width:28%;
+	background-color: window;
+	margin:2px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	text-align: left;
+}
+
+.myManpowerCSS_branchColumnClass2{
+	width:16%;
+	background-color: window;
+	margin:2px;
+	padding:0px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	text-align:right;
+}
+
+.myManpowerCSS_selectDropDownStyle{
+	width: 250px;
+	background-color: Window;
+	color: WindowText;
+	padding-left: 1pt;
+	padding-right: 1pt;
+	vertical-align: middle;
+}
+
+.myManpowerCSS_rowClassWindowBg{
+	background-color: window;
+}
+
+.myManpowerCSS_rowClassGrayBg{
+	background-color: #cdc5c9;
+}
+
+.myManpowerCSS_mainContentBox_create {
+	background-image: url("img/centerFiller.gif");
+	background-repeat: repeat-y;
+	
+}
+
+.myManpowerCSS_mainContentHeaderBoxTop_create { 
+	background-image: url("img/centerTop.gif");
+	background-repeat: no-repeat;
+	height: 12px;
+}
+
+.myManpowerCSS_mainContent2_create {
+	margin-left: 8px;
+	padding: 0px 20px 0px 0px; 
+	width: 591px;
+}
+
+.myManpowerCSS_commonJobApp {
+	padding-left: 10px; 
+}
+
+.myManpowerCSS_formStyle_create {
+	padding: 0px 0px 17px 15px; 
+	width: 630px;/* 637-15 */
+}
+
+.myManpowerCSS_myManpowerCSS_simpleText {
+		color:#7a838b;
+		font-weight: bolder;
+		font-size: 11px;
+}
+
+.myManpowerCSS_bottomFill_create {
+	background-color: #E3F0F8; 
+	width: 610px; 
+	/*height: 80px;*/
+}
+
+.myManpowerCSS_mainContentHeaderBox { 
+	color: white; 
+	padding: 20px 20px 10px 35px; 
+	background-image: url("img/centerTopFiller3.GIF");
+	background-repeat: repeat-y;
+	background-position: top left;
+	
+}
+
+.myManpowerCSS_mainContentHeaderBox_create { 
+	color: white; 
+	padding: 20px 20px 10px 35px; 
+	background-image: url("img/centerTopTitleFiller.gif");
+	background-repeat: repeat-y;
+	background-position: top left;
+	
+}
+
+.myManpowerCSS_centerBottomBorder_create {
+	background-image: url("img/centerBottomAddcover.gif");
+	background-repeat: no-repeat;
+	height: 23px;
+	margin-left: 4px;
+}
+
+.myManpowerCSS_mpInputBox {
+	font-weight: normal;
+	font-family: verdana;;
+	border: #5f81aa;
+	border-bottom-style: solid; 
+	border-left-style: solid; 
+	border-right-style: solid; 
+	border-style: solid; 
+	border-top-style: solid; 
+	border-width: 1px; 
+	font-size: 8pt; 
+}
+
+.myManpowerCSS_width100{
+	width: 100%; 
+}
+
+.myManpowerCSS_width98{
+	width: 98%; 
+}
+
+.myManpowerCSS_width95{
+	width: 95%; 
+}
+
+.myManpowerCSS_width90{
+	width: 90%; 
+}
+
+.myManpowerCSS_width80{
+	width: 80%; 
+}
+
+.myManpowerCSS_width70{
+	width: 70%; 
+}
+
+.myManpowerCSS_width60{
+	width: 60%; 
+}
+
+.myManpowerCSS_width50{
+	width: 50%;
+}
+
+.myManpowerCSS_width45{
+	width: 45%;
+}
+
+.myManpowerCSS_width40{
+	width: 40%;
+}
+.myManpowerCSS_width30{
+	width: 30%;
+}
+.myManpowerCSS_width20{
+	width: 20%;
+}
+.myManpowerCSS_width10{
+	width: 10%;
+}
+
+.myManpowerCSS_alignTop{
+	vertical-align: top;
+}
+
+.myManpowerCSS_alignCenter{
+	text-align: center;
+}
+
+.myManpowerCSS_plainGrayTable {
+		font-size: 8pt;
+		background-color:#ebebeb;
+}
+
+.myManpowerCSS_simpleOutputText{
+		color:#7a838b;
+		font-size: 12pt;
+		font-weight: bold;
+}
+
+.myManpowerCSS_simplePlusOutputText{
+		color:#7a838b;
+		font-size: 14pt;
+		font-weight: bold;
+}
+
+.myManpowerCSS_simpleOutputLinkText{
+		color: #8cb1cc;
+		font-size: 12px;
+}
+
+.myManpowerCSS_paddingLeftRight{
+	padding-left: 10px;
+	padding-right: 15px; 
+}
+
+
+.myManpowerCSS_paddingLeftRight25{
+	padding-left: 10px;
+	padding-right: 25px;
+}
+
+.myManpowerCSS_dummy{}
+
+.myManpowerCSS_height10{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height20{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height30{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height40{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height50{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height60{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height70{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_height80{ 
+	height: 10%; 
+}
+
+.myManpowerCSS_innerTitle_create {
+	text-align: left;
+	background-color: #DCEDF7; 
+	width: 571px; 
+	font-family:Arial; 
+	font-size:14px; 
+	font-weight: bolder;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #467295;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+.myManpowerCSS_tt1{
+	 font-size: 12px;
+	 
+	 font-weight: bold;
+	 padding-top:5px;
+	 color:#2A70AE;
+}
+
+.myManpowerCSS_tt2{
+	 font-size: 20px;
+	 font-weight: bold;
+	 color:#2A70AE;
+}
+
+.myManpowerCSS_smallheader{
+	font-weight:bold;
+	font-size:8pt;
+	
+}
+
+.myManpowerCSS_smallLink{
+
+text-decoration:underline;
+font-weight: bold;
+color: #8cb1cc;
+
+}
+
+.myManpowerCSS_headingstyle
+{
+	
+          
+             color: white; 
+             font-family: "courier, arial";
+             font-size: 13pt;
+             font-weight: heavy;
+             background-color:#ddecf7;
+		   	 margin: 1px;
+}
+
+.myManpowerCSS_simpleText{
+		color:black;
+		font-size: 11pt;
+		font-family: Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+}
+
+.myManpowerCSS_answerText{
+	font-size: 10pt;
+	font-weight: bold;
+	color:#424242;
+}
+.myManpowerCSS_questionTextStyle{
+	padding-left: 20px;
+	font-size: 8pt;
+	font-weight: bold;
+	color:#B4B4B4
+}
+
+.myManpowerCSS_smallText{
+	padding-right: 10px;
+	font-family: "arial,verdana";
+	font-size: 8pt;
+}
+
+.myManpowerCSS_questionTextStyle2{
+	
+	font-size: 8pt;
+	font-weight: bold;
+	color:#B4B4B4
+}
+
+.myManpowerCSS_headingText{
+	font-weight: bold;
+	font-size: 12pt;
+	color:#424242;
+}
+
+
+.tdmyManpowerCSS_questionTextStyle1{
+	padding-left: 20px;
+	font-size: 8pt;
+	font-weight: bold;
+	color:#B4B4B4;
+	text-align: right;
+	width: 150px;
+}
+
+.myManpowerCSS_tdanswearTextStyle2{
+	font-size: 10pt;
+	font-weight: bold;
+	color:#424242;
+	text-align: left;
+	width: 350px;
+}
+
+.myManpowerCSS_column_value_perc1{
+	width: 55%;
+
+	margin: 5px;
+	padding: 5px;
+	
+	
+	text-align: left;
+	vertical-align:text-top;
+	
+	font-size: 		10;
+	font-family: 	verdana;
+}
+
+.myManpowerCSS_column_label_perc2{
+	width: 45%;
+
+
+	margin-left: 5px;
+	padding-left: 25px;
+	
+	text-align: left;
+	font-size: 8pt;
+	
+}
+
+.progressBar {
+   border: 1px solid #819EB0;
+   height: 20px;
+}
+
+.progressBarBlock {
+   background: url(../theme/img/progressBarBlock.gif) repeat-x left top;
+}
+
+.progressBarFull{
+   background: url(../theme/img/progress-bar-full.gif)repeat-x center;
+   width: 16.7%;
+   margin: 0px;
+   padding: 0px;
+}
+
+
+.progressBarEmpty{
+   background: url(../theme/img/progress-bar-empty.gif)repeat-x center;
+   width: 16.7%;
+   margin: 0px;
+   padding: 0px;
+}
+
+.progressBlueBar{
+   background: url(../theme/img/progressBarBlock.gif);
+   background-repeat: repeat-x;
+   background-position:center;
+   width:18px;
+   margin: 0px;
+   padding: 0px;
+   border: none;
+}
+
+.progressBlank{
+   width: 16.7%;
+   margin: 0px;
+   padding: 0px;
+   text-align: center;
+   border: none;
+}
+
+.progressBarArrow1 {
+   background: url(../theme/img/progressBarArrow.gif)no-repeat;
+}
+
+.myManpower_Error {
+	padding: 2px;
+	color: red;
+	font-weight: bold;
+}
+
+.myManpower_TextBlue {
+	color: blue;
+}
+
+.myManpowerCSS_transparent {
+		filter:alpha(opacity=70);
+		-moz-opacity:.70;
+		opacity:.70;
+}
+
+.myManpowerCSS_plus{
+ 	background: url("img/plus.gif"); 
+	background-repeat: no-repeat;
+	height: 9px;
+	width: 9px;
+	color: #000;
+	font-size: 5px;	
+}
+
+.myManpowerCSS_minus{
+ 	background: url("img/minus.gif"); 
+	background-repeat: no-repeat;
+	height: 9px;
+	width: 9px;
+	color: #000;
+	font-size: 5px;
+}	
+	
+.myManpowerCSS_cross{
+ 	background: url("img/cross.gif"); 
+	background-repeat: no-repeat;
+	font-size: 10px;
+	font-family: arial,verdana;
+	text-align: left;
+	padding-left: 15px;
+}
+
+.myManpowerCSS_skillsTable{
+	color: #333333;
+	font-family: helvetica,arial,sans-serif;
+	font: bold; 
+}
+
+.myManpowerCSS_ja_smallText {
+		font-size: 10px;
+		font-family: arial,verdana;
+}
+
+.myManpowerCSS_useroff{
+ 	background: url("img/useroff.gif"); 
+	background-repeat: no-repeat;
+	font-size: 10px;
+	font-family: arial,verdana;
+	text-align: left;
+	padding-left: 15px;
+}
+
+.MyManpowerCSS_circleNum{
+	color: white;
+}
+
+.myManpowerCSS_configColumnClass2{
+	width:28%;
+	background-color: window;
+	margin:2px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	text-align: left;
+}
+
+.myManpowerCSS_configColumnClass1{
+	width:72%;
+	background-color: window;
+	margin:2px;
+	padding-left:4pt;
+	padding-right:4pt;
+	padding-bottom:2px;
+	text-align: left;
+}
+
+.myManpowerCSS_font12{
+	font-size: 12px;
+}
+
+.myManpowerCSS_font11{
+	font-size: 11px;
+}
+
+.blueBorders {
+	border: 1px solid #5f81aa;
+}
+
+.myManpower_cvNamesStyle{
+	text-indent: 10px;
+	font-weight: bolder;
+	font-size: 20pt;
+	font-style:italic;
+	text-align: left;
+	font-family: helvetica,arial,sans-serif;
+}
+.myManpower_sectionHeaderStyle{
+	text-indent: 5px;
+	font-weight: bold;
+	font-size: 	 12pt;
+	font-style:	 normal;
+	text-align:  left;
+	font-family: helvetica,arial,sans-serif;
+}
+
+
+.myManpower_cvTextStyle{
+	font-size: 10pt;
+	font-style:normal;
+	text-align: left;
+	font-family: helvetica,arial,sans-serif;
+}
+
+.myManpowerCSS_popUp_top{
+	background-image: url("img/pop_up_upper.gif");
+	background-repeat: no-repeat;
+}
+
+.myManpowerCSS_popUp_inner{
+	background-image: url("img/pop_up_inner.gif");
+	background-repeat: repeat-y;
+	padding: 10px;
+	padding-right: 20px;
+}
+
+.myManpowerCSS_popUp_bottom{
+	background-image: url("img/pop_up_bottom.gif");
+	background-repeat: no-repeat;
+}
+
+.myManpowerCSS_popUp_cross{
+	background-image: url("img/popUp_cross.gif");
+	background-repeat: no-repeat;
+}
+
+.topAlign{
+	text-align: top;
+}
+
+.text-font {
+	font-family:verdana;
+	font-size:11px;
+	line-height:18px;
+}
+
+.save-result-font {
+	font-family:verdana;
+	font-size:11px;
+	line-height:18px;
+	color: red;
+}
+
+.special-text {
+	font-size: 14px;
+	color: #6698C2;
+	font-weight: bolder;
+}
+
+.header-text {
+	font-size: 14px;
+	color: #fff;
+	font-weight: bolder;
+}
+
+.header_left_align {
+	text-align: left;
+}
+
+.welcome-title {
+	font-weight: bold;
+	font-size: 14px;
+	color: #000000;
+}
+
+.emergency-top-style{
+	background-image: url("img/emergency_upper.gif");
+	background-repeat: no-repeat;
+	height: 12px;
+	
+	margin-bottom: 0px;
+}
+
+.emergency-botom-style {
+	background-image: url("img/emergency_bottom.gif");
+	background-repeat: no-repeat;
+	height: 23px;
+	margin-left: 4px;
+	
+	margin-top: -5px;
+}
+
+.emergency-side-borders {
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+	width: 500px;
+}
+
+.manpower_blue {
+	color: #5F81AA;
+}
+
+.manpower_blue_name {
+	color: #5F81AA;
+	font-weight: bold;
+}
+
+.manpower_green {
+	color: #7EA190
+}
+
+.manpower_black {
+	color: #000000
+}
+
+.manpower_read_only_box {
+	width: 200px;
+	line-height: 15px;
+	border: none;
+	background-color: #B9B9B9;
+}
+
+.mainPageStyle{
+	background:url(../theme/img/background2.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	padding:2px;
+	margin: 1; 
+	text-align: top;
+}
+
+.internalMainPageStyle {
+	background:url(../theme/img/whitebackground.gif);
+	background-repeat: no-repeat;
+	background-position: top left;
+	padding:2px;
+	margin: 1; 
+	text-align: top;
+}
+
+#menu {
+	border-bottom : 1px solid #000;
+	margin : 0;
+	padding-bottom: 31px;
+	padding-left : 10px;
+}
+
+#menu ul, #menu li	{
+	display : inline;
+	list-style-type : none;
+	margin : 0;
+	padding : 0;
+}
+
+
+
+.active	{
+	background : url("img/tab_on2.jpg") no-repeat;
+	border-bottom : 1px solid #fff;
+	color : #000;
+	float : left;
+	line-height : 27px;
+	width: 88px;
+	margin-right : 8px;
+	text-align: center;
+	padding : 2px 10px 2px 10px;
+	text-decoration : none;
+}
+
+.inactive {
+	background: url("img/tab_off2.jpg") no-repeat;
+	color : white;
+	float : left;
+	line-height : 27px;
+	width: 88px;
+	text-align: center;
+	margin-right : 8px;
+	padding : 2px 10px 2px 10px;
+	text-decoration : none;
+}
+
+	
+form.section-1 #menu li#nav-1 a, 
+form.section-2 #menu li#nav-2 a,
+form.section-3 #menu li#nav-3 a,
+form.section-4 #menu li#nav-4 a {
+	background : #fff;
+	border-bottom : 1px solid #fff;
+	color : #000;
+}
+
+#menu #subnav-1,
+#menu #subnav-2,
+#menu #subnav-3,
+#menu #subnav-4 {
+	display : none;
+	width: 90%;
+}
+
+form.section-1 #menu ul#subnav-1, 
+form.section-2 #menu ul#subnav-2,
+form.section-3 #menu ul#subnav-3,
+form.section-4 #menu ul#subnav-4 {
+	display : inline;
+	left : 10px;
+	position : absolute;
+	top : 95px;
+}
+
+form.section-1 #menu ul#subnav-1 a, 
+form.section-2 #menu ul#subnav-2 a,
+form.section-3 #menu ul#subnav-3 a,
+form.section-4 #menu ul#subnav-4 a {
+	background : #fff;
+	border : none;
+	border-left : 1px solid #ccc;
+	color : #999;
+	font-size : smaller;
+	font-weight : bold;
+	line-height : 10px;
+	margin-right : 4px;
+	padding : 2px 10px 2px 10px;
+	text-decoration : none;
+}
+
+
+
+#contents {
+	background : #fff;
+	border : 1px solid #000;
+	border-top : none;
+	clear : both;
+	margin : 0px;
+	padding : 5px;
+}

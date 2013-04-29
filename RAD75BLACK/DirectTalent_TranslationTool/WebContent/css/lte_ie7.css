@@ -1,0 +1,8 @@
+
+#Page .step2 dl dd{
+        display: block;
+        float: none;/* #lta */
+}
+#Page .step3 dl dd{
+        float: none;
+}

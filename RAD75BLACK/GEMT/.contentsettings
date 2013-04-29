@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><contentsettings>
+    <file html-document-type="-//W3C//DTD HTML 4.01 Transitional//EN" path="WebContent/GEMTEntryForm/GEMTEntryFormView.jsp"/>
+    <file html-document-type="-//W3C//DTD HTML 4.01 Transitional//EN" path="WebContent/GEMTEntryForm/GEMTEntryFormEdit.jsp"/>
+    <file html-document-type="-//W3C//DTD HTML 4.01 Transitional//EN" path="WebContent/GEMTEntryForm/GEMTEntryFormHelp.jsp"/>
+    <file html-document-type="-//W3C//DTD HTML 4.01 Transitional//EN" path="WebContent/GEMTEntryForm/GEMTEntryFormConfigure.jsp"/>
+</contentsettings>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+		 <!-- 
+		 			This package contains the object backed version of the Register action.  We have separated into
+		 			a separate package for the sake of clarity.  Note, we are extending the chapterThreePublic package
+		 			so that we can inherit all of the components.  We will reuse many of them.  We merely want to 
+		 			take advantage of the modularization of Struts 2 to make the sample code more clear.  Note also 
+		 			that we are still  using the same namespace as in the original chapter three version.   
+		 -->
+		
+    <package name="chapterThreeObjectBacked" namespace="/chapterThree" extends="chapterThreePublic">
+        
+        <action name="RegistrationOB" >
+					<result>/chapterThree/Registration_OB.jsp</result>
+        </action>
+      
+        <action name="RegisterOB" class="manning.chapterThree.objectBacked.ObjectBackedRegister">
+					<result>/chapterThree/RegistrationSuccess_OB.jsp</result>
+					<result name="input">/chapterThree/Registration_OB.jsp</result>
+        </action>
+        
+   </package>
+
+
+</struts>

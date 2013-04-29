@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="EntityAccessService" targetNamespace="http://entity.webservice.bis.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://entity.webservice.bis.com/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://entity.webservice.bis.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <schema targetNamespace="http://entity.webservice.bis.com/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://entity.webservice.bis.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="DataNotFoundException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="InvalidArgumentException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ServerErrorException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="EntityFormattedDateBean">
+        <sequence>
+          <element name="XSDateTime" type="boolean"/>
+          <element name="dateFormat" type="short"/>
+          <element name="localeName" nillable="true" type="string"/>
+          <element name="timeFormat" type="short"/></sequence></complexType></schema>
+  </types>
+  <message name="IEntityAccess_removeEntityResponse">
+  </message>
+  <message name="InvalidArgumentException">
+    <part name="InvalidArgumentException" type="ns2:InvalidArgumentException"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByNameFormattedResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByName">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+  </message>
+  <message name="DataNotFoundException">
+    <part name="DataNotFoundException" type="ns2:DataNotFoundException"/>
+  </message>
+  <message name="IEntityAccess_saveEntity">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_saveEntityResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_saveEntityFormattedResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByADUsername">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="EntityFormattedDateBean_3" type="ns2:EntityFormattedDateBean"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByNameResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_saveEntityFormatted">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="EntityFormattedDateBean_3" type="ns2:EntityFormattedDateBean"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntity">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityFormatted">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="EntityFormattedDateBean_3" type="ns2:EntityFormattedDateBean"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByADUsernameResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_removeEntity">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="IEntityAccess_lockEntityResponse">
+  </message>
+  <message name="IEntityAccess_getUserAsEntityResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_deleteEntity">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="IEntityAccess_deleteEntityResponse">
+  </message>
+  <message name="IEntityAccess_getUserAsEntityByNameFormatted">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="EntityFormattedDateBean_3" type="ns2:EntityFormattedDateBean"/>
+  </message>
+  <message name="ServerErrorException">
+    <part name="ServerErrorException" type="ns2:ServerErrorException"/>
+  </message>
+  <message name="IEntityAccess_unlockEntity">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="long_3" type="xsd:long"/>
+  </message>
+  <message name="IEntityAccess_getEntityFormatted">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="EntityFormattedDateBean_3" type="ns2:EntityFormattedDateBean"/>
+  </message>
+  <message name="IEntityAccess_unlockEntityResponse">
+  </message>
+  <message name="IEntityAccess_getEntityResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_getUserAsEntityFormattedResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_lockEntity">
+    <part name="long_1" type="xsd:long"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="long_3" type="xsd:long"/>
+  </message>
+  <message name="IEntityAccess_getEntityFormattedResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="IEntityAccess_getEntity">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <portType name="IEntityAccess">
+    <operation name="deleteEntity" parameterOrder="String_1 long_2">
+      <input message="tns:IEntityAccess_deleteEntity"/>
+      <output message="tns:IEntityAccess_deleteEntityResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getEntity" parameterOrder="String_1 long_2">
+      <input message="tns:IEntityAccess_getEntity"/>
+      <output message="tns:IEntityAccess_getEntityResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getEntityFormatted" parameterOrder="String_1 long_2 EntityFormattedDateBean_3">
+      <input message="tns:IEntityAccess_getEntityFormatted"/>
+      <output message="tns:IEntityAccess_getEntityFormattedResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getUserAsEntity" parameterOrder="String_1 long_2">
+      <input message="tns:IEntityAccess_getUserAsEntity"/>
+      <output message="tns:IEntityAccess_getUserAsEntityResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getUserAsEntityByADUsername" parameterOrder="String_1 String_2 EntityFormattedDateBean_3">
+      <input message="tns:IEntityAccess_getUserAsEntityByADUsername"/>
+      <output message="tns:IEntityAccess_getUserAsEntityByADUsernameResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getUserAsEntityByName" parameterOrder="String_1 String_2">
+      <input message="tns:IEntityAccess_getUserAsEntityByName"/>
+      <output message="tns:IEntityAccess_getUserAsEntityByNameResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getUserAsEntityByNameFormatted" parameterOrder="String_1 String_2 EntityFormattedDateBean_3">
+      <input message="tns:IEntityAccess_getUserAsEntityByNameFormatted"/>
+      <output message="tns:IEntityAccess_getUserAsEntityByNameFormattedResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getUserAsEntityFormatted" parameterOrder="String_1 long_2 EntityFormattedDateBean_3">
+      <input message="tns:IEntityAccess_getUserAsEntityFormatted"/>
+      <output message="tns:IEntityAccess_getUserAsEntityFormattedResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="lockEntity" parameterOrder="long_1 String_2 long_3">
+      <input message="tns:IEntityAccess_lockEntity"/>
+      <output message="tns:IEntityAccess_lockEntityResponse"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="removeEntity" parameterOrder="String_1 long_2">
+      <input message="tns:IEntityAccess_removeEntity"/>
+      <output message="tns:IEntityAccess_removeEntityResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="saveEntity" parameterOrder="String_1 String_2">
+      <input message="tns:IEntityAccess_saveEntity"/>
+      <output message="tns:IEntityAccess_saveEntityResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="saveEntityFormatted" parameterOrder="String_1 String_2 EntityFormattedDateBean_3">
+      <input message="tns:IEntityAccess_saveEntityFormatted"/>
+      <output message="tns:IEntityAccess_saveEntityFormattedResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="unlockEntity" parameterOrder="long_1 String_2 long_3">
+      <input message="tns:IEntityAccess_unlockEntity"/>
+      <output message="tns:IEntityAccess_unlockEntityResponse"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+  </portType>
+  <binding name="IEntityAccessBinding" type="tns:IEntityAccess">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="deleteEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getEntityFormatted">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getUserAsEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getUserAsEntityByADUsername">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getUserAsEntityByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getUserAsEntityByNameFormatted">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getUserAsEntityFormatted">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="lockEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="removeEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="saveEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="saveEntityFormatted">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="unlockEntity">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://entity.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="EntityAccessService">
+    <port binding="tns:IEntityAccessBinding" name="IEntityAccessPort">
+      <!-- DEV -->
+      <!-- soap:address location="http://10.14.2.101:8080/WebApp/EntityAccess"/-->
+      <!-- UAT -->
+      <soap:address location="http://10.151.100.63/WebApp/EntityAccess"/>
+    </port>
+  </service>
+</definitions>

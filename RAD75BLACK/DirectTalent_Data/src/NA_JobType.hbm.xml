@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.NA_JobType" table="NA_JOB_TYPE">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">NA_JOB_TYPE_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="site_id" />
+		</property>
+		<property name="display">
+			<column name="display" />
+		</property>
+		<list name="jobClasses" lazy="true" inverse="true">
+      		<key column="JOB_TYPE_ID"/>
+      		<index column="ID"/>
+      		<one-to-many class="com.manpower.portal.mpnet.hbn.beans.NA_JobClass"/>
+  		</list>
+ 	</class>
+</hibernate-mapping>

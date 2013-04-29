@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.AdvertisementContact" table="ADVERTISEMENTCONTACTS">
+		<id name="id" type="long" column="ADVERTCONTACTID" >
+		<generator class="sequence"> 
+			<param name="sequence">ADVERTISEMENTCONTACTS_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="contactName">
+			<column name="NAME" />
+		</property>
+		<property name="address1">
+			<column name="ADDRESS1" />
+		</property>
+		<property name="address2">
+			<column name="ADDRESS2" />
+		</property>
+		<property name="poBox">
+			<column name="POBOX" />
+		</property>
+		<property name="city">
+			<column name="CITY" />
+		</property>
+		<property name="state">
+			<column name="STATE" />
+		</property>
+		<property name="postalCode">
+			<column name="POSTALCODE" />
+		</property>
+		<property name="country">
+			<column name="COUNTRY" />
+		</property>
+		<property name="branchId" type="long">
+			<column name="BRANCH_ID" />
+		</property>
+		<property name="advertisementId" type="long">
+			<column name="ADVERTISEMENTID" />
+		</property>
+		
+		<property name="phone">
+			<column name="PHONENUMBER"/>
+		</property>
+
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+				<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="createdBy">
+			<column name="CREATED_BY"/>
+		</property>
+		<property name="changedBy">
+			<column name="CHANGED_BY" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>
+		<property name="externalId">
+			<column name="EXTERNALID" />
+		</property>		
+		<property name="recruiterUserId">
+			<column name="RECRUITER_USER_ID"></column>
+		</property>
+		<property name="userId">
+			<column name="USER_ID"></column>
+		</property>
+		
+		<many-to-one name="branch" column="BRANCH_ID" class="com.manpower.portal.mpnet.hbn.beans.Branch" not-null="false" insert="false" update="false"/>
+		
+ 	</class>
+</hibernate-mapping>

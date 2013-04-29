@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="SearchService" targetNamespace="http://search.webservice.bis.com/" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns2="http://search.webservice.bis.com/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://search.webservice.bis.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <types>
+    <schema targetNamespace="http://search.webservice.bis.com/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://search.webservice.bis.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="DataNotFoundException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="InvalidArgumentException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ServerErrorException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfSearchParameter">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:SearchParameter[]"/></restriction></complexContent></complexType>
+      <complexType name="SearchParameter">
+        <sequence>
+          <element name="dataType" type="int"/>
+          <element name="dateValue" nillable="true" type="dateTime"/>
+          <element name="longValue" type="long"/>
+          <element name="name" nillable="true" type="string"/>
+          <element name="stringValue" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ArrayOflong">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="long[]"/></restriction></complexContent></complexType>
+      <complexType name="ArrayOfstring">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="string[]"/></restriction></complexContent></complexType>
+      <complexType name="SearchFormattedDateBean">
+        <sequence>
+          <element name="XSDateTime" type="boolean"/>
+          <element name="dateFormat" type="short"/>
+          <element name="localeName" nillable="true" type="string"/>
+          <element name="timeFormat" type="short"/></sequence></complexType>
+      <complexType name="SearchResultBean">
+        <sequence>
+          <element name="createdBy" type="long"/>
+          <element name="createdDate" nillable="true" type="dateTime"/>
+          <element name="entityIDs" nillable="true" type="tns:ArrayOflong"/>
+          <element name="highlight" type="int"/>
+          <element name="label" nillable="true" type="string"/>
+          <element name="modifiedBy" type="long"/>
+          <element name="modifiedDate" nillable="true" type="dateTime"/>
+          <element name="ownerID" type="long"/>
+          <element name="searchDefinitionID" type="long"/>
+          <element name="searchName" nillable="true" type="string"/>
+          <element name="searchResultId" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfSearchColumnBean">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:SearchColumnBean[]"/></restriction></complexContent></complexType>
+      <complexType name="SearchColumnBean">
+        <sequence>
+          <element name="display" type="short"/>
+          <element name="language" nillable="true" type="string"/>
+          <element name="referencePath" nillable="true" type="string"/>
+          <element name="sort" type="short"/></sequence></complexType></schema>
+  </types>
+  <message name="ISearchService_getAllSearchDefinitionNamesResponse">
+    <part name="result" type="ns2:ArrayOfstring"/>
+  </message>
+  <message name="ISearchService_getFormattedSearchResultResponse">
+    <part name="result" type="xsd:string"/>
+  </message>
+  <message name="ISearchService_getSearchResultResponse">
+    <part name="result" type="ns2:SearchResultBean"/>
+  </message>
+  <message name="ISearchService_getAllSearchDefinitionNames">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="ISearchService_runSearchAndAssignToUser">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="arrayOfSearchParameter_3" type="ns2:ArrayOfSearchParameter"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="String_5" type="xsd:string"/>
+  </message>
+  <message name="ISearchService_runSearchById">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="arrayOfSearchParameter_3" type="ns2:ArrayOfSearchParameter"/>
+    <part name="int_4" type="xsd:int"/>
+  </message>
+  <message name="ISearchService_getAllSearchResultsForWebUser">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="ISearchService_echoParametersResponse">
+    <part name="result" type="ns2:ArrayOfSearchParameter"/>
+  </message>
+  <message name="ISearchService_deleteSearchResultResponse">
+  </message>
+  <message name="ISearchService_getAllSearchResultsForWebUserResponse">
+    <part name="result" type="ns2:ArrayOflong"/>
+  </message>
+  <message name="ISearchService_resetToDefaultFormatterResponse">
+  </message>
+  <message name="ISearchService_runSearchByNameResponse">
+    <part name="result" type="ns2:SearchResultBean"/>
+  </message>
+  <message name="ISearchService_getAllSearchResultsForUser">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+  </message>
+  <message name="ISearchService_getFormattedSearchResult">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="int_3" type="xsd:int"/>
+    <part name="int_4" type="xsd:int"/>
+    <part name="SearchFormattedDateBean_5" type="ns2:SearchFormattedDateBean"/>
+  </message>
+  <message name="ISearchService_getSearchResultCount">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="ISearchService_getSearchResultCountResponse">
+    <part name="result" type="xsd:long"/>
+  </message>
+  <message name="ISearchService_getStoredResultList">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="arrayOfSearchParameter_3" type="ns2:ArrayOfSearchParameter"/>
+  </message>
+  <message name="ISearchService_runSearchAndAssignToUserResponse">
+    <part name="result" type="ns2:SearchResultBean"/>
+  </message>
+  <message name="ISearchService_getAllSearchDefinitionIDs">
+    <part name="String_1" type="xsd:string"/>
+  </message>
+  <message name="InvalidArgumentException">
+    <part name="InvalidArgumentException" type="ns2:InvalidArgumentException"/>
+  </message>
+  <message name="ISearchService_resetToDefaultFormatter">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="ISearchService_runSearchByIdResponse">
+    <part name="result" type="ns2:SearchResultBean"/>
+  </message>
+  <message name="ISearchService_getAllSearchDefinitionIDsResponse">
+    <part name="result" type="ns2:ArrayOflong"/>
+  </message>
+  <message name="ISearchService_getAllSearchResultsForUserResponse">
+    <part name="result" type="ns2:ArrayOflong"/>
+  </message>
+  <message name="ISearchService_getStoredResultListResponse">
+    <part name="result" type="ns2:ArrayOflong"/>
+  </message>
+  <message name="ISearchService_setSearchResultFormatter">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="arrayOfSearchColumnBean_3" type="ns2:ArrayOfSearchColumnBean"/>
+  </message>
+  <message name="DataNotFoundException">
+    <part name="DataNotFoundException" type="ns2:DataNotFoundException"/>
+  </message>
+  <message name="ISearchService_echoParameters">
+    <part name="arrayOfSearchParameter_1" type="ns2:ArrayOfSearchParameter"/>
+  </message>
+  <message name="ISearchService_runSearchByName">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="arrayOfSearchParameter_3" type="ns2:ArrayOfSearchParameter"/>
+    <part name="int_4" type="xsd:int"/>
+  </message>
+  <message name="ISearchService_getSearchResult">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="ServerErrorException">
+    <part name="ServerErrorException" type="ns2:ServerErrorException"/>
+  </message>
+  <message name="ISearchService_deleteSearchResult">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+  </message>
+  <message name="ISearchService_setSearchResultFormatterResponse">
+  </message>
+  <portType name="ISearchService">
+    <operation name="deleteSearchResult" parameterOrder="String_1 long_2">
+      <input message="tns:ISearchService_deleteSearchResult"/>
+      <output message="tns:ISearchService_deleteSearchResultResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="echoParameters" parameterOrder="arrayOfSearchParameter_1">
+      <input message="tns:ISearchService_echoParameters"/>
+      <output message="tns:ISearchService_echoParametersResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getAllSearchDefinitionIDs" parameterOrder="String_1">
+      <input message="tns:ISearchService_getAllSearchDefinitionIDs"/>
+      <output message="tns:ISearchService_getAllSearchDefinitionIDsResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getAllSearchDefinitionNames" parameterOrder="String_1">
+      <input message="tns:ISearchService_getAllSearchDefinitionNames"/>
+      <output message="tns:ISearchService_getAllSearchDefinitionNamesResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getAllSearchResultsForUser" parameterOrder="String_1 String_2">
+      <input message="tns:ISearchService_getAllSearchResultsForUser"/>
+      <output message="tns:ISearchService_getAllSearchResultsForUserResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getAllSearchResultsForWebUser" parameterOrder="String_1">
+      <input message="tns:ISearchService_getAllSearchResultsForWebUser"/>
+      <output message="tns:ISearchService_getAllSearchResultsForWebUserResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getFormattedSearchResult" parameterOrder="String_1 long_2 int_3 int_4 SearchFormattedDateBean_5">
+      <input message="tns:ISearchService_getFormattedSearchResult"/>
+      <output message="tns:ISearchService_getFormattedSearchResultResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getSearchResult" parameterOrder="String_1 long_2">
+      <input message="tns:ISearchService_getSearchResult"/>
+      <output message="tns:ISearchService_getSearchResultResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getSearchResultCount" parameterOrder="String_1 long_2">
+      <input message="tns:ISearchService_getSearchResultCount"/>
+      <output message="tns:ISearchService_getSearchResultCountResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="getStoredResultList" parameterOrder="String_1 String_2 arrayOfSearchParameter_3">
+      <input message="tns:ISearchService_getStoredResultList"/>
+      <output message="tns:ISearchService_getStoredResultListResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="resetToDefaultFormatter" parameterOrder="String_1 long_2">
+      <input message="tns:ISearchService_resetToDefaultFormatter"/>
+      <output message="tns:ISearchService_resetToDefaultFormatterResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="runSearchAndAssignToUser" parameterOrder="String_1 String_2 arrayOfSearchParameter_3 int_4 String_5">
+      <input message="tns:ISearchService_runSearchAndAssignToUser"/>
+      <output message="tns:ISearchService_runSearchAndAssignToUserResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="runSearchById" parameterOrder="String_1 long_2 arrayOfSearchParameter_3 int_4">
+      <input message="tns:ISearchService_runSearchById"/>
+      <output message="tns:ISearchService_runSearchByIdResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="runSearchByName" parameterOrder="String_1 String_2 arrayOfSearchParameter_3 int_4">
+      <input message="tns:ISearchService_runSearchByName"/>
+      <output message="tns:ISearchService_runSearchByNameResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+    <operation name="setSearchResultFormatter" parameterOrder="String_1 long_2 arrayOfSearchColumnBean_3">
+      <input message="tns:ISearchService_setSearchResultFormatter"/>
+      <output message="tns:ISearchService_setSearchResultFormatterResponse"/>
+      <fault message="tns:InvalidArgumentException" name="InvalidArgumentException"/>
+      <fault message="tns:DataNotFoundException" name="DataNotFoundException"/>
+      <fault message="tns:ServerErrorException" name="ServerErrorException"/>
+    </operation>
+  </portType>
+  <binding name="ISearchServiceBinding" type="tns:ISearchService">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="deleteSearchResult">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="echoParameters">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getAllSearchDefinitionIDs">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getAllSearchDefinitionNames">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsForUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getAllSearchResultsForWebUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getFormattedSearchResult">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getSearchResult">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getSearchResultCount">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="getStoredResultList">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="resetToDefaultFormatter">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="runSearchAndAssignToUser">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="runSearchById">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="runSearchByName">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+    <operation name="setSearchResultFormatter">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </input>
+      <output>
+        <soap:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="InvalidArgumentException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="DataNotFoundException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" name="ServerErrorException" namespace="http://search.webservice.bis.com/" use="encoded"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="SearchService">
+    <port binding="tns:ISearchServiceBinding" name="ISearchServicePort">
+      <!-- DEV -->
+      <!-- soap:address location="http://10.14.2.101:8080/WebApp/SearchService"/-->
+      <!-- UAT -->
+      <soap:address location="http://10.151.100.63/WebApp/SearchService"/>   
+    </port>
+  </service>
+</definitions>

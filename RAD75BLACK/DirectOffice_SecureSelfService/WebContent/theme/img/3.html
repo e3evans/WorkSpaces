@@ -1,0 +1,373 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Version 1 Tabs: Sliding Doors of CSS</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style type="text/css" media="screen">@import "v1.cssXX";</style>
+  
+<style type="text/css">
+
+body {
+	margin: 20px;
+	padding: 0;
+	font-family: arial, helvetica, serif;
+	background: #4e8abe;
+}
+
+#nav, #nav ul { /* all lists */
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	line-height: 1;
+}
+
+#nav li ul { /* second-level lists */
+	padding-top: 20px;
+	margin: -19px 0 0 -5px;
+	position: absolute;
+	
+	/* UPDATE TO CHANGE WIDTH OF SUBMENU */
+	/* background: url(white80notile.gif) no-repeat left bottom;
+	width: 111px; */ /* small */
+	/* background: url(white80notile156.gif) no-repeat left bottom;
+	width: 156px;  */ /* medium */	
+	background: url(white80notile176.gif) no-repeat left bottom;
+	width: 176px; 
+	
+	padding-bottom: 20px;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#nav li:hover ul, #nav li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+
+
+#nav li { /* all list items */
+	float: left;
+	background: url(left_off.gif) no-repeat left top;
+	margin: 0;
+	padding: 0 0 0 6px;
+	font: 14px/14px helvetica,"Trebuchet MS",arial;
+	font-weight: normal;
+}
+
+#nav a {
+	float: left;
+	display: block;
+	background: url(right_off.gif) no-repeat right top;
+	padding: 10px 11px 24px 6px;
+	text-decoration: none;
+	color: #fff;
+}
+/* Commented Backslash Hack
+	 hides rule from IE5-Mac \*/
+#nav a {float:none;}
+/* End IE5-Mac hack */
+#nav a:hover {
+	color: #000;
+	}
+#nav #current {
+	background-image: url(left_on.gif);
+	}
+#nav #current a {
+	background-image: url(right_on2.gif);
+	padding-left: 5px;
+	color: #525252;
+	}
+#nav #current a:hover {
+	color: #000;
+	}
+
+#nav #current li {
+	background-image: none;
+	}
+#nav #current li a {
+	background-image: none;
+	padding-left: 0px;
+	}
+
+
+/*Non-IE6*/
+#nav li ul li a, #nav li ul li {
+	font-size: 12px;
+	font-weight: bold;
+	color: #525252;
+	background-image: none;
+	text-align: left;
+}
+#nav li ul li {
+	padding: 0 12px 0 13px;
+	
+	/* UPDATE TO CHANGE WIDTH OF SUBMENU */
+	/*width: 111px;*/ /* small */
+	/*width: 131px;*/ /* medium */
+	width: 151px; /* large */
+}
+#nav li:hover ul, #nav li.sfhover ul, {
+	z-index: 398;
+/*
+	display: block; 
+	position: absolute; 
+	padding: 14px 7px 13px 0;
+	margin: -19px 0 0 -7px;
+*/
+}
+#nav li:hover ul li a, #nav li:hover ul li a, 
+#nav li.sfhover ul li a, #nav li.sfhover ul li a  { 
+	display:block; 
+	height:auto; 
+	line-height: 16px; 
+	margin-left: 0px; 
+	padding: 4px 16px 4px 0; 
+	border-bottom: dotted 1px #8e9295; 
+	color: #525252;
+} /*Color subcells normal mode*/
+
+#nav li:hover ul li a:hover,
+#nav li.sfhover ul li a.sfhover {
+	text-decoration:none; 
+	color: #000; 
+	cursor: hand; 
+	background: #e4e4e4;
+} /*Color subcells hovering mode*/
+
+
+
+
+
+#nav li li { /* all list items */
+	padding: 0 0 0 0px;
+	width: 10em; /* ATK MAY NEED TO CHANGE */
+}
+
+#nav li ul { /* second-level lists */
+	position: absolute;
+	left: -999em; /* using left instead of display to hide menus because display: none isn't read by screen readers */
+}
+
+#nav li ul ul { /* third-and-above-level lists */
+	margin: -1em 0 0 10em;
+}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, 
+#nav li.sfhover ul, #nav li li.sfhover ul { /* lists nested under hovered list items */
+	left: auto;
+}
+
+#content {
+	clear: left;
+	color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+/* third-and-above-level lists */
+
+
+#nav li:hover ul li li a, 
+#nav li.sfhover ul li li a { 
+/*
+	display:block; 
+	height:auto; 
+	margin-left: 0px; 
+*/
+	line-height: 12px; 
+	padding: 0;
+	padding: 4px 16px 4px 0px; 
+	font-size: 11px;
+	font-weight: normal;
+	border-bottom: none; 
+	color: #525252;
+} /*Color subcells normal mode*/
+
+#nav li:hover ul li li, 
+#nav li.sfhover ul li li{ 
+/*
+	display:block; 
+	height:auto; 
+	line-height: 16px; 
+	margin-left: 0px; 
+	padding: 4px 16px 4px 0; 
+*/
+} 
+
+#nav li ul li ul { /* second-level lists */
+	position: absolute;
+	background: #e4e4e4;
+	padding: 6px 2px;
+	width: 10em; /* ATK MAY NEED TO CHANGE */
+	left: -999em; 
+	margin-top: -26px;
+	
+	/* UPDATE TO CHANGE WIDTH OF SUBMENU */
+	/*margin-left: 123px;*/ /* small */
+	/*margin-left: 143px;*/ /* medium */
+	margin-left: 163px; /* large */
+}
+
+
+
+#nav li ul li ul li {
+	padding: 0 12px 0 10px;
+	width: 111px;
+}
+#nav #current {
+	background-image: url(left_on.gif);
+	}
+#nav #current ul a {
+	color: #525252;
+	}
+#nav #current ul a:hover {
+	color: #000;
+	}
+
+
+</style>
+
+
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+
+sfHover = function() {
+	var sfEls = document.getElementById("nav").getElementsByTagName("LI");
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", sfHover);
+
+//--><!]]></script>
+  
+</head>
+
+<body>
+
+<div id="header">
+  <ul id="nav"><!-- 
+    --><li><a href="index.html">Home </a></li><!-- 
+    --><li id="current"><a href="2.html">My Account</a><!-- 
+		--><ul><!--
+			--><li><a href="#">Lorem ipsum &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Betta</a></li>
+					<li><a href="#">Colisa</a></li>
+				</ul>
+			</li><li><a href="#">Dolor sit amet Dolor sit amet &#187;</a>
+				<ul>
+					<li><a href="#">Macropodus</a></li>
+					<li><a href="#">Malpulutta</a></li>
+					<li><a href="#">Parosphromenus</a></li>
+					<li><a href="#">Pseudosphromenus</a></li>
+					<li><a href="#">Sphaerichthys</a></li>
+				</ul>
+			</li><li><a href="#">Consectetuer a b c d e f g h i j k l m n o p &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Betta</a></li>
+					<li><a href="#">Colisa</a></li>
+					<li><a href="#">Macropodus</a></li>
+					<li><a href="#">Malpulutta</a></li>
+					<li><a href="#">Parosphromenus</a></li>
+					<li><a href="#">Pseudosphromenus Pseudos Phromenus</a></li>
+					<li><a href="#">Sphaerichthys</a></li>
+					<li><a href="#">Trichogaster</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li><li><a href="#">Adipiscing elit &#187;</a>
+				<ul>
+					<li><a href="#">Sphaerichthys</a></li>
+					<li><a href="#">Trichogaster</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li><li><a href="#">Integer auctor &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li>	
+		</ul><!-- 
+	--></li><!-- 
+    --><li><a href="3.html">Find Jobs</a><!-- 
+		--><ul><!-- 
+			--><li><a href="#">Lorem ipsum at leo &#187;</a></li><li><a href="#">Dolor sit amet &#187;</a></li><li><a href="#">Consectetuer &#187;</a></li><li><a href="#">Adipiscing elit &#187;</a></li><li><a href="#">Integer auctor &#187;</a></li><!-- 
+		--></ul></li><!-- 
+    --><li><a href="4.html">For Employers</a><!-- 
+		--><ul><!-- 
+			--><li><a href="#">Lorem ipsum volutpat &#187;</a></li><li><a href="#">Dolor sit amet &#187;</a></li><li><a href="#">Consectetuer &#187;</a></li><li><a href="#">Adipiscing elit &#187;</a></li><li><a href="#">Integer auctor &#187;</a></li><li><a href="#">Nullam volutpat magna &#187;</a></li><!-- 
+		--></ul></li><!-- 
+    --><li><a href="5.html">Career Resources</a><!-- 
+		--><ul><!-- 
+			--><li><a href="#">Adipiscing elit &#187;</a></li><li><a href="#">Integer auctor &#187;</a></li><li><a href="#">Nullam volutpat magna &#187;</a></li><!-- 		
+		--></ul></li><!-- 
+    --><li><a href="6.html">About Manpower</a><!-- 
+		--><ul><!--
+			--><li><a href="#">Lorem ipsum &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Betta</a></li>
+					<li><a href="#">Colisa</a></li>
+				</ul>
+			</li><li><a href="#">Dolor sit amet &#187;</a>
+				<ul>
+					<li><a href="#">Macropodus</a></li>
+					<li><a href="#">Malpulutta</a></li>
+					<li><a href="#">Parosphromenus</a></li>
+					<li><a href="#">Pseudosphromenus</a></li>
+					<li><a href="#">Sphaerichthys</a></li>
+				</ul>
+			</li><li><a href="#">Consectetuer &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Betta</a></li>
+					<li><a href="#">Colisa</a></li>
+					<li><a href="#">Macropodus</a></li>
+					<li><a href="#">Malpulutta</a></li>
+					<li><a href="#">Parosphromenus</a></li>
+					<li><a href="#">Pseudosphromenus</a></li>
+					<li><a href="#">Sphaerichthys</a></li>
+					<li><a href="#">Trichogaster</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li><li><a href="#">Adipiscing elit &#187;</a>
+				<ul>
+					<li><a href="#">Sphaerichthys</a></li>
+					<li><a href="#">Trichogaster</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li><li><a href="#">Integer auctor &#187;</a>
+				<ul>
+					<li><a href="#">Belontia</a></li>
+					<li><a href="#">Trichopsis</a></li>
+				</ul>
+			</li>	
+		</ul><!-- 
+	--></li><!-- 
+  --></ul>
+</div>
+ 
+<!-- 
+Molestie mauris
+Donec dictum 
+Sed libero. Quisque at leo. Suspendisse id tellus. Sed eros. Aenean pulvinar bibendum massa. Vivamus dui nisi, volutpat et, pulvinar in, pulvinar sit amet, nisi. Nullam volutpat magna in leo. -->
+<!-- <img src="fpo.gif" width="619" height="100" border="0" /> -->
+</body>
+</html>

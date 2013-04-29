@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><persistence>
+<jsp-scripting>
+        <session>
+            <variable name="testing" type="java.lang.String"/>
+        <variable name="libItems" type="java.util.List">
+                <collectionProperty name="libItems">
+                    <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            </variable>
+        </session>
+    <request id="/WcmCrawler/WebContent/WcmCrawlerView.jsp">
+            
+        </request>
+    </jsp-scripting>
+<beanData>
+        <bean id="/WcmCrawler/WebContent/WcmCrawlerView.jsp" type="java.util.List">
+            <collectionProperty name="libraryItems">
+                <contains type="java.lang.Object"/>
+            </collectionProperty>
+        </bean>
+    </beanData>
+</persistence>

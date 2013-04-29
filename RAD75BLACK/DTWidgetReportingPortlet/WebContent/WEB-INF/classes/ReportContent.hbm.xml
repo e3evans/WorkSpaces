@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.directalent.rss.hbn.beans.ReportContent"
+		table="REPORTS">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">REPORT_SEQ</param>
+			</generator>
+		</id>
+
+		<property name="reportContent" type="text">
+			<column name="REPORT" />
+		</property>
+
+		<property name="mimeType" type="string">
+			<column name="MIME_TYPE" />
+		</property>
+		
+		<property name="reportName" type="string">
+			<column name="RPT_NAME" />
+		</property>
+
+	</class>
+</hibernate-mapping>
+

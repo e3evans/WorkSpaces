@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.JobTitle" table="JOBTITLES">
+		
+		<id name="id" type="long" column="ID">
+			<generator class="sequence"> 
+				<param name="sequence">JOBTITLES_SEQ</param>
+			</generator>
+		</id>
+
+
+		<property name="siteId">
+			<column name="SITE_ID"/>
+		</property>		
+		
+		<property name="code">
+			<column name="CODE" />
+		</property>		
+		
+		<property name="description">
+			<column name="REMARKS"/>
+		</property>
+		
+		<map name="jobTitleNames" table="JOBTITLENAMES" lazy="false">
+			<key column="JOBTITLE_ID"/>
+			<map-key column="LANG" type="string"></map-key>
+			<composite-element class="com.manpower.portal.mpnet.hbn.beans.JobTitleName">
+				<property name="jobTitleName" column="JOBTITLE_NAME"></property>
+			</composite-element>
+		</map>
+
+ 	</class>
+</hibernate-mapping>
+

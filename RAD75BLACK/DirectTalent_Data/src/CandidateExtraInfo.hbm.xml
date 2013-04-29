@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.CandidateExtraInfo" table="CANDIDATEEXTRAINFO">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">CANDIDATEEXTRAINFO_SEQ</param>
+			</generator>
+		</id>
+		<property name="candidateId" type="long">
+			<column name="CANDIDATE_ID"></column>
+		</property>
+		<property name="noEducated" type="boolean">
+			<column name="NOEDUCATION" sql-type="integer"></column>
+		</property>
+		<property name="noExperienced" type="boolean">
+			<column name="NOWORKEXPIRIENCE" sql-type="integer"></column>
+		</property>
+		<property name="noReferenced" type="boolean">
+			<column name="NOREFERENCE" sql-type="integer"></column>
+		</property>
+	</class>
+</hibernate-mapping>

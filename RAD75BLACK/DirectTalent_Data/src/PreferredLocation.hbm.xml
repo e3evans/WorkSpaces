@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.PreferredLocation" table="CANDIDATEPREFERREDLOCATIONS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATELOCATIONS_SEQ</param>
+		</generator>
+		</id>
+	
+		<many-to-one 	name="candidate" 
+						column="CANDIDATE_ID" 
+						class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+						not-null="true" 
+						update="false" />
+		<many-to-one name="location" 
+					column="LOCATION_ID" 
+					class="com.manpower.portal.mpnet.hbn.beans.CountryLocation"
+					not-null="true" 
+					update="false" 
+					lazy="false"/>
+		
+		<property name="locationFlag">
+			<column name="LOCATION_FLAG"></column>
+		</property>
+			
+ 	</class>
+</hibernate-mapping>
+

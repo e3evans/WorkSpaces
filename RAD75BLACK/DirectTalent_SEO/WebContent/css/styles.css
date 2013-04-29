@@ -1,0 +1,201 @@
+	table {
+		font-family:Helvetica,Verdana,sans-serif;
+		font-size:12px;
+	
+	}
+	.headerTitleBg{
+		background:url("../images/jobdesc_03.jpg") no-repeat top left;
+		width:640px;
+		height:103px;
+		padding-left:55px;
+		padding-bottom:10px;
+		font-size:18px;
+		font-weight:bold;
+		vertical-align:bottom;
+		
+	}
+	.jobDetails{
+		background:url("../images/jobdesc_05.jpg") no-repeat top left;
+		width:640px;
+		color:#989898;
+		padding-left:65px;
+		padding-top:10px;
+		padding-bottom:10px;
+		vertical-align:top;
+	}
+	.jobBody{
+		background:url("../images/jobdesc_06.jpg") repeat-y top left;
+	
+		width:540px;
+		padding-left:55px;
+		vertical-align:top;
+		padding-top:10px;	
+		padding-right:50px;
+		
+	}
+	.jobFooter{
+		background:url("../images/jobdesc_10.jpg") no-repeat top left;
+		height:108px;
+		width:640px;
+		padding-left:55px;
+	
+	}
+	.leftHead{
+		color:#989898;
+	}
+	.rightData{
+		padding-left:25px;
+		color:#525252;
+	}
+
+	.buttonMiddle{
+		background:url("../images/button_04.jpg") repeat-x top left;
+		text-align:center;
+		font-size:12px;
+		color:#FFFFFF;
+		font-family:Helvetica,Verdana,sans-serif;
+		font-weight:bold;
+		padding-bottom:7px;
+		cursor:pointer;
+	}
+	
+	.jobLink,.jobLink:hover,jobLink:visited{
+		font-weight:bold;
+		color:#5f81aa;
+		font-size:12px;
+		text-decoration:none;
+	
+	}
+	
+	
+		.leftSpanTop{
+	   background:url("../images/JobCatBox/JobCatsBox_03.jpg") no-repeat top left;
+	   width:23px;
+	   height:15px;
+	   
+	}
+	.centerSpanTop{
+		background:url("../images/JobCatBox/JobCatsBox_04.jpg") repeat-x top left;
+		height:15px;
+		text-align:left;
+	}
+	.rightSpanTop{
+	   background:url("../images/JobCatBox/JobCatsBox_05.jpg") no-repeat top right;
+	   width:23px;
+	   height:15px;
+	}
+	
+	.leftSpanTopCenter{
+	   background:url("../images/JobCatBox/JobCatsBox_07.jpg") repeat-y top left;
+	   width:23px;
+	}
+	.centerSpanTopCenter{
+		background:url("../images/JobCatBox/JobCatsBox_08.jpg") repeat-x top left;
+		font-family:Helvetica,Verdana,Arial;
+		font-size:22px;
+		font-weight:bold;
+		color:#FFFFFF;
+		background-color:#548ec0;
+	}
+	.rightSpanTopCenter{
+		background:url("../images/JobCatBox/JobCatsBox_09.jpg") repeat-y top right;
+	
+	}
+	
+	.leftSpanMiddle{
+		background:url("../images/JobCatBox/JobCatsBox_13.jpg") repeat-y top left;
+	}
+	
+	.centerSpanMiddle{
+		padding-top:15px;
+		font-family:Helvetica,Verdana,Arial;
+		font-size:12px;
+		padding-bottom:15px;
+		
+	
+	}
+	.rightSpanMiddle{
+		background:url("../images/JobCatBox/JobCatsBox_15.jpg") repeat-y top right;
+	}
+	
+	.leftSpanBottomCenter{
+	   background:url("../images/JobCatBox/JobCatsBox_22.jpg") repeat-y top left;
+	   width:23px;
+	}
+	.centerSpanBottomCenter{
+		font-family:Helvetica,Verdana,Arial;
+		font-size:12px;
+		font-weight:bold;
+		color:#3c75ae;
+		background-color:#e3f4fb;
+		text-align:right;
+		padding-top:15px;
+		padding-right:15px;
+	}
+	.rightSpanBottomCenter{
+		background:url("../images/JobCatBox/JobCatsBox_24.jpg") repeat-y top right;
+	
+	}
+	
+	.leftSpanBottom{
+	   background:url("../images/JobCatBox/JobCatsBox_25.jpg") no-repeat top left;
+	   width:23px;
+	   height:15px;
+	   
+	}
+	.centerSpanBottom{
+		background:url("../images/JobCatBox/JobCatsBox_26.jpg") repeat-x top left;
+		height:15px;
+		text-align:left;
+	}
+	.rightSpanBottom{
+	   background:url("../images/JobCatBox/JobCatsBox_27.jpg") no-repeat top right;
+	   width:23px;
+	   height:15px;
+	}
+	.bluelinks{
+		text-decoration:none;color:#3c75ae;
+	}
+	.bluelinks:hover{
+		text-decoration:underline;
+	}
+	
+	.jobtitlelink{
+		text-decoration:none;color:#3c75ae;
+		font-weight:bold;
+	}
+	.jobtitlemorelink{
+		text-decoration:underline;color:#3c75ae;
+		font-weight:bold;
+		font-size:11px;
+	}
+	
+	.jobseperator{
+		color: #fff; 
+		background-color: #fff; 
+		border: 1px dotted #5b6d7b; 
+		border-style: none none dotted; }
+	}
+	.resultstable td{
+		font-family:Helvetica,Verdana,Arial;
+		color:#5b6d7b;
+		font-size:11px;
+	}
+	.pagerStyle{
+		font-family:Helvetica,Verdana,Arial;
+		color:#5b6d7b;
+		font-size:11px;
+	
+	}
+	
+		.buttonMiddle{
+		background:url("../images/button_04.jpg") repeat-x top left;
+		text-align:center;
+		font-size:12px;
+		color:#FFFFFF;
+		font-family:Helvetica,Verdana,sans-serif;
+		font-weight:bold;
+		padding-bottom:7px;
+		cursor:pointer;
+	}
+	

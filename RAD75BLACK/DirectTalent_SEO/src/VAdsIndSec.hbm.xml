@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directtalentseo.hbn.beans.VAdsIndSec" table="v_ads_indsec13"  >
+ 		<id name="id" type="long" column="advertisementid" />
+		<property name="sitename" column="sitename"/>
+		<property name="jobtitle" column="jobtitle"/>
+		<property name="jobdescription"  column="jobdescription"/>
+		<property name="candidateprofile" column="candidateprofile"/>
+		<property name="candidateskills" column="candidateskills"/>
+		<property name="industry_sector" column="industry_sector"/>
+		<property name="location" column="location"/>
+		<property name="payrange" column="payrange"/>
+		<property name="countrycode" column="countrycode"/>
+		<property name="publicationdate" column="publicationdate" type="timestamp"/>
+		<property name="expirationdate" column="expirationdate" type="timestamp"/>
+		<property name="referencenumber" column="referencenumber" />
+		<property name="advertcontactid" column="advertcontactid" type="long"/>
+		<property name="contracttype" column="contracttype"/>
+		<property name="language" column="language"/>
+		<property name="q_total" column="q_total" type="long"/>
+
+	</class>
+</hibernate-mapping>

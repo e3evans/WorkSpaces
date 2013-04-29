@@ -1,0 +1,42 @@
+[2009-09-01 14:32:16] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-01 14:32:16] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-01 14:32:16] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-01 14:32:16] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-01 14:32:16] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password2
+[2009-09-01 15:05:28] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-01 15:05:28] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-01 15:05:28] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-01 15:05:28] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-01 15:05:28] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password2
+[2009-09-01 15:26:57] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-01 15:26:57] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-01 15:26:57] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-01 15:26:57] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-01 15:26:57] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password2
+[2009-09-01 15:26:57] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:48) - START CUSTOM:  
+[2009-09-01 15:27:04] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:50) - GOT THIS FAR!!
+[2009-09-01 16:32:36] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-01 16:32:36] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-01 16:32:36] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-01 16:32:36] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-01 16:32:36] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password2
+[2009-09-10 08:52:00] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-10 08:52:00] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-10 08:52:00] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-10 08:52:00] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-10 08:52:00] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password3
+[2009-09-10 08:53:10] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-10 08:53:10] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-10 08:53:10] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-10 08:53:10] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-10 08:53:10] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password3
+[2009-09-10 09:02:12] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-10 09:02:12] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-10 09:02:12] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-10 09:02:12] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-10 09:02:12] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password3
+[2009-09-10 09:03:17] INFO  [main] com.bis.webservice.util.TestBed (TestBed.java:40) - Here is some INFO
+[2009-09-10 09:03:17] WARN  [main] com.bis.webservice.util.TestBed (TestBed.java:41) - Here is some WARN
+[2009-09-10 09:03:17] ERROR [main] com.bis.webservice.util.TestBed (TestBed.java:42) - Here is some ERROR
+[2009-09-10 09:03:17] FATAL [main] com.bis.webservice.util.TestBed (TestBed.java:43) - Here is some FATAL
+[2009-09-10 09:03:17] INFO  [main] com.manpower.directoffice.api.DOSecurityUtility (DOSecurityUtility.java:47) - PinNumber--> Password3

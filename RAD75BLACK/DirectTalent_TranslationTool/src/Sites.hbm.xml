@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.manpower.translations.beans.Sites" table="SITES">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" precision="10" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="sitecode" type="java.lang.String">
+            <column name="SITECODE" length="15" not-null="true" unique="true" />
+        </property>
+        <property name="sitename" type="java.lang.String">
+            <column name="SITENAME" length="25" not-null="true" unique="true" />
+        </property>
+        <property name="siteowner" type="java.lang.String">
+            <column name="SITEOWNER" length="50" not-null="true" />
+        </property>
+        <property name="sitefirstlang" type="java.lang.String">
+            <column name="SITEFIRSTLANG" length="25" not-null="true" />
+        </property>
+        <property name="sitesecondlang" type="java.lang.String">
+            <column name="SITESECONDLANG" length="25" not-null="true" />
+        </property>
+        <property name="sitethirdlang" type="java.lang.String">
+            <column name="SITETHIRDLANG" length="25" not-null="true" />
+        </property>
+        <property name="createdOn" type="java.util.Date">
+            <column name="CREATED_ON" length="7" />
+        </property>
+        <property name="createdBy" type="java.lang.String">
+            <column name="CREATED_BY" length="200" not-null="true" />
+        </property>
+        <property name="changedOn" type="java.util.Date">
+            <column name="CHANGED_ON" length="7" not-null="true" />
+        </property>
+        <property name="changedBy" type="java.lang.String">
+            <column name="CHANGED_BY" length="200" not-null="true" />
+        </property>
+        <property name="updatedon" type="java.util.Date">
+            <column name="UPDATEDON" length="7" not-null="true" />
+        </property>
+        <property name="updatedby" type="java.lang.String">
+            <column name="UPDATEDBY" length="200" not-null="true" />
+        </property>
+        <property name="countrycode" type="java.lang.String">
+            <column name="COUNTRYCODE" length="4" />
+        </property>
+        <property name="sitestatus" type="java.lang.String">
+            <column name="SITESTATUS" length="10" />
+        </property>
+        <property name="defaultLevel" type="java.lang.String">
+            <column name="DEFAULT_LEVEL" length="10" />
+        </property>
+        <property name="integrationflag" type="java.lang.String">
+            <column name="INTEGRATIONFLAG" length="1" />
+        </property>
+        <property name="distanceUnit" type="java.lang.String">
+            <column name="DISTANCE_UNIT" length="2" />
+        </property>
+        <property name="resourcePrefix" type="java.lang.String">
+            <column name="RESOURCE_PREFIX" length="4" not-null="true" />
+        </property>
+        <property name="bgFlag" type="java.lang.String">
+            <column name="BG_FLAG" length="1" not-null="true" />
+        </property>
+        <property name="sitedesc" type="java.lang.String">
+            <column name="SITEDESC" length="25" />
+        </property>
+    </class>
+</hibernate-mapping>

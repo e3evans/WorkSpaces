@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.bgs.beans.DTAdvertBean" table="advertisements" mutable="false">
+		<id name="advertisementid" type="long" column="advertisementid" />
+		<property name="site_id" column="site_id" type="long"/>
+		<property name="advertcontactid" column="advertcontactid" type="long"/>
+		<property name="jobtitle" column="jobtitle"/>
+		<property name="jobdescription" column="jobdescription"/>
+		<property name="candidateprofile" column="candidateprofile"/>
+		<property name="candidateskills" column="candidateskills"/>
+		<property name="expirationdate" column="expirationdate" type="timestamp"/>
+		<property name="jobcode" column="jobcode"/>
+		<property name="foadvertid" column="foadvertid"/>
+	</class>
+</hibernate-mapping>

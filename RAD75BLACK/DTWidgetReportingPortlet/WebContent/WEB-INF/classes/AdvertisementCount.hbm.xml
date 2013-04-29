@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directalent.rss.hbn.beans.AdvertisementCountBean" table="ADVERTISEMENTS" >
+ 		<id name="id"  column="site_id" type="long"/>
+		<property name="sitename" column="sitename" />
+		<property name="count" column="count" type="long"/>
+	</class>
+</hibernate-mapping>

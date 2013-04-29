@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.AssessmentProvider" table="ASSESSMENT_PROVIDER">
+		<id name="id" type="long" column="ID" >
+			<generator class="sequence"> 
+				<param name="sequence">ASSESSMENT_PROVIDER_SEQ</param>
+			</generator>
+		</id>
+		<property name="name">
+			<column name="NAME" />
+		</property>	
+		<set name="tests" inverse="true" lazy="true" cascade="all" order-by="lower(name) asc">
+			<key column="PROVIDER_ID"/>
+			<one-to-many class="com.manpower.portal.mpnet.hbn.beans.AssessmentTest"/>
+		</set> 
+ 	</class>
+</hibernate-mapping>
+		

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.portlet.wcmcrawler.WcmCrawlerPortlet.890eecf722">
+	<portlet>
+		<portlet-name>WcmCrawler</portlet-name>
+		<display-name xml:lang="en">WcmCrawler</display-name>
+		<display-name>WcmCrawler</display-name>
+		<portlet-class>com.manpower.portlet.wcmcrawler.WcmCrawlerPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/WcmCrawlerView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/WcmCrawlerEdit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portlet.wcmcrawler.nl.WcmCrawlerPortletResource</resource-bundle>
+		<portlet-info>
+			<title>WcmCrawler</title>
+			<short-title>WcmCrawler</short-title>
+			<keywords>WcmCrawler</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

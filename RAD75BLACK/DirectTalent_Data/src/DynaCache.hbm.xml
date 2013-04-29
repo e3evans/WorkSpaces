@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.DynaCache" table="DYNACACHE">
+
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">DYNACACHE_SEQ</param>
+		</generator>
+		</id>
+		<property name="sessionId">
+			<column name="SESSION_ID"></column>
+		</property>
+		<property name="key">
+			<column name="KEY1"></column>
+		</property>
+		<property name="value">
+			<column name="value1"></column>
+		</property>
+</class>
+
+</hibernate-mapping>

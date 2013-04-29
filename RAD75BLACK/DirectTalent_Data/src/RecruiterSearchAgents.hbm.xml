@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.RecruiterSearchAgent" table="RECRUITERSEARCHAGENTS">
+		<id name="id" type="long" column="ID" >
+			<generator class="sequence"> 
+				<param name="sequence">RECRUITERSEARCHAGENTS_SEQ</param>
+			</generator>
+		</id>
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="recruiterId" type="long">
+			<column name="RECRUITER_ID" />
+		</property>
+		<property name="portletName">
+			<column name="PORTLET_NAME" />
+		</property>
+		<property name="searchCriteria">
+			<column name="SEARCH_CRITERIA" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="created_by">
+			<column name="CREATED_BY" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>
+		<property name="changed_By">
+			<column name="CHANGED_BY" />
+		</property>	
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<property name="agentName">
+			<column name="AGENT_NAME" />
+		</property>
+ 	</class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.beans.Resume" table="bjh_resumes" mutable="false">
+	
+		<id name="resume_id" type="long" column="cv_id" />
+		<property name="resume" column="resume" type="blob"/>
+		<property name="firstname" column="firstname"/>
+		<property name="lastname" column="lastname"/>
+		<property name="mime_type" column="mime_type"/>
+		<property name="resume_name" column="resume_name"/>
+		<property name="cand_type" column="cand_type"/>
+			
+	</class>
+</hibernate-mapping>

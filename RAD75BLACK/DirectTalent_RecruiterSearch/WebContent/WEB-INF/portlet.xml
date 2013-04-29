@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.portal.portlet.directtalent_recruitersearch.DirectTalent_RecruiterSearchPortlet.29252c94d1">
+	<portlet>
+		<portlet-name>DirectTalent_RecruiterSearch</portlet-name>
+		<display-name>DirectTalent_RecruiterSearch</display-name>
+		<display-name xml:lang="en">DirectTalent_RecruiterSearch</display-name>
+		<portlet-class>com.manpower.portal.portlet.directtalent_recruitersearch.DirectTalent_RecruiterSearchPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/RecruiterSearch/DirectTalent_RecruiterSearchView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/RecruiterSearch/DirectTalent_RecruiterSearchEdit.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.config</name>
+			<value>/RecruiterSearch/DirectTalent_RecruiterSearchConfig.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.help</name>
+			<value>/RecruiterSearch/DirectTalent_RecruiterSearchHelp.jsp</value>
+		</init-param>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.directtalent_recruitersearch.nl.DirectTalent_RecruiterSearchPortletResource</resource-bundle>
+		<portlet-info>
+			<title>DirectTalent_RecruiterSearch</title>
+			<short-title>DirectTalent_RecruiterSearch</short-title>
+			<keywords>DirectTalent_RecruiterSearch</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

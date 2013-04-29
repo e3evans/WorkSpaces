@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateJobTitle" table="CANDIDATEJOBTITLES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEJOBTITLES_SEQ</param>
+		</generator>
+		</id>
+	
+		<many-to-one name="candidate" 
+					column="CANDIDATE_ID" 
+					class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+					not-null="true" 
+					update="false" />
+		<many-to-one name="jobTitle" 
+					column="JOB_TITLE_ID" 
+					class="com.manpower.portal.mpnet.hbn.beans.JobTitle"
+					not-null="true" 
+					update="false"/>
+		
+		<property name="jobTitleFreeText">
+			<column name="JOB_TITLE_FREE_FORM"/>
+		</property>	
+ 	</class>
+</hibernate-mapping>
+

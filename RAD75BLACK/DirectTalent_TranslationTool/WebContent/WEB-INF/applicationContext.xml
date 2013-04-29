@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xmlns:aop="http://www.springframework.org/schema/aop"
+     xmlns:tx="http://www.springframework.org/schema/tx"
+     xsi:schemaLocation="
+     http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+     http://www.springframework.org/schema/tx
+     http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+     http://www.springframework.org/schema/aop
+     http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="propertyFilesDBService" class="com.manpower.translations.service.PropertyFilesDBService"/>
+
+	<bean id="propertyFile" class="com.manpower.translations.model.SimplePropertyFile" />
+
+    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:translation-tool.properties</value>
+		</property>
+	</bean>
+
+	<bean id="propertyFileManager" class="com.manpower.translations.service.PropertyFileManagerImpl">
+		<property name="localStorage" value="${localstorage}"/>
+		<property name="templateLocation" value="${com.manpower.translationtool.templates.location}"/>
+		<property name="langFileAsString" value="${com.manpower.translationtool.lang.list}"/>
+		<property name="deployServers" value="${com.manpower.translationtool.deployservers}"/>
+	</bean>
+
+	<bean id="step1Action" class="com.manpower.translations.actions.Step1Action">
+		 <property name="propertyFileManager" ref="propertyFileManager"/>
+		 <property name="propertyFilesDBService" ref="propertyFilesDBService"/>
+	</bean>
+
+	<bean id="step2Action" class="com.manpower.translations.actions.Step2Action">
+ 		<property name="propertyFileManager" ref="propertyFileManager"/>
+		<property name="propertyFilesDBService" ref="propertyFilesDBService"/>
+		<property name="file" ref="propertyFile"/>
+	</bean>
+
+	<bean id="step3Action" class="com.manpower.translations.actions.Step3Action">
+		<property name="file" ref="propertyFile"/>
+	</bean>
+
+	<bean id="step4Action" class="com.manpower.translations.actions.Step4Action">
+ 		<property name="propertyFileManager" ref="propertyFileManager"/>
+		<property name="propertyFilesDBService" ref="propertyFilesDBService"/>
+		<property name="file" ref="propertyFile"/>
+	</bean>
+   
+   <bean id="propertyFileUpload" class="com.manpower.translations.actions.PropertyFileUpload">
+      <property name="propertyFileManager" ref="propertyFileManager"/>
+      <property name="propertyFilesDBService" ref="propertyFilesDBService"/>
+   </bean>
+   
+  
+	
+</beans>

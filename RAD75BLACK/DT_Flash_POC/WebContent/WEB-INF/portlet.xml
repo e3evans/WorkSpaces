@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.portal.portlet.dt_flash_poc.DT_Flash_POCPortlet.b6e10b1c22">
+	<portlet>
+		<portlet-name>DT_Flash_POC</portlet-name>
+		<display-name xml:lang="en">DT_Flash_POC</display-name>
+		<display-name>DT_Flash_POC</display-name>
+		<portlet-class>com.manpower.portal.portlet.dt_flash_poc.DT_Flash_POCPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>edit_defaults</portlet-mode>
+			<portlet-mode>config</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portal.portlet.dt_flash_poc.nl.DT_Flash_POCPortletResource</resource-bundle>
+		<portlet-info>
+			<title>DT_Flash_POC</title>
+			<short-title>DT_Flash_POC</short-title>
+			<keywords>DT_Flash_POC</keywords>
+		</portlet-info>
+	</portlet>
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>
+	<custom-portlet-mode>
+		<portlet-mode>edit_defaults</portlet-mode>
+	</custom-portlet-mode>
+</portlet-app>

@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.JobApplicant"
+		table="V_JOB_APPLICANTS" mutable="false">
+
+		<id name="id" type="long" column="ID"></id>
+
+		<property name="siteId">
+			<column name="SITE_ID" />
+		</property>
+		
+		<property name="advertId">
+			<column name="ADVERT_ID" />
+		</property>
+
+		<property name="rating">
+			<column name="RATING" />
+		</property>
+		
+		<property name="externalId">
+			<column name="EXTERNALID" />
+		</property>
+		
+		<property name="firstName">
+			<column name="FIRSTNAME"/>
+		</property>
+		
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<property name="dateApplied" type="timestamp">
+			<column name="DATEAPPLIED" />
+		</property>
+		
+		<property name="lastLogin" type="timestamp">
+			<column name="LASTLOGIN" />
+		</property>
+		
+		<property name="branchName">
+			<column name="BRANCHNAME" />
+		</property>
+		
+		<property name="status" type="string">
+			<column name="STATUS" />
+		</property>
+		
+		<property name="bgScore">
+			<column name="BG_SCORE" />
+		</property>
+		
+		<property name="applicantType">
+			<column name="applicant_type" />
+		</property>
+		
+		<property name="candidateId">
+			<column name="candidate_id" />
+		</property>
+		
+		<property name="sentToFo">
+			<column name="sent_to_fo" />
+		</property>
+		<property name="profileStatus">
+			<column name="PROFILE_STATUS" />
+		</property>
+		<property name="resumeStatus">
+			<column name="RESUME_STATUS" />
+		</property>
+		<property name="createdBy">
+			<column name="created_by"></column>
+		</property>
+
+	</class>
+</hibernate-mapping>
+

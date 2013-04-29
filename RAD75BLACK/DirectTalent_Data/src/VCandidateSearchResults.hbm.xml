@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.VCandidateSearchResults" table="V_CANDIDATE_SEARCH_RESULTS" mutable="false">
+		<id name="id" type="long" column="CANDIDATE_ID"></id>
+		<property name="firstName" type="string" column="FIRSTNAME"/>
+		<property name="middleName" type="string" column="MIDDLENAME"/>
+		<property name="lastName" type="string" column="LASTNAME"/>
+		<property name="preferredBranch" type="string" column="PREFERRED_BRANCH"/>
+		<property name="lastLoginDate" column="LAST_LOGIN_DATE" type="timestamp"></property>
+		<property name="status" column="STATUS" type="string"></property>		
+		<property name="sentToFO" column="SENT_TO_FO" type="boolean"></property>
+		<property name="countOfJobsAppliedFor" column="COUNT_OF_JOBS_APPLIED_FOR" type="integer"></property>			
+		<property name="activeStatus" column="ACTIVE_STATUS" type="integer"></property>
+	</class>
+</hibernate-mapping>

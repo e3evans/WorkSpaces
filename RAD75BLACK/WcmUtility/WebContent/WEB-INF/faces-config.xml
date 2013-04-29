@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE faces-config PUBLIC
+  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.0//EN"
+  "http://java.sun.com/dtd/web-facesconfig_1_0.dtd">
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config>
+	<factory>
+		<faces-context-factory>
+		com.ibm.faces.context.AjaxFacesContextFactory</faces-context-factory>
+		<render-kit-factory>
+		com.ibm.faces.renderkit.AjaxRenderKitFactory</render-kit-factory>
+	</factory>
+	<managed-bean>
+		<managed-bean-name>pc_WcmUtilityView</managed-bean-name>
+		<managed-bean-class>pagecode.WcmUtilityPortlet.WcmUtilityView</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_WcmUtilityEdit</managed-bean-name>
+		<managed-bean-class>pagecode.WcmUtilityPortlet.WcmUtilityEdit</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_WcmUtilityConfig</managed-bean-name>
+		<managed-bean-class>pagecode.WcmUtilityPortlet.WcmUtilityConfig</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_WcmViewerView</managed-bean-name>
+		<managed-bean-class>pagecode.WcmViewer.WcmViewerView</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_WcmViewerEdit</managed-bean-name>
+		<managed-bean-class>pagecode.WcmViewer.WcmViewerEdit</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>pc_WcmViewerConfig</managed-bean-name>
+		<managed-bean-class>pagecode.WcmViewer.WcmViewerConfig</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+
+	<lifecycle>
+		<phase-listener>com.ibm.faces.webapp.ValueResourcePhaseListener</phase-listener>
+	</lifecycle>
+	
+	<!-- variable/property resolver registration -->
+	<application>
+		<variable-resolver>com.ibm.faces.databind.SelectItemsVarResolver</variable-resolver>
+		<variable-resolver>com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<variable-resolver>
+		com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<variable-resolver>
+		com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<variable-resolver>
+		com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<variable-resolver>
+		com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<variable-resolver>com.ibm.faces.portlet.PortletVariableResolver</variable-resolver>
+		<state-manager>com.ibm.faces.application.DevelopmentStateManager</state-manager>
+		<property-resolver>com.ibm.faces.databind.SelectItemsPropResolver</property-resolver>
+		<locale-config>
+			<supported-locale>en</supported-locale>
+		</locale-config>
+	</application>	
+
+
+</faces-config>

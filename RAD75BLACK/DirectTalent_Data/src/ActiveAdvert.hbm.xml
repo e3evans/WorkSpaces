@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.ActiveAdvert" table="M_SEARCH_ACTIVE_ADVERTS">
+
+		<id name="id" type="long" column="ADVERTISEMENTID" />
+
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="jobTitle">
+			<column name="JOBTITLE" />
+		</property>	
+		<property name="jobDescription">
+			<column name="JOBDESCRIPTION" />
+		</property>	
+		<property name="candidateProfile">
+			<column name="CANDIDATEPROFILE" />
+		</property>	
+		<property name="candidateSkills">
+			<column name="CANDIDATESKILLS" />
+		</property>	
+		<property name="industrySector">
+			<column name="INDUSTRYSECTOR" />
+		</property>	
+		<property name="locationId">
+			<column name="LOCATION" />
+		</property>	
+		<property name="contractType">
+			<column name="CONTRACTTYPE" />
+		</property>	
+		<property name="publicationDate" type="timestamp">
+			<column name="PUBLICATIONDATE" />
+		</property>	
+		<property name="referenceNumber">
+			<column name="REFERENCENUMBER" />
+		</property>	
+		<property name="hoursWorked">
+			<column name="HOURSWORKED" />
+		</property>
+		<property name="language">
+			<column name="LANGUAGE" />
+		</property>
+ 	</class>
+</hibernate-mapping>

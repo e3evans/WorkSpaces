@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.widget.hbn.beans.TopTen" table="ps_rsf_opportunity" mutable="false">
+		<id name="opp_id" type="long" column="opp_id"/>
+		<property name="opportunity_name" column="opportunity_name"/>
+		<property name="name1" column="name1"/>
+		<property name="est_revenue" column="est_revenue" type="long"/>
+		<property name="gp" column="gp" type="long"/>
+		<property name="sales_stage" column="sales_stage" />
+		<property name="sales_user_name" column="sales_user_name"/>
+		<property name="est_close_dt" column="est_close_dt" type="timestamp"/>		
+	</class>
+</hibernate-mapping>
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="DirectTalent_DataAccess" default="init" basedir=".">
+	<description>
+		DirectTalent DataAccess components init
+	</description>
+
+	<property file="build.standalone.properties" />
+	
+	<property name="dir.classes" location="${dir.build}/classes" />
+	<property name="dir.test" location="${dir.build}/test-classes" />
+	<property name="dir.test.data" location="${dir.test}/data" />
+	<property name="dir.test.report" location="${dir.test}/report" />
+	<property name="dir.javadoc" location="${dir.build}/javadoc"/>
+
+	<!-- init -->
+	<target name="init">
+		<tstamp>
+			<format property="buildtime" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+		</tstamp>
+		<mkdir dir="${dir.classes}" />
+		<mkdir dir="${dir.dist}" />
+	</target>
+
+		
+	<target name="all" depends="init" />
+
+</project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><portlet-properties>
+    <portlet name="Vlado2">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_Vlado2/jsp/html/Vlado2PortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

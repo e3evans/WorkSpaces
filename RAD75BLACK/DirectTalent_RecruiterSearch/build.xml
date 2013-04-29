@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     October 1, 2007 9:22:17 AM                                                        
+
+     DirectTalent
+     DirectTalent portlet components
+
+     This is the master build file and is used to call either build_rad.xml 
+     or build_standalone.xml file to compile this project.
+                   
+     dcook                                                                
+     ====================================================================== -->
+
+<project name="DirectTalent_Search20" default="all" basedir=".">
+	<description>
+		DirectTalent portlet components
+	</description>
+	<!-- Set global properties -->
+	<property file="build.properties" />
+	<property name="dist" value="${dir.work}/dist" />
+	
+	<target name='usage'>
+		<java classname='org.apache.tools.ant.Main'>
+			<arg value='-projecthelp'/>
+		</java>
+	</target>
+	
+<!-- Initialization targets -->
+	<target name='init'>
+		<!-- Create the timestamp -->
+		<tstamp />
+		<!-- Create the dist directory where the output files are placed -->
+		<mkdir dir="${dist}" />
+	</target>
+
+	<target name="info">
+		<echo message="Build information..."/>
+		<echo message="Project name: ${project.name}"/>
+		<echo message="Output directory: ${dist}"/>
+		<echo message="Build for ${build.environment} environment"/>
+		<echo message="RAD build: ${build.rad}"/>
+		<echo message="Is debug information included in the build: ${build.debug}"/>
+		<echo message="Is this a full or incremental build: ${build.type}"/>
+		<echo message="Is metadata included in the archive(s): ${build.metadata}"/>
+		<echo message="Is project validated prior to the builld: ${build.validate}"/>
+		<echo message="Is existing archive(s) overwritten by this build process: ${build.overwrite}"/>
+	</target>
+
+<!-- RAD only build targets -->
+	<target name="build-rad" description="Build all projects using RAD targets" if="build.rad">
+		<echo message="Building all projects using RAD targets"/>
+		<ant dir="." antfile="build_rad.xml" inheritall="true" target="all"/>
+	</target>
+		
+<!-- non RAD build targets -->
+	<target name="build-standalone" description="Build all projects without using RAD targets" unless="build.rad">
+		<echo message="Building all projects without using RAD targets"/>
+		<ant dir="." antfile="build_standalone.xml" inheritall="true" target="all"/>
+	</target>
+		
+<!-- CVS related targets -->
+	<target name='cvs-checkout' description='Checks source code out of CVS' unless="build.rad">
+		<cvs cvsroot='${cvs.root}' command='checkout' dest='${cvs.dest}' package='${cvs.module.name}'/>
+	</target>
+			
+	<target name='cvs-update' description='Updates source from from CVS' unless="build.rad">
+		<cvs cvsroot='${cvs.root}' command='update' dest='${cvs.dest}' package='${cvs.module.name}'/>
+	</target>
+	
+<!-- Testing related targets -->
+	<target name="junit-test">
+	</target>
+	
+	<target name='all' depends='init, info, cvs-update, build-standalone, build-rad, junit-test'/>
+	
+<!-- Delete the output files -->
+	<target name="clean">
+		<delete dir="${dist}" failOnError="false" />
+	</target>
+</project>

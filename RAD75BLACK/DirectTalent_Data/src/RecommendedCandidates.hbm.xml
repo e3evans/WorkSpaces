@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.RecommendedCandidate" table="RECOMMENDEDCANDIDATES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">RECOMMENDEDCANDIDATES_SEQ</param>
+		</generator>
+		</id>
+		
+		
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+				
+		<property name="dateApplied"  type="timestamp">
+			<column name="DATEAPPLIED" />
+		</property>
+		<property name="candidateId"  type="long">
+			<column name="CANDIDATE_ID" />
+		</property>
+		<property name="applicantId"  type="long">
+			<column name="APPLICANT_ID" />
+		</property>	
+		<property name="advertisementId"  type="long">
+			<column name="ADVERT_ID" />
+		</property>	
+		
+		<property name="lastUpdatedOn" type="timestamp">
+			<column name="RESUMEUPDATEDON" />
+		</property>
+		<property name="bgScore">
+			<column name="BG_SCORE" />
+		</property>	
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>	
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+ 	</class>
+</hibernate-mapping>

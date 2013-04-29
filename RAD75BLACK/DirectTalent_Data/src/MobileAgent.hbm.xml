@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.MobileAgent" table="MOBILE_JOB_AGENTS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">MOBILE_JOB_AGENTS_SEQ</param>
+		</generator>
+		</id>
+		<many-to-one name="device" column="DEVICE_ID" class="com.manpower.portal.mpnet.hbn.beans.MobileDevice"
+			not-null="true" />
+		<property name="name">
+			<column name="AGENTNAME" />
+		</property>
+		<property name="data">
+			<column name="AGENT_DATA" />
+		</property>		
+		<property name="newJobsCount" type="long">
+			<column name="NEW_JOBS_COUNT"></column>
+		</property>
+ 	</class>
+</hibernate-mapping>
+

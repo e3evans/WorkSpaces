@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.RecommendedCandidatesPreferences" table="RECOMMENDEDCANDIDATES_PREFS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">RECOMMENDEDCAND_PREFS_SEQ</param>
+		</generator>
+		</id>
+		<property name="advertId" type="long">
+			<column name="ADVERT_ID" />
+		</property>
+		<property name="recruiterId" type="long">
+			<column name="RECRUITER_ID" />
+		</property>
+		<property name="distance" type="integer">
+			<column name="DISTANCE" />
+		</property>
+		<property name="distanceUnit" type="string">
+			<column name="DISTANCE_UNIT" />
+		</property>
+		<property name="score" type="string">
+			<column name="BG_SCORE" />
+		</property>
+		
+		<!--
+		There is a bug in Hibernate related to using property-ref in <join> clause. 
+		Should use this code when the bug is resolved (http://opensource.atlassian.com/projects/hibernate/browse/HHH-1829).
+		For now we will use HQL.
+		<join table="ADVERTISEMENTS" inverse="true" >                   
+        	<key column="ADVERTISEMENTID" property-ref="advertId" not-null="true" unique="true" />
+        	<property name="jobTitle" type="string">
+				<column name="JOBTITLE" />
+			</property>
+			<property name="referenceNumber" type="string">
+				<column name="REFERENCENUMBER" />
+			</property>
+		</join>
+		-->
+	</class>
+</hibernate-mapping>

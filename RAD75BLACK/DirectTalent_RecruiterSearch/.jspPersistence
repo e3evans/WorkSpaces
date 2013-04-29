@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+<jsp-scripting>
+        <request id="/DirectTalent_RecruiterSearch/WebContent/RecruiterSearch/DirectTalent_RecruiterSearchView.jsp">
+            
+        </request>
+    <session>
+            
+        <variable name="pager" type="java.lang.String"/>
+        <variable name="searchResults" type="java.util.List">
+                <collectionProperty name="searchResults">
+                    <contains type="com.manpower.hbn.beans.CandidateSearchResults"/>
+                </collectionProperty>
+            </variable>
+        </session>
+    </jsp-scripting>
+<beanData>
+        <bean id="/DirectTalent_RecruiterSearch/WebContent/RecruiterSearch/DirectTalent_RecruiterSearchView.jsp" type="pagecode.RecruiterSearch.ui.beans.PreferredLocationTypeAheadBean">
+            <collectionProperty name="typeAheadList">
+                <contains type="java.lang.Object"/>
+            </collectionProperty>
+        <collectionProperty name="typeahead">
+                <contains type="java.lang.Object"/>
+            </collectionProperty>
+        </bean>
+    </beanData>
+</persistence>

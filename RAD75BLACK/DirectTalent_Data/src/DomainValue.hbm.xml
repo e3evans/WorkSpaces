@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.DomainValue" table="V_LOOKUP_VALUES">
+
+		<id name="id" type="long" column="LOOKUP_ID"/>
+			
+		<property name="site" 		column="SITECODE"/>
+		<property name="siteId" 	column="SITE_ID"/>
+		<property name="language" 	column="LANG"/>
+		<property name="lookupName" column="LOOKUP_NAME"/>
+		<property name="code" 		column="VALUE_CODE" />
+		<property name="desc" 		column="LOOKUP_DESCRIPTION"/>
+		<property name="sortCode"	column="SORT_CODE"/>
+		
+		
+ 	</class>
+</hibernate-mapping>

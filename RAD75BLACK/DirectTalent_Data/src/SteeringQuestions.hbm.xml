@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.SteeringQuestion" table="STEERING_QUESTIONS">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">STEERING_QUESTIONS_SEQ</param>
+		</generator>
+		</id>
+		
+		<property name="siteId" column="SITE_ID"/>
+		
+		<property name="question" column="QUESTION"/>
+		
+		<property name="yesAnswer" column="ANSWER1"/>
+		
+		<property name="noAnswer" column="ANSWER2"/>
+		
+		<property name="yesDecision" column="DECISION1"/>
+		
+		<property name="noDecision" column="DECISION2"/>
+
+		<property name="language" column="LANG"/>
+
+		<property name="questionId" column="QUESTIONID"/>		
+
+		<property name="questionType" column="QUESTIONTYPE"/>				
+		
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATED_ON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATED_BY" />
+		</property>
+
+ 	</class>
+</hibernate-mapping>

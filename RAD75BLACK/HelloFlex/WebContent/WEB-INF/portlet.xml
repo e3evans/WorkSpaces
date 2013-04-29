@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.manpower.portlet.helloflex.HelloFlexPortlet.038e44ea22">
+	<portlet>
+		<portlet-name>HelloFlex</portlet-name>
+		<display-name xml:lang="en">HelloFlex</display-name>
+		<display-name>HelloFlex</display-name>
+		<portlet-class>com.manpower.portlet.helloflex.HelloFlexPortlet</portlet-class>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.manpower.portlet.helloflex.nl.HelloFlexPortletResource</resource-bundle>
+		<portlet-info>
+			<title>HelloFlex</title>
+			<short-title>HelloFlex</short-title>
+			<keywords>HelloFlex</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>

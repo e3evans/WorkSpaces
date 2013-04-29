@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.bgs.beans.DTBranchBean" table="branches" mutable="false">
+	
+		<id name="id" type="long" column="id" />
+		<property name="site_id" column="site_id" type="long"/>
+		<property name="branchname" column="branchname"/>
+			
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.OtherSiteDetails" table="other_site_details">
+		
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">other_site_details_seq</param>
+		</generator>
+		</id>
+		<property name="siteId">
+			<column name="SITE_ID"/>
+		</property>
+
+		<property name="carreerHarmonyTestURL">
+			<column name="CAREER_HARMONY_URL"/>
+		</property>
+		<property name="externalAdvertURL">
+			<column name="EXTERNAL_ADVERT_URL"/>
+		</property>
+ 	</class>
+</hibernate-mapping>

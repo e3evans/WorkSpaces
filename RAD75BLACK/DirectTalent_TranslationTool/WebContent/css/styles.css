@@ -1,0 +1,236 @@
+/* Javlin CSS */
+
+/* Top level container for the person menu */
+.personMenu { border:1px solid rgb(224,224,224); background-color:rgb(245,248,255); font-family:Helvetica, Arial, sans-serif; font-style:normal; margin:0px; padding:0px; -moz-border-radius: 7px; }
+.personMenu a { color:#0063dc; text-decoration:underline; }
+.semtag_header { }
+
+/* Container for business-card photo */
+.photoCard { float:left; margin:10px 5px 10px 10px; padding:0px; }
+.photoCard img { border:1px solid rgb(192,192,192); padding:2px ! important; height:115px; width:115px; background-color:white; }
+
+/* Container for business-card */
+.businessCard { float:right; margin:10px 3px; padding-top:0px; line-height:1.2em; }
+
+/* List for displaying business card information */
+.businessCard ul { list-style-type:none; margin:0px; padding-left:0px }
+.businessCard .cardName { color:black; font-weight:bold; font-size:1.1em; }
+.businessCard li { color:black; font-size:1.0em; }
+.businessCard a { text-decoration:underline; }
+
+/* Container for person menu actions */
+.personMenuActions { clear:both; background-color:white; width:100%; padding:0px; margin-bottom:0px; border-top:1px solid #ACB9CD; }
+
+/* Styles for menu list */
+.personMenuActions ul { padding:0px; margin:0px; list-style:none; }
+.personMenuActions li { }
+
+/* Styles for the hover */
+.menu_drop_icon { color:black; font-family: Arial, Tahoma, Verdana, Helvetica, sans-serif; font-size:1.0em; background-color:#e2eeff; border:1px solid #ACB9CD; padding:2px; -moz-border-radius: 7px; }
+.menu_drop_icon img { border:none; }
+a.menu_drop_icon { background: url(menu_dropdown.gif) no-repeat scroll center; }
+a.menu_drop_icon:link, a.menu_drop_icon:visited{ color:#000; text-decoration:none; }
+a.menu_drop_icon:hover { background: url(menu_dropdown.gif) no-repeat scroll center; }
+
+.hasHover { border-bottom: 1px dotted #306bc4; }
+img.hasHover { padding:1px; border:1px dotted #306bc4; }
+
+
+/* Values specific to popup menu */
+.personMenu { width:400px; }
+.personMenu .photoCard { }
+.personMenu .photoCard img { }
+.personMenu .businessCard { width:258px; }
+.personMenu .businessCard ul { }
+.personMenu .businessCard .cardName { }
+.personMenu .businessCard li { }
+.personMenu .businessCard a { }
+.personMenu .personMenuActions { -moz-border-radius: 7px; }
+.personMenu .personMenuActions tr, .personMenu .personMenuActions td { border-width:0px; padding:0px; margin:0px; -moz-border-radius: 7px; }
+.personMenu .personMenuActions a { color:black; font-size:1.0em; text-decoration:none; border: solid 1px; display:block; padding:1px 2px 1px 5px; -moz-border-radius: 7px; }
+.personMenu .personMenuActions a:link, .personMenu .personMenuActions a:visited { border-color: white; }
+.personMenu .personMenuActions a:hover, .personMenu .personMenuActions a:active { background-color:#e2eeff; border-color: #8bb5e8; }
+.personMenu .personMenuActions a:focus, .personMenu .personMenuActions a:active { background-color:#e2eeff; border-color: #8bb5e8; }
+
+/* Values specific to inline menu */
+.X-person-display-inline .personMenu { }
+.X-person-display-inline .personMenu .photoCard { }
+.X-person-display-inline .personMenu .photoCard img { }
+.X-person-display-inline .personMenu .businessCard { }
+.X-person-display-inline .personMenu .businessCard ul { }
+.X-person-display-inline .personMenu .businessCard .cardName { }
+.X-person-display-inline .personMenu .businessCard li { }
+.X-person-display-inline .personMenu .personMenuActions { }
+.X-person-display-inline .personMenu .personMenuActions ul { }
+.X-person-display-inline .personMenu .personMenuActions li { }
+.X-person-display-inline .personMenu .personMenuActions a:link, .X-person-display-inline .personMenuActions a:visited{ }
+.clear {
+        clear               : both;
+}
+#Page {
+        width               : 970px;
+        margin              : 0 auto;
+        padding-top         : 20px;
+}
+
+#Page h2 {
+        color               : #D37B17;
+        font-size           : 1.8em;
+        padding-bottom      : 15px;
+        font-weight         : normal;
+}
+
+#Page ul.steps {
+        list-style-type     : none;
+        padding             : 0;
+        margin              : 0;
+        width               : 970px;
+}
+
+#Page ul.steps a{
+        display             : block;
+        padding             : 15px 64px;
+         background         : #E7E8E9;
+         color              : #000;
+}
+
+#Page ul.steps li{
+        float               : left;
+        padding             : 0;
+        margin              : 0 1px 20px 1px;
+       
+        font-size           : 1.1em
+}
+
+#Page ul.steps li.selected a {
+        background          : #9FCBB6;
+        padding             : 15px 100px;
+}
+
+#Page dl {
+        clear               : both;
+        padding-top         : 30px;
+}
+#Page dl dt,
+#Page .step2 dl dd{
+        float               : left;
+        margin              : 0;
+        display: inline;
+}
+
+#Page .step3 dl dd{
+        float               : left;
+        margin              : 0;
+}
+#Page .step1 dl dd{
+        margin-bottom: 20px;
+}
+#Page dl dt {
+        /*clear               : both;*/
+        clear: left;
+        width               : 120px;
+        margin-bottom       : 20px;
+        color               : #7DA090;
+        font-size           : 12px;
+        font-weight         : bold;
+        padding-top         : 2px;
+}
+
+#Page input.submit {
+        background          : url(../images/buttonsubmitback.png) repeat-x;
+        padding             : 0px 10px 0px 10px;
+        border              : solid 1px #333;
+        text-transform      : uppercase;
+        height              : 18px;
+        font-size           : 10px;
+        color               : #FFF;
+        margin-top          : 10px;
+}
+
+#Page .step3 dl {
+        padding-top         : 5px;
+}
+
+#Page .step3 dl dt {
+        margin-bottom        : 10px;
+}
+
+#Page .step3 dl dd {
+        padding: 3px 0
+}
+
+#Page .step2 dl dd {
+        padding: 3px 0;
+        clear:right;
+}
+#Page .step2 dl dt,
+#Page .step3 dl dt {
+        width               : 30px;
+
+}
+#Page .step3 dl dt {
+        padding-top         : 0;
+}
+
+#Page .step2 dl {
+        margin-top          : 0;
+        padding-top         : 15px;
+}
+
+#Page .languageBar {
+        border-bottom       : 1px solid #333;
+        padding-bottom      : 5px;
+        margin-bottom       : 5px;
+        font-size           : 1.6em;
+        font-weight         : bold;
+}
+
+#Page .step2 .step2list,
+#Page .step3 .step3list{
+        padding             : 0;
+        margin              : 0;
+        list-style-type     : none;
+}
+
+#Page .step2 .step2list li,
+#Page .step3 .step3list li{
+        float               : none;
+        clear               : both;
+        padding             : 5px 10px;
+      
+}
+#Page .step3 .step3list li{
+        position            : relative;
+        border-top          : 1px solid #CCC;
+        padding             : 10px 10px 5px 10px;
+}
+
+#Page .step3 .step3list li.first {
+        border-top       : none;
+}
+
+#Page .step2 .step2list li.even,
+#Page .step3 .step3list li.even{
+        background          : #E7E8E9;
+}
+
+#Page .step3 .step3list li.modified{
+        background          : #fff8d2;
+        border              : 2px solid #CCC;
+}
+
+
+#Page .step3 .step3list li.modified img{
+        position            : absolute;
+        left                : -40px;
+        top                 : 0px;
+}
+
+.continueButton {
+        text-align          : center;
+        padding             : 20px 0;
+}
+
+#Page dd p {
+        margin              : 0;
+}

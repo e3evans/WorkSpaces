@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.Advertisement" table="ADVERTISEMENTS">
+		<id name="id" type="long" column="ADVERTISEMENTID" >
+		<generator class="sequence"> 
+			<param name="sequence">ADVERTISEMENTS_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>	
+		
+		<property name="jobTitle">
+			<column name="JOBTITLE" />
+		</property>	
+		<property name="jobDescription">
+			<column name="JOBDESCRIPTION" />
+		</property>	
+		<property name="candidateProfile">
+			<column name="CANDIDATEPROFILE" />
+		</property>	
+		<property name="candidateSkills">
+			<column name="CANDIDATESKILLS" />
+		</property>	
+		<property name="industrySector">
+			<column name="INDUSTRYSECTOR" />
+		</property>	
+		
+		<property name="location">
+			<column name="LOCATION" />
+		</property>	
+		
+		<property name="jobCountry">
+			<column name="JOBCOUNTRY" />
+		</property>	
+		
+		<property name="lonCoordinate" type="float">
+			<column name="LON_COORDINATE" />
+		</property>
+		<property name="latCoordinate" type="float">
+			<column name="LAT_COORDINATE" />
+		</property>
+		<property name="contractType">
+			<column name="CONTRACTTYPE" />
+		</property>	
+		<property name="publicationDate" type="timestamp">
+			<column name="PUBLICATIONDATE" />
+		</property>	
+		<property name="clientName">
+			<column name="CLIENTNAME" />
+		</property>	
+		<property name="payRange">
+			<column name="PAYRANGE" />
+		</property>	
+		<property name="referenceNumber">
+			<column name="REFERENCENUMBER" />
+		</property>	
+		<!-- Added to new columns - MStoffel -->
+		<property name="expirationDate" type="timestamp">
+			<column name="EXPIRATIONDATE" />
+		</property>
+		<property name="regLevel">
+			<column name="REG_LEVEL" />
+		</property>		
+		<property name="assessmentTest">
+			<column name="ASSESSMENT_TEST" />
+		</property>				
+		<many-to-one
+				name="adContact"
+				column="ADVERTCONTACTID"
+				update="true"
+				cascade="none"
+				class="com.manpower.portal.mpnet.hbn.beans.AdvertisementContact"
+				not-null="true"
+				outer-join="true"
+				access="field"/>
+		
+		<property name="hoursWorked">
+			<column name="HOURSWORKED" />
+		</property>
+		<property name="language">
+			<column name="LANGUAGE" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="createdBy">
+			<column name="CREATED_BY" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>
+		<property name="changedBy">
+			<column name="CHANGED_BY" />
+		</property>
+		
+		<property name="externalId">
+			<column name="EXTERNALID" />
+		</property>	
+		
+		<property name="businessArea">
+			<column name="BUSINESSARREA" />
+		</property>	
+		
+		<property name="careerHarmonyId" type="long">
+			<column name="CAREERHARMONY_ID" />
+		</property>
+		
+		<property name="loc_freeform">
+			<column name="LOC_FREEFORM" />
+		</property>		
+<!--  Begin new fields -->	
+		<property name="jobType">
+			<column name="JOBTYPE" />
+		</property>
+		<property name="jobClass">
+			<column name="JOBCLASS" />
+		</property>
+		<property name="jobCode">
+			<column name="JOBCODE" />
+		</property>
+		<property name="frontOfficeAdvertId">
+			<column name="FOADVERTID " />
+		</property>
+		<property name="certifications">
+			<column name="CERTIFICATIONS" />
+		</property>
+		<property name="degreeArea">
+			<column name="DEGREEAREA" />
+		</property>
+		<property name="degreeType">
+			<column name="DEGREETYPE" />
+		</property>
+		<property name="jobDuration">
+			<column name="JOBDURATION" />
+		</property>
+		<property name="durationDetail">
+			<column name="DURATIONDETAIL" />
+		</property>
+		<property name="experienceMin">
+			<column name="EXPERIENCEMIN" />
+		</property>
+		<property name="salaryUnit">
+			<column name="SALARYUNIT" />
+		</property>
+		<property name="jobTemplateType">
+			<column name="JOBTEMPLATETYPE" />
+		</property>
+		<property name="numVacancies" type="integer">
+			<column name="NUMVACANCIES" />
+		</property>
+		<property name="maxRate" type="float">
+			<column name="MAXRATE" />
+		</property>
+		<property name="minRate" type="float">
+			<column name="MINRATE" />
+		</property>
+		<property name="office">
+			<column name="OFFICE" />
+		</property>
+		<property name="accountingUnit">
+			<column name="ACCOUNTINGUNIT" />
+		</property>
+		<property name="teaserText">
+			<column name="TEASERTEXT" />
+		</property>
+		<property name="postalCode1">
+			<column name="POSTAL_CODE1" />
+		</property>
+		<property name="postalCode2">
+			<column name="POSTAL_CODE2" />
+		</property>
+		<property name="postalCode3">
+			<column name="POSTAL_CODE3" />
+		</property>
+		<property name="notificationEmail">
+			<column name="NOTIFICATION_EMAIL" />
+		</property>
+		
+		<property name="extJoBoards">
+			<column name="EXT_JOB_BOARDS"></column>
+		</property>
+
+		<property name="appliedFor">
+			<column name="APPLIED_FOR" />
+		</property>
+		<property name="fromFrontOffice">
+			<column name="FROM_FRONT_OFFICE" />
+		</property>
+		
+		<property name="resumeNotRequired" column="RESUME_NOT_REQUIRED" type="boolean"></property>
+		
+		<set name="sites" table="ADVERTISEMENT_SITES" lazy="false">
+			<key column="SITEADVERT_ID"></key>
+			<many-to-many column="SITE_ID" class="com.manpower.portal.mpnet.hbn.beans.Site"></many-to-many>
+		</set>
+		
+		<set name="locations" table="ADVERTISEMENT_LOCATIONS" lazy="false" >
+			<key column="LOCADVERT_ID"></key>
+			<many-to-many column="LOCATION_ID" class="com.manpower.portal.mpnet.hbn.beans.CountryLocation"></many-to-many>
+		</set>
+		
+		<set name="languages" table="ADVERTISEMENT_LANGUAGES" lazy="false">
+			<key column="LANGADVERT_ID"></key>
+			<element column="LANGUAGE_CODE" type="string"></element>
+		</set>
+		
+		<set name="extSites" table="ADVERTISEMENTS_EXT_SITES" lazy="false">
+			<key column="EXTSITEADVERT_ID"></key>
+			<element column="EXT_SITE_VALUE_CODE" type="string"></element>
+		</set>
+ 	</class>
+</hibernate-mapping>

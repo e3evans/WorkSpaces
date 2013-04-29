@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!DOCTYPE hibernate-configuration
+   PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+  "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+    <hibernate-configuration>
+      <session-factory>
+     <property name="session_factory_name">java:hibernate/HibernateFactory</property>
+      <!-- Data Source -->
+      <property name="connection.datasource">jdbc/mpnet</property>
+		
+      <!-- Database Settings -->
+     <!-- <property name="default_schema">MPNETADMINDV</property> -->
+      <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>
+      <property name="show_sql">true</property>
+      
+      <!-- JDBC Settings -->
+      <property name="jdbc.use_streams_for_binary">true</property>
+      <property name="max_fetch_depth">1</property>
+      <property name="jdbc.batch_size">0</property>
+        
+      <!-- Cache settings -->
+      <property name="cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property>
+      <!-- Transaction API -->
+      <property name="transaction.manager_lookup_class">org.hibernate.transaction.WebSphereTransactionManagerLookup</property>
+         
+      <!-- Mapping files -->
+
+        <!-- MPNet Mapping files -->
+
+       <mapping resource="GemtSummaryReport.hbm.xml"/>
+       <mapping resource="GEMTNotes.hbm.xml"/>
+       <mapping resource="GemtManagers.hbm.xml"/>
+       <mapping resource="GemtDirectReports.hbm.xml"/>
+       <mapping resource="GemtSummaryReportFile.hbm.xml"/>
+       <mapping resource="GemtSummaryReportFileLite.hbm.xml"/>       
+      
+    </session-factory>
+   </hibernate-configuration>

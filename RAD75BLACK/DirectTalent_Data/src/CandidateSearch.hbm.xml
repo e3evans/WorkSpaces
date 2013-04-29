@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateSearch" table="CANDIDATESEARCH">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATESEARCH_SEQ</param>
+		</generator>
+		</id>
+
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="candidateId" type="long">
+			<column name="CAND_ID" />
+		</property>	
+		<property name="applicantId" type="long">
+			<column name="APPL_ID" />
+		</property>	
+		<property name="email">
+			<column name="EMAIL" />
+		</property>	
+		<property name="userId">
+			<column name="USER_ID" />
+		</property>	
+		<property name="firstName">
+			<column name="FIRSTNAME" />
+		</property>
+		<property name="middleName">
+			<column name="MIDDLENAME" />
+		</property>
+		<property name="lastName">
+			<column name="LASTNAME" />
+		</property>
+		<property name="phoneNumber">
+			<column name="PHONENUMBER" />
+		</property>
+		<property name="city">
+			<column name="CITY" />
+		</property>
+		<property name="state">
+			<column name="STATE" />
+		</property>
+		<property name="postalCode">
+			<column name="CODE" />
+		</property>
+
+		<property name="country">
+			<column name="COUNTRY" />
+		</property>
+		<property name="resumeName">
+			<column name="FILENAME" />
+		</property>
+		<property name="mimeType">
+			<column name="MIME_TYPE" />
+		</property>
+		<property name="status">
+			<column name="REVIEW_STATUS" />
+		</property>
+		<property name="createdOn" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="lastLoginDate" type="timestamp">
+			<column name="LAST_LOGIN" />
+		</property>
+		<property name="dateAppliedOn" type="timestamp">
+			<column name="APPLIED_ON" />
+		</property>
+		<property name="lastResumeDate" type="timestamp">
+			<column name="LAST_RESUME_DATE" />
+		</property>
+	
+		<property name="birthDate" type="timestamp">
+			<column name="BIRTHDATE" />
+		</property>
+		<property name="branchId" type="long">
+			<column name="BRANCH_ID" />
+		</property>
+		<property name="latitude"  type="double">
+			<column name="LATITUDE" />
+		</property>
+		<property name="longitude"  type="double">
+			<column name="LONGITUDE" />
+		</property>
+		<property name="score">
+			<column name="TEXT_SCORE"/>
+		</property>
+		<property name="locationId">
+			<column name="LOCATION_ID"/>
+		</property>
+		<property name="geoCodeStatus">
+			<column name="GEOCODE_STATUS"/>
+		</property>
+ 	</class>
+</hibernate-mapping>

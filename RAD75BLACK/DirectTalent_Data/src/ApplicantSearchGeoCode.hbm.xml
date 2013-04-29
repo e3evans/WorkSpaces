@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.ApplicantSearchGeoCode" table="V_APPLICANT_ADDRESSES">
+		
+		<id name="id" type="long" column="ID">
+		</id>
+		<property name="powerSearchId">
+			<column name="POWERSEARCH_ID"></column>
+		</property>
+		<property name="country">
+			<column name="COUNTRY" />
+		</property>
+		<property name="region">
+			<column name="REGION" />
+		</property>
+		<property name="city">
+			<column name="CITY" />
+		</property>
+		<property name="postalCode">
+			<column name="POSTALCODE" />
+		</property>
+		<property name="email">
+			<column name="EMAIL" />
+		</property>
+		<property name="siteId">
+			<column name="SITE_ID" />
+		</property>
+	</class>
+</hibernate-mapping>

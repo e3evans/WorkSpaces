@@ -1,0 +1,186 @@
+<script>
+
+	var consentOption1='<%=consentOption1%>';
+	var consentOption2='<%=consentOption2%>';
+	var consentOption3='<%=consentOption3%>';
+	var consentOption4='<%=consentOption4%>';
+	
+	function processClick(evt)
+	{
+		evt = (evt) ? evt : event;
+		
+		var target = (evt.target) ? evt.target : evt.srcElement;
+		
+		encodeData(target.name,target.checked);
+	}
+	
+	function uncheck(checkboxId)
+	{
+		document.getElementById(checkboxId).checked=false;
+	}
+	
+	function encodeData(name,checked)
+	{
+		if(name=='CUST_PRIVACY_TERMS_1')
+		{
+			if(checked==false)
+			{
+                                document.getElementById('CUST_CONSENT_TERMS_TR').style.display = "none";
+                                document.getElementById('CUST_CONSENT_TERMS_A_TR').style.display = "none";
+                                document.getElementById('CUST_CONSENT_TERMS_B_TR').style.display = "none";
+
+				if(document.getElementById('CUST_PRIVACY_TERMS_2').checked==false)
+				{
+					consentOption1='0';
+				}
+			}
+			else
+			{
+				consentOption1='1';
+				uncheck('CUST_PRIVACY_TERMS_2');
+                                document.getElementById('CUST_CONSENT_TERMS_TR').style.display = "";
+                                document.getElementById('CUST_CONSENT_TERMS_A_TR').style.display = "";
+                                document.getElementById('CUST_CONSENT_TERMS_B_TR').style.display = "";
+			}
+		}
+		if(name=='CUST_PRIVACY_TERMS_2')
+		{
+			if(checked==false)
+			{
+				if(document.getElementById('CUST_PRIVACY_TERMS_1').checked==false)
+				{
+					consentOption1='0';
+				}
+			}
+			else
+			{
+				consentOption1='2';
+				uncheck('CUST_PRIVACY_TERMS_1');
+                                document.getElementById('CUST_CONSENT_TERMS_TR').style.display = "none";
+                                document.getElementById('CUST_CONSENT_TERMS_A_TR').style.display = "none";
+                                document.getElementById('CUST_CONSENT_TERMS_B_TR').style.display = "none";
+
+			}
+		}		
+
+		if(name=='CUST_CONSENT_TERMS_1')
+		{
+			if(checked==false)
+			{
+				if(document.getElementById('CUST_CONSENT_TERMS_2').checked==false)
+				{
+					consentOption2='0';
+				}
+			}
+			else
+			{
+				consentOption2='1';
+				uncheck('CUST_CONSENT_TERMS_2');
+			}
+		}
+		if(name=='CUST_CONSENT_TERMS_2')
+		{
+			if(checked==false)
+			{
+				if(document.getElementById('CUST_CONSENT_TERMS_1').checked==false)
+				{
+					consentOption2='0';
+				}
+			}
+			else
+			{
+				consentOption2='2';
+				uncheck('CUST_CONSENT_TERMS_1');
+			}
+		}
+		
+		if(name=='CUST_CONSENT_TERMS_A_1')
+		{
+			if(checked==false)
+			{
+				consentOption3='0';
+			}
+			else
+			{
+				consentOption3='1';
+			}
+		}		
+		
+		if(name=='CUST_CONSENT_TERMS_B_1')
+		{
+			if(checked==false)
+			{
+				consentOption4='0';
+			}
+			else
+			{
+				consentOption4='1';
+			}
+		}		
+
+		encodedData=consentOption1+consentOption2+consentOption3+consentOption4;
+		
+		setEncodedConsentData(encodedData);
+	}
+</script>
+
+<TABLE>
+	<TR colspan='3'>
+		<%=italian_consent_intro%>
+	</TR>
+	<TR>
+		<TD valign="top" align="center">
+			<%=italian_consent_selection_ckeckbox_1%>
+			<BR/>
+			<input type="checkbox" id="CUST_PRIVACY_TERMS_1" name="CUST_PRIVACY_TERMS_1" value="" <%=checkBox1Checked%> style="margin-left: -4px" onclick="processClick(event)"/>
+		</TD>
+		<TD valign="top" align="center">
+			<%=italian_consent_selection_ckeckbox_2%>
+			<BR/>
+			<input type="checkbox" id="CUST_PRIVACY_TERMS_2" name="CUST_PRIVACY_TERMS_2" value="" <%=checkBox2Checked%> style="margin-left: -4px" onclick="processClick(event)"/>
+		</TD>	
+		<TD valign="top">
+			<span class="outputText"><%=italian_consent_selectiion%></span>
+		</TD>		
+	</TR>
+	<TR>
+		<TD  colspan="3" class="errorText">
+                        <span class="outputText"><%=error_consent_text%></span>
+		</TD>
+	</TR>
+	<TR id="CUST_CONSENT_TERMS_TR" style="display:<%=display%>">
+		<TD valign="top" align="center">
+			<%=italian_consent_training_checkbox_1%>
+			<BR/>
+			<input type="checkbox" id="CUST_CONSENT_TERMS_1" name="CUST_CONSENT_TERMS_1" value="" <%=checkBox3Checked%> style="margin-left: -4px" onclick="processClick(event)"/>	
+		</TD>
+		<TD valign="top" align="center">
+			<%=italian_consent_training_checkbox_2%>
+			<BR/>
+			<input type="checkbox" id="CUST_CONSENT_TERMS_2" name="CUST_CONSENT_TERMS_2" value="" <%=checkBox4Checked%> style="margin-left: -4px" onclick="processClick(event)"/>
+		</TD>	
+		<TD valign="top">
+			<span class="outputText"><%=italian_consent_training%></span>
+		</TD>		
+	</TR>		
+	<TR id="CUST_CONSENT_TERMS_A_TR" style="display:<%=display%>">
+		<TD colspan='2' valign="top" align="center">
+			<%=italian_consent_labour_checkbox%>
+			<BR/>
+			<input type="checkbox" name="CUST_CONSENT_TERMS_A_1" value="" <%=checkBox5Checked%> style="margin-left: -4px" onclick="processClick(event)"/>
+		</TD>	
+		<TD valign="top">
+			<span class="outputText"><%=italian_consent_labour%></span>
+		</TD>		
+	</TR>	
+	<TR id="CUST_CONSENT_TERMS_B_TR" style="display:<%=display%>">
+		<TD colspan='2' valign="top" align="center">
+			<%=italian_consent_protected_checkbox%>
+			<BR/>
+			<input type="checkbox" name="CUST_CONSENT_TERMS_B_1" value="" <%=checkBox6Checked%> style="margin-left: -4px" onclick="processClick(event)"/>
+		</TD>	
+		<TD valign="top">
+			<span class="outputText"><%=italian_consent_protected%></span>
+		</TD>		
+	</TR>		
+</TABLE>		

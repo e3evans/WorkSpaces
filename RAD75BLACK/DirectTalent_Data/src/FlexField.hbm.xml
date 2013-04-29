@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.FlexField" table="FLEX_FIELD">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">FLEX_FIELD_SEQ</param>
+			</generator>
+		</id>
+		<property name="siteId" type="long">
+			<column name="SITE_ID"></column>
+		</property>
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		<property name="flexInput1" type="string">
+			<column name="FLEX_INPUT_1"></column>
+		</property>
+		<property name="flexInput2" type="string">
+			<column name="FLEX_INPUT_2"></column>
+		</property>
+		<property name="flexList1" type="string">
+			<column name="FLEX_LIST_1"></column>
+		</property>
+		<property name="flexList2" type="string">
+			<column name="FLEX_LIST_2"></column>
+		</property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,121 @@
+<script>
+
+        var selectedFirstInput=' <%=selectedFirstInput%>';
+        var selectedSecondInput=' <%=selectedSecondInput%>';
+        var selectedFirstList=' <%=selectedFirstList%>';
+        var selectedSecondList=' <%=selectedSecondList%>';
+
+	function changeList(evt)
+	{
+			evt = (evt) ? evt : event;
+			
+			var target = (evt.target) ? evt.target : evt.srcElement;
+			
+			encodeFlexData(target.name,target.options[target.selectedIndex].value);			
+	}
+
+	function changeInput(evt)
+	{
+			evt = (evt) ? evt : event;
+			
+			var target = (evt.target) ? evt.target : evt.srcElement;
+			
+			encodeFlexData(target.name,target.value);			
+	}
+
+	function encodeFlexData(name,value)
+	{
+                if(value=='')
+                {
+                        value=" ";
+                }
+
+		if(name=='first_flex_list')
+		{
+                        selectedFirstList=value;
+		}
+		else if(name=='second_flex_list')
+		{
+		        selectedSecondList=value;
+		}	
+		else if(name=='first_flex_input')
+		{
+		        selectedFirstInput=value;
+		}	
+		else if(name=='second_flex_input')
+		{
+		        selectedSecondInput=value;
+		}	
+
+
+		encodedData=selectedFirstInput+"#"+selectedSecondInput+"#"+selectedFirstList+"#"+selectedSecondList;
+		
+		setEncodedFlexData(encodedData);		
+	}
+</script>
+<table WIDTH="565px">
+	<tr style="<%=showFirstInput%>">
+		<td width="<%=widthPercent%>">
+                        <span style="<%=requiredFirstInput%>">*</span>
+			<span class="outputText"><%=first_flex_input_label%></span>
+		</td>
+		<td>
+			<input type="text" class="mpInputBox" name="first_flex_input"  value="<%=selectedFirstInput%>" onBlur="changeInput(event)" tabindex="<%=first_flex_input_tab_index%>"/>
+		</td>		
+	</tr>
+	<tr style="<%=showFirstInput%>">
+                <td>
+                </td>
+		<td class="errorText">
+			<%=error_first_input%>
+		</td>	
+	</tr>	
+	<tr style="<%=showSecondInput%>">
+		<td>
+                        <span style="<%=requiredSecondInput%>">*</span>
+			<span class="outputText"><%=second_flex_input_label%></span>
+		</td>
+		<td>
+			<input type="text" class="mpInputBox"  name="second_flex_input"  value="<%=selectedSecondInput%>" onBlur="changeInput(event)" tabindex="<%=second_flex_input_tab_index%>"/>
+		</td>		
+	</tr>
+	<tr style="<%=showSecondInput%>">
+                <td>
+                </td>
+		<td class="errorText">
+			<%=error_second_input%>
+		</td>	
+	</tr>	
+	<tr style="<%=showFirstList%>">
+		<td>
+                        <span style="<%=requiredFirstList%>">*</span>
+			<span class="outputText"><%=first_flex_list_label%></span>
+		</td>
+		<td>
+			<%=first_list%>
+		</td>		
+	</tr>
+	<tr style="<%=showFirstList%>">
+                <td>
+                </td>
+		<td class="errorText">
+			<%=error_first_list%>
+		</td>	
+	</tr>	
+	<tr style="<%=showSecondList%>">
+		<td>
+                        <span style="<%=requiredSecondList%>">*</span>
+			<span class="outputText"><%=second_flex_list_label%></span>
+		</td>
+		<td>
+			<%=second_list%>
+		</td>		
+	</tr>
+	<tr style="<%=showSecondList%>">
+                <td>
+                </td>
+		<td class="errorText">
+			<%=error_second_list%>
+		</td>	
+	</tr>
+</table>

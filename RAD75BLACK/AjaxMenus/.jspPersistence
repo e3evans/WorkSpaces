@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence>
+<jsp-scripting>
+        <request id="/AjaxMenus/WebContent/AjaxMenus/AjaxMenusEdit.jsp">
+            <variable name="baseMenu" type="java.lang.String"/>
+        <variable name="browseList" type="java.util.List">
+                <collectionProperty name="browseList">
+                    
+                
+                <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            <collectionProperty name="children">
+                    <contains type="java.lang.Object"/>
+                </collectionProperty>
+            <collectionProperty name="facets">
+                    <contains type="java.lang.Object"/>
+                </collectionProperty>
+            <collectionProperty name="attributes">
+                    <contains type="java.lang.Object"/>
+                </collectionProperty>
+            <collectionProperty name="facetsAndChildren">
+                    <contains type="java.lang.Object"/>
+                </collectionProperty>
+            </variable>
+        <variable name="testList" type="java.util.List">
+                <collectionProperty name="testList">
+                    <contains type="javax.faces.component.UISelectItem"/>
+                </collectionProperty>
+            </variable>
+        </request>
+    <session>
+            
+        <variable name="topLevelList" type="java.util.List">
+                <collectionProperty name="topLevelList">
+                    
+                
+                <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            </variable>
+        <variable name="level1Value" type="java.lang.String"/>
+        <variable name="breadcrumbs" type="java.lang.String"/>
+        
+        <variable name="storedPrefs" type="java.util.List">
+                <collectionProperty name="storedPrefs">
+                    <contains type="com.manpower.portal.theme.ajax.AjaxMenuBean"/>
+                </collectionProperty>
+            </variable>
+        <variable name="lastentry" type="java.lang.String"/>
+        <variable name="previewArea" type="java.lang.String"/>
+        <variable name="hideword" type="java.lang.String"/>
+        <variable name="websites" type="java.util.List">
+                <collectionProperty name="websites">
+                    <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            </variable>
+        <variable name="showdropdown" type="java.lang.String"/>
+        </session>
+    <request id="/AjaxMenus/WebContent/AjaxMenus/AjaxMenusView.jsp">
+            <variable name="displayArea" type="java.lang.String"/>
+        <variable name="websites" type="java.util.List">
+                <collectionProperty name="websites">
+                    <contains type="javax.faces.model.SelectItem"/>
+                </collectionProperty>
+            </variable>
+        </request>
+    <request id="/AjaxMenus/WebContent/AjaxMenus/AjaxMenusViewNew.jsp">
+            <variable name="displayArea" type="java.lang.String"/>
+        </request>
+    </jsp-scripting>
+<beanData/>
+</persistence>

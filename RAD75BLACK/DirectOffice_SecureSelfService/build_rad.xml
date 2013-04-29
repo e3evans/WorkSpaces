@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     October 1, 2007 9:22:17 AM                                                        
+
+     DirectTalent_MyManpower
+     DirectTalent_MyManpower components
+     This build file is used to build in a RAD ANT environment, it MUST be
+     called from build.xml.
+     To use eclipse and WebSphere tasks, you MUST run ANT in the SAME JRE
+     as the workspace, otherwise these tasks will not be found on the classpath.
+                   
+     dcook                                                                
+     ====================================================================== -->
+
+<project name="DirectOffice_SecureSelfService" default="all" basedir=".">
+
+		<description>
+			DirectOffice Secure Self Service components
+		</description>
+
+	<property file='build.properties'/>
+	<property name='dist' value='${dir.work}/dist'/>
+	
+	<target name="init">
+	 	<tstamp/> 
+		<delete dir='${dist}/temp' />
+		<mkdir dir='${dist}/temp' />
+	</target>
+	
+	<!-- Build the project -->
+	<target name="build-project">
+		<!-- Refresh the project -->
+		<echo message="Refeshing ${project.name}" />
+		<eclipse.refreshLocal resource="${project.name}" />
+		<projectBuild ProjectName="${project.name}" BuildType="${build.type}" DebugCompilation="${build.debug}" />
+	</target>
+	
+	<target name="build-utility" description="Build utility projects" if="build.rad">
+		<echo message="Building utility projects"/>
+		<ant dir="../${project.utility.3}" antfile="build.xml" inheritall="false" target="all"/>
+	</target>
+	
+	<target name="export-project-jar" depends="create-manifest">
+		<!-- export the JAR file -->
+		<warExport warprojectname="${project.name}" warexportfile="${dist}/${project.name}-${DSTAMP}-${TSTAMP}.war" exportsource="${build.source}" overwrite="${build.overwrite}"/>
+	</target>
+		
+	<target name="create-manifest" description="generates a manifest file">
+		<manifest file="${dir.work}/MANIFEST.MF">
+			<attribute name="Built-By" value="${user.name}"/>
+			<attribute name="Built-On" value="${DSTAMP}:${TSTAMP}"/>
+		</manifest>
+	</target>
+	
+	<target name="build-all" depends="build-project">
+		<!-- Builds all projects -->
+		<echo message="Built all projects" />
+	</target>
+
+	<target name="export-all" depends="export-project-jar">
+		<!-- Exports all files -->
+		<echo message="Exported all files" />
+	</target>
+	
+<!-- Testing related targets -->
+	<target name="junit-test">
+		<junit haltonfailure="true" printsummary="true">
+			<test name="com.manpower.*"/>
+		</junit>
+	</target>
+	
+	<target name="all" depends="init, build-all, export-all, modified-war">
+		<!-- Build all projects and exports all files -->
+		<echo message="Build finished!" />
+	</target>
+	
+<!-- unwar -->
+	<target name="unwar-temp-file">
+		<unwar src="${dist}/${project.name}-${DSTAMP}-${TSTAMP}.war" dest="${dist}/temp" />	
+	</target>
+	
+	<target name="move-utility-projects">
+		<copy file='${dir.root}/projects/Manpower/${project.utility.3}/configuration/build/dist/${project.utility.3}.jar' 
+			tofile='${dist}/temp/WEB-INF/lib/${project.utility.3}.jar'
+			verbose='true'/>
+	</target>
+	
+	<target name='modified-war' depends='unwar-temp-file'>
+		<war destfile="${dist}/${project.name}.war" webxml='${dist}/temp/WEB-INF/web.xml' manifest="${dist}/temp/META-INF/MANIFEST.MF">
+			<fileset dir='${dist}/temp' excludes="*.war"/>
+		</war>
+	</target>
+</project>

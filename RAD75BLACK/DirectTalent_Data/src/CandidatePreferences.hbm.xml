@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidatePreferences" table="CANDIDATEPREFERENCES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEPREFERENCES_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="contactMethod">
+			<column name="CONTACTMETHOD" />
+		</property>		
+		<property name="contractType">
+			<column name="CONTRACTTYPE" />
+		</property>
+		<property name="jobTitle">
+			<column name="JOBTITLE" />
+		</property>		
+		<property name="positionType">
+			<column name="POSITIONTYPE" />
+		</property>		
+		<property name="distanceUnits">
+			<column name="DISTANCEUNITS" />
+		</property>		
+		<property name="industrySector">
+			<column name="INDUSTRYSECTOR" />
+		</property>
+		<property name="workShifts">
+			<column name="WORKSHIFTS" />
+		</property>		
+		<property name="Flexhours">
+			<column name="FLEXHOURS" />
+		</property>		
+		<property name="introToManpower">
+			<column name="INTROTOMANPOWER" />
+		</property>
+		<property name="workType">
+			<column name="WORKTYPE" />
+		</property>		
+
+		<property name="startDate"  type="timestamp">
+			<column name="STARTDATE" />
+		</property>
+		
+		<property name="hoursPerWeek">
+			<column name="HOURSPERWEEK" />
+		</property>
+		<property name="relocateInternational">
+			<column name="RELOCATEINTERNATIONAL" />
+		</property>
+
+		<property name="relocateCountry">
+			<column name="RELOCATECOUNTRY" />
+		</property>
+
+		<property name="location"  type="string">
+			<column name="PREFEREDLOCATION" />
+		</property>
+		
+		<property name="proximity"  type="string">
+			<column name="PROXIMITY" />
+		</property>
+		
+		<property name="preferedRole"  type="string">
+			<column name="ROLEDESC" />
+		</property>
+
+
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>		
+ 	</class>
+</hibernate-mapping>

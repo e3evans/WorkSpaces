@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.VCandidateResume" table="V_CANDIDATERESUMES" mutable="false">
+		<id name="candidate_id" type="long" column="CANDIDATE_ID"/>
+		<property name="resume_id" type="long" column="RESUME_ID"/>
+		<property name="firstname" column="FIRSTNAME"/>
+		<property name="lastname" column="LASTNAME"/>
+		<property name="contact_by_email" column="CONTACT_BY_EMAIL"/>
+		<property name="candidate_email" column="CANDIDATE_EMAIL"/>		
+		<property name="branch_city" column="BRANCH_CITY"/>
+		<property name="branchname" column="BRANCHNAME"/>
+		<property name="branch_address1" column="BRANCH_ADDRESS1"/>
+		<property name="branch_address2" column="BRANCH_ADDRESS2"/>
+		<property name="branch_state" column="BRANCH_STATE"/>
+		<property name="branch_country" column="BRANCH_COUNTRY"/>
+		<property name="branch_postalcode" column="BRANCH_POSTALCODE"/>
+		<property name="branch_phone" column="BRANCH_PHONE"/>
+		<property name="branch_fax" column="BRANCH_FAX"/>
+		<property name="branch_email" column="BRANCH_EMAIL"/>
+		<property name="site_country" column="SITE_COUNTRY"/>
+		<property name="resume_name" column="RESUME_NAME"/>
+		<property name="resume" type="blob" column="RESUME"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.mpnet.hbn.beans.CandidateReferences" table="CANDIDATEREFERENCES">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">CANDIDATEREFERENCES_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="siteId" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="name">
+			<column name="NAME" />
+		</property>				
+		<property name="phone">
+			<column name="PHONE" />
+		</property>		
+		<property name="email">
+			<column name="EMAIL" />
+		</property>		
+		<property name="company">
+			<column name="COMPANY" />
+		</property>
+		<property name="title">
+			<column name="TITLE" />
+		</property>		
+		<property name="referenceType">
+			<column name="REFERENCETYPE" />
+		</property>		
+		<property name="relationship">
+			<column name="RELATIONSHIP" />
+		</property>				
+		<property name="contact">
+			<column name="CONTACT" />
+		</property>				
+		<many-to-one name="candidate" column="CANDIDATE_ID" class="com.manpower.portal.mpnet.hbn.beans.Candidate"
+			not-null="true" />
+		<property name="updatedOn" type="timestamp">
+			<column name="UPDATEDON" />
+		</property>
+		<property name="updatedBy">
+			<column name="UPDATEDBY" />
+		</property>
+		<property name="created_On" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="changed_On" type="timestamp">
+			<column name="CHANGED_ON" />
+		</property>				
+ 	</class>
+</hibernate-mapping>

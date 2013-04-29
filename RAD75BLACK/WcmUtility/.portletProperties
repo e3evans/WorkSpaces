@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-properties>
+    <portlet name="WcmUtility">
+        <property>
+            <name>WSRP_PRODUCER</name>
+            <value>false</value>
+        </property>
+    </portlet>
+    <portlet name="WcmViewer">
+        <property>
+            <name>WSRP_PRODUCER</name>
+            <value>false</value>
+        </property>
+    </portlet>
+    <portlet name="WcmWebViewerJSR168">
+        <property>
+            <name>DEFAULT_PAGE</name>
+            <value>/_WcmWebViewerJSR168/jsp/html/WcmWebViewerJSR168PortletView.jsp</value>
+        </property>
+    </portlet>
+</portlet-properties>

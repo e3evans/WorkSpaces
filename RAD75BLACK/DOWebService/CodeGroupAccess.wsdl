@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="CodeGroupAccess" targetNamespace="http://codegroup.webservice.bis.com/" xmlns:tns="http://codegroup.webservice.bis.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://codegroup.webservice.bis.com/types" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <schema targetNamespace="http://codegroup.webservice.bis.com/types" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:soap11-enc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://codegroup.webservice.bis.com/types" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+      <complexType name="CodeBean">
+        <sequence>
+          <element name="id" type="long"/>
+          <element name="localizedDesc" nillable="true" type="string"/>
+          <element name="localizedName" nillable="true" type="string"/>
+          <element name="name" nillable="true" type="string"/>
+          <element name="parentId" type="long"/></sequence></complexType>
+      <complexType name="DataNotFoundException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="InvalidArgumentException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ServerErrorException">
+        <sequence>
+          <element name="message" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="CodeGroupBean">
+        <sequence>
+          <element name="allDescriptions" nillable="true" type="tns:ArrayOfLocalName"/>
+          <element name="codes" nillable="true" type="tns:ArrayOfCodeBean"/>
+          <element name="groupName" nillable="true" type="string"/>
+          <element name="id" type="long"/></sequence></complexType>
+      <complexType name="ArrayOfLocalName">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:LocalName[]"/></restriction></complexContent></complexType>
+      <complexType name="LocalName">
+        <sequence>
+          <element name="description" nillable="true" type="string"/>
+          <element name="language" nillable="true" type="string"/>
+          <element name="name" nillable="true" type="string"/></sequence></complexType>
+      <complexType name="ArrayOfCodeBean">
+        <complexContent>
+          <restriction base="soap11-enc:Array">
+            <attribute ref="soap11-enc:arrayType" wsdl:arrayType="tns:CodeBean[]"/></restriction></complexContent></complexType></schema>
+  </types>
+  <message name="ICodeGroup_getCodeGroup">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+  </message>
+  <message name="ICodeGroup_getCodeIDFromPath">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+  </message>
+  <message name="ICodeGroup_getCodeByID">
+    <part name="String_1" type="xsd:string"/>
+    <part name="long_2" type="xsd:long"/>
+    <part name="String_3" type="xsd:string"/>
+  </message>
+  <message name="ServerErrorException">
+    <part name="ServerErrorException" type="ns2:ServerErrorException"/>
+  </message>
+  <message name="ICodeGroup_getCodeByIDResponse">
+    <part name="result" type="ns2:CodeBean"/>
+  </message>
+  <message name="InvalidArgumentException">
+    <part name="InvalidArgumentException" type="ns2:InvalidArgumentException"/>
+  </message>
+  <message name="ICodeGroup_getCodeIDFromPathResponse">
+    <part name="result" type="xsd:long"/>
+  </message>
+  <message name="ICodeGroup_getCodeGroupByLanguageResponse">
+    <part name="result" type="ns2:CodeGroupBean"/>
+  </message>
+  <message name="ICodeGroup_getCodeGroupResponse">
+    <part name="result" type="ns2:CodeGroupBean"/>
+  </message>
+  <message name="DataNotFoundException">
+    <part name="DataNotFoundException" type="ns2:DataNotFoundException"/>
+  </message>
+  <message name="ICodeGroup_getCodeGroupByLanguage">
+    <part name="String_1" type="xsd:string"/>
+    <part name="String_2" type="xsd:string"/>
+    <part name="String_3" type="xsd:string"/>
+  </message>
+  <portType name="ICodeGroup">
+    <operation name="getCodeByID" parameterOrder="String_1 long_2 String_3">
+      <input message="tns:ICodeGroup_getCodeByID"/>
+      <output message="tns:ICodeGroup_getCodeByIDResponse"/>
+      <fault name="InvalidArgumentException" message="tns:InvalidArgumentException"/>
+      <fault name="DataNotFoundException" message="tns:DataNotFoundException"/>
+      <fault name="ServerErrorException" message="tns:ServerErrorException"/>
+    </operation>
+    <operation name="getCodeGroup" parameterOrder="String_1 String_2">
+      <input message="tns:ICodeGroup_getCodeGroup"/>
+      <output message="tns:ICodeGroup_getCodeGroupResponse"/>
+      <fault name="InvalidArgumentException" message="tns:InvalidArgumentException"/>
+      <fault name="DataNotFoundException" message="tns:DataNotFoundException"/>
+      <fault name="ServerErrorException" message="tns:ServerErrorException"/>
+    </operation>
+    <operation name="getCodeGroupByLanguage" parameterOrder="String_1 String_2 String_3">
+      <input message="tns:ICodeGroup_getCodeGroupByLanguage"/>
+      <output message="tns:ICodeGroup_getCodeGroupByLanguageResponse"/>
+      <fault name="InvalidArgumentException" message="tns:InvalidArgumentException"/>
+      <fault name="DataNotFoundException" message="tns:DataNotFoundException"/>
+      <fault name="ServerErrorException" message="tns:ServerErrorException"/>
+    </operation>
+    <operation name="getCodeIDFromPath" parameterOrder="String_1 String_2">
+      <input message="tns:ICodeGroup_getCodeIDFromPath"/>
+      <output message="tns:ICodeGroup_getCodeIDFromPathResponse"/>
+      <fault name="InvalidArgumentException" message="tns:InvalidArgumentException"/>
+      <fault name="DataNotFoundException" message="tns:DataNotFoundException"/>
+      <fault name="ServerErrorException" message="tns:ServerErrorException"/>
+    </operation>
+  </portType>
+  <binding name="ICodeGroupBinding" type="tns:ICodeGroup">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getCodeByID">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault name="DataNotFoundException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault name="ServerErrorException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+    </operation>
+    <operation name="getCodeGroup">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault name="DataNotFoundException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault name="ServerErrorException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+    </operation>
+    <operation name="getCodeGroupByLanguage">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault name="DataNotFoundException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault name="ServerErrorException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+    </operation>
+    <operation name="getCodeIDFromPath">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </input>
+      <output>
+        <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </output>
+      <fault name="InvalidArgumentException">
+        <soap:fault name="InvalidArgumentException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="DataNotFoundException">
+        <soap:fault name="DataNotFoundException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+      <fault name="ServerErrorException">
+        <soap:fault name="ServerErrorException" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="http://codegroup.webservice.bis.com/"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="CodeGroupAccess">
+    <port name="ICodeGroupPort" binding="tns:ICodeGroupBinding">
+      <!-- DEV -->
+      <!--soap:address location="http://10.14.2.101:80/WebApp/ICodeGroup"/-->
+      <!-- UAT -->
+      <soap:address location="http://10.151.100.63/WebApp/ICodeGroup"/>
+    </port>
+  </service>
+</definitions>

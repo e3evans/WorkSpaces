@@ -1,0 +1,46 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+   <constant name="struts.custom.i18n.resources" value="global-messages" />
+   <package name="dttranslations" namespace="/translations" extends="struts-default">
+
+      <action name="step1" class="step1Action">
+         <result name="input">/app/jsp/step1.jsp</result>
+         <result name="success" type="redirectAction">
+            <param name="actionName">step2</param>
+            <!-- <param name="propFile">${propFile}</param>  -->
+            <!-- <param name="selectedCountryCode">${country.id.countryCode}</param>  -->
+            <param name="namespace">/translations</param>
+         </result>
+         <result name="error">/app/jsp/error.jsp</result>
+      </action>
+
+      <action name="step2" class="step2Action">
+         <result name="input">/app/jsp/step2.jsp</result>
+         <result name="success" type="redirectAction">
+            <param name="actionName">step3</param>
+            <param name="namespace">/translations</param>
+         </result>
+         <result name="error">/app/jsp/error.jsp</result>
+      </action>
+
+      <action name="step3" class="step3Action">
+         <result name="success">/app/jsp/step3.jsp</result>
+         <result name="error">/app/jsp/error.jsp</result>
+      </action>
+
+      <action name="step4" class="step4Action">
+         <result name="success">/app/jsp/step4.jsp</result>
+         <result name="error">/app/jsp/error.jsp</result>
+      </action>
+
+      <action name="importProperty" class="propertyFileUpload">
+         <result name="input">/app/jsp/upload-property.jsp</result>
+         <result name="success">/app/jsp/upload-success.jsp</result>
+         <result name="error">/app/jsp/error.jsp</result>
+      </action>
+
+   </package>
+
+</struts>

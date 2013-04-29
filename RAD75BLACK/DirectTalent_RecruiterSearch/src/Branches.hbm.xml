@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.beans.Branches" table="bjh_resumes"  >
+	
+		<id name="branch_id" type="long" column="branch_id" />
+		<property name="branchname" column="branchname"/>
+		<property name="mpmatches" column="mpmatches" type="long"/>
+		
+			
+	</class>
+</hibernate-mapping>

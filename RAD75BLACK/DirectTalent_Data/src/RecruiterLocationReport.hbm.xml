@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.manpower.portal.mpnet.hbn.beans.RecruiterLocationReport" table="V_RECRUITER_LOCATION_REPORT" mutable="false">
+		<id name="id" type="long" column="CANDIDATE_ID"></id>
+		<property name="firstName" type="string" column="FIRSTNAME"/>
+		<property name="lastName" type="string" column="LASTNAME"/>
+		<property name="middleName" type="string" column="MIDDLENAME"/>
+		<property name="resumeId" type="long" column="RESUME_ID"/>
+		<property name="preferredLocation" type="string" column="PREFERED_LOCATION"/>
+		<property name="locationId" type="long" column="LOCATION_ID"/>
+		<property name="regionId" type="long" column="REGION_ID"></property>
+		<property name="language" type="string" column="LANG"/>
+		<property name="siteId" type="long" column="SITE_ID"/>
+		<property name="branchName" type="string" column="BRANCHNAME"/>
+		<property name="resumeUpdatedOn" type="timestamp" column="UPDATEDON"></property>
+		<!-- property name="resume" type="blob" column="RESUME"/ -->
+		<property name="dateApplied" column="DATEAPPLIED" type="timestamp"></property>
+		<property name="lastLoginDate" column="LAST_LOGIN_DATE" type="timestamp"></property>
+		<property name="rating" column="RATING" type="string"></property>
+		<property name="status" column="STATUS" type="string"></property>		
+		<property name="sentToFO" column="SENT_TO_FO" type="boolean"></property>
+		<property name="bgScore" column="BG_SCORE" type="string"></property>
+		<property name="chScore" column="CH_SCORE" type="string"></property>	
+		<property name="countOfJobsAppliedFor" column="COUNT_OF_JOBS_APPLIED_FOR" type="integer"></property>			
+		<property name="candidateRowCount" column="CANDIDATE_ROW_NUMBER" type="integer"></property>
+		<property name="activeStatus" column="ACTIVE_STATUS" type="integer"></property>		
+		<property name="primaryResume" type="boolean" column="PRIMARY_RESUME"></property>		
+	</class>
+</hibernate-mapping>

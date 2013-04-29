@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.hbn.beans.CandidateSearchResults" table="bjh_resumes" mutable="false">
+	
+	
+		<id name="unique_id" type="long" column="unique_id"/>
+ 		<property name="candidate_id" type="long" column="candidate_id" />
+ 		
+ 		<property name="region_id" type="long"/>
+		<property name="location_id" type="long"/>
+		<property name="site_id" type="long"/>
+ 		<property name="resume_id" type="long"/>
+ 		<property name="count_of_jobs_applied_for" type="long"/>
+ 		<property name="cv_id" type="long"/>
+ 		<property name="q_total" type="long"/>
+ 		
+		<property name="firstname" column="firstname"/>
+		<property name="middlename" column="middlename"/>
+		<property name="status" column="status"/>
+		<property name="prefered_location" column="prefered_location"/>
+		<property name="branchname" column="branchname"/>
+		<property name="lastname" column="lastname"/>
+		<property name="cand_type" column="cand_type"/>
+		
+		<property name="mime_type" column="mime_type"/>
+		<property name="resume_name" column="resume_name"/>
+		
+		
+		<property name="dateapplied" type="timestamp"  column="dateapplied"/> 
+		<property name="last_login_date" type="timestamp" column="last_login_date"/> 
+		<property name="updatedon" type="timestamp" column="updatedon"/>
+		
+	</class>
+</hibernate-mapping>

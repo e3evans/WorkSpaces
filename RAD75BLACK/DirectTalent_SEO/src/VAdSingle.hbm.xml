@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directtalentseo.hbn.beans.VAdSingle" table="v_ads_indsec13"  >
+ 		<id name="id" type="long" column="advertisementid" />
+		<property name="sitename" column="sitename"/>
+		<property name="jobtitle" column="jobtitle"/>
+		<property name="jobdescription"  column="jobdescription"/>
+		<property name="candidateprofile" column="candidateprofile"/>
+		<property name="candidateskills" column="candidateskills"/>
+		<property name="industry_sector" column="industry_sector"/>
+		<property name="location" column="location"/>
+		<property name="payrange" column="payrange"/>
+		<property name="countrycode" column="countrycode"/>
+		<property name="publicationdate" column="publicationdate" type="timestamp"/>
+		<property name="expirationdate" column="expirationdate" type="timestamp"/>
+		<property name="referencenumber" column="referencenumber" />
+		<property name="advertcontactid" column="advertcontactid" type="long"/>
+		<property name="contracttype" column="contracttype"/>
+		<property name="language" column="language"/>
+		<property name="branch_name" column="branch_name"/>
+		<property name="branch_address1" column="branch_address1"/>
+		<property name="branch_address2" column="branch_address2"/>
+		<property name="branch_city" column="branch_city"/>
+		<property name="branch_zipcode" column="branch_zipcode"/>
+		<property name="branch_state" column="branch_state"/>
+	
+
+	</class>
+</hibernate-mapping>

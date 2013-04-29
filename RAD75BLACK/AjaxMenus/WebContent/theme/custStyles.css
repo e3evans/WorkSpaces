@@ -1,0 +1,39 @@
+		.menuPortBox{
+			background-color:#e1eef6;
+			color:#64696d;
+			padding:0px;
+			font-weight:bold;
+			font-family:arial;
+			font-size:x-small;	
+		}
+		
+		a.menuPortLinkHead,a.menuPortLinkHead:hover,a.menuPortLinkHead:visited{
+			font-size: 10px;
+			color: #666666;
+			cursor:pointer;
+			font-weight:bold;
+			text-decoration:none;
+			font-family:arial;
+		}
+		
+		a.menuPortLink,a.menuPortLink:hover,a.menuPortLink:visited{
+			font-size: 10px;
+			color: #999999;
+			cursor:pointer;
+			font-weight:bold;
+			text-decoration:none;
+			font-family:arial;
+		}
+		
+		.menuPortDropdown{
+			font-family:arial;
+			font-size:x-small;
+			width:200px;
+		
+		}
+		
+		.selectBox{
+			border:1px solid black;
+			width:200px;
+		}
+	

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.manpower.portal.gemt.hbn.beans.GemtManagersHbnBean" table="GEMT_MANAGERS" >
+ 
+ 
+
+		<id name="id" type="long" column="gemt_sum_mgr_id" >
+			<generator class="sequence"> 
+				<param name="sequence">GEMT_MGRS_SEQ</param>
+			</generator>
+		</id>
+
+		<property name="gemt_sum_managername" column="gemt_sum_managername"/> 
+		<property name="gemt_sum_mgremail" column="gemt_sum_mgremail"/> 
+
+		<property name="created_on" column="created_on" type="timestamp"/>
+		<property name="created_by" column="created_by"/>
+		<property name="updated_on" column="updated_on" type="timestamp"/>
+		<property name="updated_by" column="updated_by"/>
+		
+		 
+	</class>
+</hibernate-mapping>

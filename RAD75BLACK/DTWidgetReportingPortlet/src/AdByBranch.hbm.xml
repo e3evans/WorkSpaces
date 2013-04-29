@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.manpower.directalent.rss.hbn.beans.AdsByBranchBean" table="V_ADV_IN_LASTWEEK" >
+ 		<id name="id" column="branchname" />
+ 		<property name="site_id" column="site_id" type="long" />
+ 		<property name="sitecode" column="sitecode"/>
+		<property name="count" column="count" type="long"/>
+	</class>
+</hibernate-mapping>

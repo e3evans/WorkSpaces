@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.manpower.portal.mpnet.hbn.beans.HistoryLog" table="HISTORYLOG">
+		<id name="id" type="long" column="ID" >
+		<generator class="sequence"> 
+			<param name="sequence">HISTORYLOG_SEQ</param>
+		</generator>
+		</id>
+		<!-- A cat has to have a name, but it shouldn' be too long. -->
+		<property name="site_id" type="long">
+			<column name="SITE_ID" />
+		</property>	
+		<property name="recruiter_id" type="long">
+			<column name="RECRUITER_ID" />
+		</property>
+		<property name="candidate_id" type="long">
+			<column name="CANDIDATE_ID" />
+		</property>
+		<property name="action">
+			<column name="ACTION" />
+		</property>
+		<property name="type">
+			<column name="TYPE" />
+		</property>
+		<property name="created_on" type="timestamp">
+			<column name="CREATED_ON" />
+		</property>
+		<property name="created_by">
+			<column name="CREATED_BY" />
+		</property>		
+ 	</class>
+</hibernate-mapping>

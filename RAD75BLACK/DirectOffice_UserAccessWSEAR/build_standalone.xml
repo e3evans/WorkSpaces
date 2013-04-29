@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     May 11, 2009                                                       
+
+     DirectOfficet_WSEAR
+     DirectOfficet_WSEAR components
+     This build file is used to build in a standalone (non-RAD) ANT environment.
+                   
+     dcook                                                                
+     ====================================================================== -->
+
+<project name="DirectOfficet_WSEAR" default="all" basedir=".">
+	<description>
+		DirectOfficet_WSEAR components
+	</description>
+
+	<property file="build.standalone.properties" />
+	
+	<property name="dir.classes" location="${dir.build}/classes" />
+	<property name="dir.test" location="${dir.build}/test-classes" />
+	<property name="dir.test.data" location="${dir.test}/data" />
+	<property name="dir.test.report" location="${dir.test}/report" />
+	<property name="dir.javadoc" location="${dir.build}/javadoc"/>
+	<property name="dir.lib" location="."/>
+	<property name="dist" value="${dir.work}/dist"/>
+	<property name="dir.war.dist" value="../${project.war}/${dir.dist}" />
+	<property name="dir.war.classes" value="../${project.war}/${dir.dist}/classes" />
+
+	<!-- init -->
+	<target name="init" depends="clean">
+		<tstamp>
+			<format property="buildtime" pattern="yyyy-MM-dd'T'HH:mm:ss" />
+		</tstamp>
+		<mkdir dir="${dir.root}"/>
+		<mkdir dir="${dir.work}"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${dir.classes}" />
+		<mkdir dir="${dir.dist}" />
+		<mkdir dir="${dir.war.dist}" />
+		<mkdir dir="${dir.war.classes}" />
+	</target>	
+	
+	<target name="set-host-port" depends="init"> 
+		<input message="${input.message}"
+			   validargs="${choose.values}"
+			   addproperty="initial.input">
+		</input>
+	<echo message="INITIAL INPUT: "/>	
+	<echo message="${initial.input}"/>
+		<condition property="set.initial" value="true">
+			<equals arg1="${initial.input}" arg2="current" trim="true"/>
+		</condition>
+		<condition property="use.custom" value="true">
+			<equals arg1="${initial.input}" arg2="custom" trim="true"/>
+		</condition>
+	</target>
+	
+	<target name="set-custom" if="use.custom">
+		<input message="Set initial context host:"
+					   addproperty="initial.context.host">
+		</input>
+		<input message="Set initial context port:"
+			 		   addproperty="initial.context.port">
+		</input>
+	</target>
+		
+	<target name="change-file" unless="set.initial">
+			<condition property="initial.context.host" value="${server.local.host}">
+				<equals arg1="local" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.local.port}">
+				<equals arg1="local" arg2="${initial.input}"/>
+			</condition>
+			
+			<condition property="initial.context.host" value="${server.dev.host}">
+				<equals arg1="dev" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.dev.port}">
+				<equals arg1="dev" arg2="${initial.input}"/>
+			</condition>
+			
+			<condition property="initial.context.host" value="${server.stg35.host}">
+				<equals arg1="stg35" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.stg35.port}">
+				<equals arg1="stg35" arg2="${initial.input}"/>
+			</condition>
+							
+			<condition property="initial.context.host" value="${server.stg36.host}">
+				<equals arg1="stg36" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.stg36.port}">
+				<equals arg1="stg36" arg2="${initial.input}"/>
+			</condition>
+			
+			<condition property="initial.context.host" value="${server.pro41.host}">
+				<equals arg1="pro41" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.pro41.port}">
+				<equals arg1="pro41" arg2="${initial.input}"/>
+			</condition>
+									
+			<condition property="initial.context.host" value="${server.dev63.host}">
+				<equals arg1="dev63" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.dev63.port}">
+				<equals arg1="dev63" arg2="${initial.input}"/>
+			</condition>
+		
+			<condition property="initial.context.host" value="${server.pro72.host}">
+				<equals arg1="pro72" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.pro72.port}">
+				<equals arg1="pro72" arg2="${initial.input}"/>
+			</condition>
+											
+			<condition property="initial.context.host" value="${server.pro73.host}">
+				<equals arg1="pro73" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.pro73.port}">
+				<equals arg1="pro73" arg2="${initial.input}"/>
+			</condition>
+			
+			<condition property="initial.context.host" value="${server.pro74.host}">
+				<equals arg1="pro74" arg2="${initial.input}"/>
+			</condition>
+			<condition property="initial.context.port" value="${server.pro74.port}">
+				<equals arg1="pro74" arg2="${initial.input}"/>
+			</condition>
+		</target>
+	
+		
+		<target name="edit-file" >
+			<echoxml file="InitialContext.xml" >
+				<configuration>
+				   <initialContextFactory>com.ibm.websphere.naming.WsnInitialContextFactory</initialContextFactory>
+				   <providerURL>corbaloc:iiop:${initial.context.host}:${initial.context.port}</providerURL>
+				   <portal_providerURL>corbaloc:iiop:localhost:14004</portal_providerURL>
+				   <isDefaultContext>false</isDefaultContext>
+				   <portal_isDefaultContext>false</portal_isDefaultContext>
+				   <retries>3</retries>
+				</configuration>
+			</echoxml>
+		</target>
+		
+		<target name="test" >
+			<echo message="HOST:"></echo>
+			<echo message="${initial.context.host}"></echo>
+			<echo message="PORT"></echo>
+			<echo message="${initial.context.port}"></echo>
+			<input message="Press enter to continue">
+			</input>
+		</target>
+	
+	<target name="build-jars" description="Build utility projects" depends="set-host-port">
+				
+			<delete dir="../${project.utility.1}/${dir.build}" />	
+				<ant dir="../${project.utility.1}" antfile="build_init.xml" inheritall="false" target="init"/>	
+				<javac source="${java.source}" debug="true" srcdir="../${project.utility.1}/src" deprecation="true" optimize="true" destdir="../${project.utility.1}/${dir.build}/classes">
+					<classpath refid="classpath.compile" />
+				</javac>
+				
+				<copy todir="../${project.utility.1}/${dir.build}/classes" flatten="false">
+					<fileset dir="../${project.utility.1}/src" excludes="**/*.java">
+					</fileset>
+				</copy>
+				
+				<copy todir="../${project.utility.1}/${dir.build}/classes" flatten="false">
+					<fileset dir="." includes="InitialContext.xml">
+					</fileset>
+				</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.1}.jar" index="true" manifest="../${project.utility.1}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.1}/${dir.build}/classes" />
+		
+		
+			<delete dir="../${project.utility.2}/${dir.build}" />				
+				<ant dir="../${project.utility.2}" antfile="build_init.xml" inheritall="false" target="init"/>				
+				<javac source="${java.source}" debug="true" srcdir="../${project.utility.2}/src" deprecation="true" optimize="true" destdir="../${project.utility.2}/${dir.build}/classes">
+							<classpath refid="classpath.compile" />
+				</javac>
+		
+				<copy todir="../${project.utility.2}/${dir.build}/classes" flatten="false">
+					<fileset dir="../${project.utility.2}/src" excludes="**/*.java">
+					</fileset>
+				</copy>
+	
+			<jar destfile="${dir.dist}/${project.utility.2}.jar" index="true" manifest="../${project.utility.2}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.2}/${dir.build}/classes" />
+		
+				
+			<delete dir="../${project.utility.3}/${dir.build}" />
+				<ant dir="../${project.utility.3}" antfile="build_init.xml" inheritall="false" target="init"/>
+				<javac source="${java.source}" debug="true" srcdir="../${project.utility.3}/src" deprecation="true" optimize="true" destdir="../${project.utility.3}/${dir.build}/classes">
+							<classpath refid="classpath.compile" />
+				</javac>
+		
+			<copy todir="../${project.utility.3}/${dir.build}/classes" flatten="false">
+				<fileset dir="../${project.utility.3}/src" excludes="**/*.java">
+				</fileset>
+			</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.3}.jar" index="true" manifest="../${project.utility.3}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.3}/${dir.build}/classes" />
+				
+		
+			<delete dir="../${project.utility.4}/${dir.build}" />		
+				<ant dir="../${project.utility.4}" antfile="build_init.xml" inheritall="false" target="init"/>
+				<javac source="${java.source}" debug="true" srcdir="../${project.utility.4}" deprecation="true" optimize="true" destdir="../${project.utility.4}/${dir.build}/classes">
+						<classpath refid="classpath.compile" />
+				</javac>
+		
+				<copy todir="../${project.utility.4}/${dir.build}/classes" flatten="false">
+					<fileset dir="../${project.utility.4}" excludes="**/*.java">
+					</fileset>
+				</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.4}.jar" index="true" manifest="../${project.utility.4}/META-INF/MANIFEST.MF" basedir="../${project.utility.4}/${dir.build}/classes" />
+		
+		
+			<delete dir="../${project.utility.5}/${dir.build}" />		
+						<ant dir="../${project.utility.5}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.5}/src" deprecation="true" optimize="true" destdir="../${project.utility.5}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+		
+						<copy todir="../${project.utility.5}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.5}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.5}.jar" index="true" manifest="../${project.utility.5}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.5}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.6}/${dir.build}" />		
+						<ant dir="../${project.utility.6}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.6}/ejbModule" deprecation="true" optimize="true" destdir="../${project.utility.6}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+
+						<copy todir="../${project.utility.6}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.6}/ejbModule" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.6}.jar" index="true" manifest="../${project.utility.6}/ejbModule/META-INF/MANIFEST.MF" basedir="../${project.utility.6}/${dir.build}/classes" />
+		
+		
+				<delete dir="../${project.utility.7}/${dir.build}" />		
+						<ant dir="../${project.utility.7}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.7}/src" deprecation="true" optimize="true" destdir="../${project.utility.7}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+						
+						<copy todir="../${project.utility.7}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.7}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.7}.jar" index="true" manifest="../${project.utility.7}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.7}/${dir.build}/classes" />
+			
+		
+			<delete dir="../${project.utility.8}/${dir.build}" />		
+						<ant dir="../${project.utility.8}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.8}/src" deprecation="true" optimize="true" destdir="../${project.utility.8}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+		
+						<copy todir="../${project.utility.8}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.8}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+			<jar destfile="${dir.dist}/${project.utility.8}.jar" index="true" manifest="../${project.utility.8}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.8}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.9}/${dir.build}" />		
+						<ant dir="../${project.utility.9}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.9}/src" deprecation="true" optimize="true" destdir="../${project.utility.9}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+							
+						<copy todir="../${project.utility.9}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.9}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.9}.jar" index="true" manifest="../${project.utility.9}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.9}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.10}/${dir.build}" />		
+						<ant dir="../${project.utility.10}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.10}/src" deprecation="true" optimize="true" destdir="../${project.utility.10}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+					
+						<copy todir="../${project.utility.10}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.10}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.10}.jar" index="true" manifest="../${project.utility.10}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.10}/${dir.build}/classes" />
+		
+			
+			<delete dir="../${project.utility.11}/${dir.build}" />		
+						<ant dir="../${project.utility.11}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.11}/src" deprecation="true" optimize="true" destdir="../${project.utility.11}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+		
+						<copy todir="../${project.utility.11}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.11}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.11}.jar" index="true" manifest="../${project.utility.11}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.11}/${dir.build}/classes" />
+		
+		
+			<delete dir="../${project.utility.12}/${dir.build}" />		
+						<ant dir="../${project.utility.12}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.12}/src" deprecation="true" optimize="true" destdir="../${project.utility.12}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+		
+						<copy todir="../${project.utility.12}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.12}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+		
+			<jar destfile="${dir.dist}/${project.utility.12}.jar" index="true" manifest="../${project.utility.12}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.12}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.13}/${dir.build}" />		
+						<ant dir="../${project.utility.13}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.13}/src" deprecation="true" optimize="true" destdir="../${project.utility.13}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>	
+						
+						<copy todir="../${project.utility.13}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.13}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+			<jar destfile="${dir.dist}/${project.utility.13}.jar" index="true" manifest="../${project.utility.13}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.13}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.14}/${dir.build}" />		
+						<ant dir="../${project.utility.14}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.14}/src" deprecation="true" optimize="true" destdir="../${project.utility.14}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+		
+						<copy todir="../${project.utility.14}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.14}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+			<jar destfile="${dir.dist}/${project.utility.14}.jar" index="true" manifest="../${project.utility.14}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.14}/${dir.build}/classes" />
+
+		
+			<delete dir="../${project.utility.15}/${dir.build}" />		
+						<ant dir="../${project.utility.15}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.15}/src" deprecation="true" optimize="true" destdir="../${project.utility.15}/${dir.build}/classes">
+								<classpath refid="classpath.compile" />
+						</javac>
+						
+						<copy todir="../${project.utility.15}/${dir.build}/classes" flatten="false">
+							<fileset dir="../${project.utility.15}/src" excludes="**/*.java">
+							</fileset>
+						</copy>
+			<jar destfile="${dir.dist}/${project.utility.15}.jar" index="true" manifest="../${project.utility.15}/src/META-INF/MANIFEST.MF" basedir="../${project.utility.15}/${dir.build}/classes" />
+			
+			<delete dir="../${project.utility.16}/${dir.build}" />		
+						<ant dir="../${project.utility.16}" antfile="build_init.xml" inheritall="false" target="init"/>
+						<javac source="${java.source}" debug="true" srcdir="../${project.utility.16}/ejbModule" deprecation="true" optimize="true" destdir="../${project.utility.16}/${dir.build}/classes" includes="**/*SessionBean.java">
+										<classpath refid="classpath.compile" />
+								</javac>
+						<copy todir="../${project.utility.6}/${dir.build}/classes" flatten="false">
+									<fileset dir="../${project.utility.16}/${dir.build}/classes" includes="**/*SessionBean.class">
+									</fileset>
+						</copy>
+						<copy todir="../${project.utility.6}/${dir.build}/classes" flatten="false">
+									<fileset dir="../${project.utility.16}/ejbModule" excludes="**/*.java">
+									</fileset>
+						</copy>
+						
+			<jar destfile="${dir.dist}/${project.utility.16}.temp.jar" index="true" manifest="../${project.utility.16}/ejbModule/META-INF/MANIFEST.MF" basedir="../${project.utility.6}/${dir.build}/classes" />
+		
+			<exec dir="${dir.ejbdeploy}" executable="cmd">
+								    <arg value="/c"/>
+								    <arg value="ejbdeploy.bat"/>
+								    <arg value="${dir.current}/${dir.dist}/${project.utility.16}.temp.jar"/>
+									<arg value="/tmp"/>
+				 					<arg value="${dir.current}/${dir.dist}/${project.utility.16}.jar"/>
+									<arg value="-novalidate"/>
+									<arg value="-cp"/>
+									<arg value="${dir.current}\${dir.dist}\${project.utility.1}.jar;${dir.current}\${dir.dist}\${project.utility.2}.jar;${dir.current}\${dir.dist}\${project.utility.3}.jar;${dir.current}\${dir.dist}\${project.utility.4}.jar;${dir.current}\${dir.dist}\${project.utility.5}.jar;${dir.current}\${dir.dist}\${project.utility.6}.jar;${dir.current}\${dir.dist}\${project.utility.7}.jar;${dir.current}\${dir.dist}\${project.utility.8}.jar;${dir.current}\${dir.dist}\${project.utility.9}.jar;${dir.current}\${dir.dist}\${project.utility.10}.jar;${dir.current}\${dir.dist}\${project.utility.11}.jar;${dir.current}\${dir.dist}\${project.utility.12}.jar;${dir.current}\${dir.dist}\${project.utility.13}.jar;${dir.current}\${dir.dist}\${project.utility.14}.jar;${dir.current}\${dir.dist}\${project.utility.15}.jar;${dir.workspace}\${project.repository}\opensource\apache\logging-log4j-1.2.14\dist\lib\log4j-1.2.14.jar;${dir.workspace}\${project.repository}\opensource\apache\commons-beanutils-1.7.0\commons-beanutils.jar;${dir.workspace}\${project.repository}\opensource\sourceforge\hibernate-3.2\hibernate3.jar"/>
+			</exec>
+		
+			<war destfile="${dir.dist}/${project.war.jar}" index="true" manifest="../${project.war}/${dir.web}/META-INF/MANIFEST.MF" webxml='../${project.war}/${dir.web}/WEB-INF/web.xml' duplicate="preserve">
+				<classes dir="../${project.war}/${dir.build}/classes"/>
+				<lib dir="${dir.dist}">
+				    <include name="${project.depend.6}.jar"/>
+				</lib>
+				<fileset dir="../${project.war}/${dir.web}" excludes="WEB-INF/classes"/>
+			</war>
+	</target>
+	
+
+
+	<!-- archive -->
+	<target name="archive" depends="build-jars">
+		<ear destfile="${dist}/${project.jar}" index="true" manifest="META-INF/MANIFEST.MF" appxml='META-INF/application.xml' duplicate="preserve">
+			<fileset dir="${dir.lib}">
+				<include name="*"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.1}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.2}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.3}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.4}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.5}.jar"/>
+			</fileset>
+	    	<fileset dir="${dir.dist}">
+			    <include name="${project.depend.6}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.7}.jar"/>
+			</fileset>
+	    	<fileset dir="${dir.dist}">
+			    <include name="${project.depend.8}.jar"/>
+			</fileset>
+	    	<fileset dir="${dir.dist}">
+			    <include name="${project.depend.9}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.10}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+			    <include name="${project.depend.11}.jar"/>
+			</fileset>
+			<fileset dir="${dir.dist}">
+				<include name="${project.war.jar}" />
+			</fileset>
+		</ear>
+	</target>
+	
+	<!-- clean build and distribution directories -->
+	<target name="clean">
+		<mkdir dir="${dir.classes}" />
+		<delete dir="${dir.build}" />
+	</target>
+
+	<!-- classpaths for compilation and testing -->
+	<path id="classpath.compile">
+		<!-- <pathelement location="../SomeProjectEJB/bin"/> -->
+		<fileset dir="${dir.lib}">
+					<include name="*.jar" />
+				</fileset>
+		<fileset dir="${dir.dist}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${dir.runtime}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${dir.apache}/commons-beanutils-1.7.0/">
+			<include  name="commons-beanutils.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-codec-1.3/">
+			<include  name="commons-codec-1.3.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-collections-3.2/">
+			<include  name="commons-collections-3.2.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-configuration-1.4/">
+			<include  name="commons-configuration-1.4.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-digester-1.8/">
+			<include  name="commons-digester-1.7.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-lang-2.3/">
+			<include  name="commons-lang-2.3.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-logging-1.0.4/">
+			<include  name="commons-logging.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-fileupload-1.2/lib">
+			<include  name="commons-fileupload-1.2.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/commons-email-1.1/">
+					<include  name="commons-email-1.1.jar"/>
+				</fileset>
+		<fileset dir="${dir.oracle}">
+			<include  name="ojdbc14_10g.jar"/>
+		</fileset>
+		<fileset dir="${dir.apache}/logging-log4j-1.2.14/dist/lib">
+			<include  name="log4j-1.2.14.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/dom4j">
+							<include  name="dom4j-1.6.1.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/">
+					<include  name="hibernate3.jar"/>
+				</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="asm.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="asm-attrs.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="cglib-2.1.3.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="commons-collections-2.1.1.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="commons-logging-1.0.4.jar"/>
+		</fileset>
+		<fileset dir="${dir.sourceforge}/hibernate-3.2/lib">
+			<include  name="jaxen-1.1-beta-7.jar"/>
+		</fileset>
+	</path>
+
+	
+	<target name="all" depends="clean, init, set-host-port, set-custom, change-file, edit-file, build-jars, archive" />
+
+</project>

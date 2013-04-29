@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd" id="com.ibm.dt_vlado.DT_VladoPortlet.e0b38f34b2">
+	<portlet>
+		<portlet-name>DT_Vlado</portlet-name>
+		<display-name xml:lang="en">DT_Vlado</display-name>
+		<display-name>DT_Vlado</display-name>
+		<portlet-class>com.ibm.dt_vlado.DT_VladoPortlet</portlet-class>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.view</name>
+			<value>/DT_VladoView.jsp</value>
+		</init-param>
+		<init-param>
+			<name>com.ibm.faces.portlet.page.edit</name>
+			<value>/DT_VladoEdit.jsp</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<resource-bundle>com.ibm.dt_vlado.nl.DT_VladoPortletResource</resource-bundle>
+		<portlet-info>
+			<title>DT_Vlado</title>
+			<short-title>DT_Vlado</short-title>
+			<keywords>DT_Vlado</keywords>
+		</portlet-info>
+	</portlet>
+</portlet-app>
